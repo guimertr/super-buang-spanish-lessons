@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clase de Español - Verbos</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #fdf5e6; /* Amarillo pastel muy suave */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+    }
+    .slide-container {
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 40px;
+        width: 600px;
+        max-width: 90%;
+        position: relative;
+    }
+    .cat-image {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto 20px auto;
+        border-radius: 50%; /* Para que sea circular y recorte los bordes */
+        background-image: url('Gemini_Generated_Image_q0cocbq0cocbq0co.jpg');
+        background-size: 300% 400%; /* Porque es un grid de 3 columnas x 4 filas */
+        background-repeat: no-repeat;
+    }
+    
+    /* Posiciones del Sprite Sheet (3 columnas x 4 filas) */
+    /* Fila 1 */
+    .comer { background-position: 0% 0%; }
+    .dormir { background-position: 50% 0%; }
+    .jugar { background-position: 100% 0%; }
+    /* Fila 2 */
+    .caminar { background-position: 0% 33.33%; }
+    .hablar { background-position: 50% 33.33%; }
+    .pensar { background-position: 100% 33.33%; }
+    /* Fila 3 */
+    .correr { background-position: 0% 66.66%; }
+    .cantar { background-position: 50% 66.66%; }
+    .esperar { background-position: 100% 66.66%; }
+    /* Fila 4 */
+    .dibujar { background-position: 0% 100%; }
+    .aprender { background-position: 50% 100%; }
+    .original { background-position: 100% 100%; }
+
+    .spanish-word {
+        font-size: 48px;
+        font-weight: bold;
+        color: #333;
+        margin: 10px 0;
+        text-transform: uppercase;
+    }
+    .english-word {
+        font-size: 24px;
+        color: #777;
+        margin: 0;
+    }
+    .controls {
+        margin-top: 30px;
+    }
+    button {
+        background-color: #ffd700;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 0 10px;
+        font-weight: bold;
+        color: #333;
+    }
+    button:hover { background-color: #ffc700; }
+</style>
+</head>
+<body>
+
+<div class="slide-container">
+    <div id="cat-display" class="cat-image original"></div>
+    <h1 id="spanish-display" class="spanish-word">BIENVENIDOS</h1>
+    <p id="english-display" class="english-word">Spanish Class</p>
+    
+    <div class="controls">
+        <button onclick="prevSlide()">Anterior</button>
+        <button onclick="nextSlide()">Siguiente</button>
+    </div>
+</div>
+
+<script>
+    const slides = [
+        { catClass: 'original', es: 'Bienvenidos', en: 'Spanish Class' },
+        { catClass: 'comer', es: 'Comer', en: 'to eat' },
+        { catClass: 'dormir', es: 'Dormir', en: 'to sleep' },
+        { catClass: 'jugar', es: 'Jugar', en: 'to play' },
+        { catClass: 'caminar', es: 'Caminar', en: 'to walk' },
+        { catClass: 'hablar', es: 'Hablar', en: 'to talk' },
+        { catClass: 'pensar', es: 'Pensar', en: 'to think' },
+        { catClass: 'correr', es: 'Correr', en: 'to run' },
+        { catClass: 'cantar', es: 'Cantar', en: 'to sing' },
+        { catClass: 'esperar', es: 'Esperar', en: 'to wait' },
+        { catClass: 'dibujar', es: 'Dibujar', en: 'to draw' },
+        { catClass: 'aprender', es: 'Aprender', en: 'to learn' }
+    ];
+
+    let currentSlide = 0;
+
+    function updateSlide() {
+        const catDiv = document.getElementById('cat-display');
+        catDiv.className = 'cat-image ' + slides[currentSlide].catClass;
+        document.getElementById('spanish-display').innerText = slides[currentSlide].es;
+        document.getElementById('english-display').innerText = slides[currentSlide].en;
+    }
+
+    function nextSlide() {
+        if (currentSlide < slides.length - 1) {
+            currentSlide++;
+            updateSlide();
+        }
+    }
+
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateSlide();
+        }
+    }
+</script>
+
+</body>
+</html>
