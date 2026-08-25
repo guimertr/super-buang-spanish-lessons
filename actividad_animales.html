@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Práctica de Animales</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #e6ffe6; /* Verde pastel suave */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+    }
+    .back-btn {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        text-decoration: none;
+        background-color: white;
+        color: #333;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .back-btn:hover { background-color: #eee; }
+    .quiz-container {
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 40px;
+        width: 600px;
+        max-width: 90%;
+        position: relative;
+    }
+    .progress {
+        font-size: 16px;
+        color: #777;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    .question {
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 30px;
+    }
+    .blank {
+        display: inline-block;
+        width: 150px;
+        border-bottom: 3px solid #333;
+        margin: 0 10px;
+        text-align: center;
+        font-style: italic;
+        color: #007bff;
+    }
+    .options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    .option-btn {
+        background-color: #f0f0f0;
+        border: 2px solid #ddd;
+        padding: 15px;
+        font-size: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-weight: bold;
+        color: #333;
+    }
+    .option-btn:hover {
+        background-color: #e0e0e0;
+        border-color: #ccc;
+    }
+    .option-btn:disabled {
+        cursor: default;
+    }
+    .option-btn.correct {
+        background-color: #d4edda;
+        border-color: #28a745;
+        color: #155724;
+    }
+    .option-btn.wrong {
+        background-color: #f8d7da;
+        border-color: #dc3545;
+        color: #721c24;
+    }
+    .feedback {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        min-height: 30px;
+    }
+    .explanation {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+        min-height: 20px;
+    }
+    .next-btn {
+        background-color: #28a745;
+        border: none;
+        padding: 10px 30px;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        display: none; /* Oculto inicialmente */
+        margin: 0 auto;
+    }
+    .next-btn:hover { background-color: #218838; }
+    
+    .final-score {
+        display: none;
+    }
+    .restart-btn {
+        background-color: #007bff;
+        border: none;
+        padding: 15px 30px;
+        font-size: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    .restart-btn:hover { background-color: #0069d9; }
+</style>
+</head>
+<body>
+<a href="index.html" class="back-btn">⬅️ Volver al Menú</a>
+<div class="quiz-container" id="quiz-box">
+    <div class="progress" id="progress">Pregunta 1 de 10</div>
+    <div class="question" id="question-text"></div>
+    <div class="options" id="options-container">
+        <!-- Botones se generan por JS -->
+    </div>
+    <div class="feedback" id="feedback"></div>
+    <div class="explanation" id="explanation"></div>
+    <button class="next-btn" id="next-btn" onclick="nextQuestion()">Siguiente ➡️</button>
+</div>
+
+<div class="quiz-container final-score" id="result-box">
+    <h1>¡Práctica Completada! 🎉</h1>
+    <p style="font-size: 24px;">Tu puntaje: <strong id="score-display">0/10</strong></p>
+    <button class="restart-btn" onclick="startQuiz()">Reintentar con nuevas preguntas 🔄</button>
+</div>
+
+<script>
+    // Banco de preguntas usando el vocabulario de animales
+    const questionBank = [
+        { sentence: "El _____ come huesos en la casa.", missing: "perro", options: ["gato", "ratón", "perro", "conejo"], exp: "'El perro' es 'the dog'. Los perros comen huesos." },
+        { sentence: "El _____ persigue al ratón.", missing: "gato", options: ["mono", "gato", "cerdo", "vaca"], exp: "'El gato' es 'the cat'. Los gatos cazan ratones." },
+        { sentence: "El _____ es pequeño y come queso.", missing: "ratón", options: ["oso", "león", "ratón", "perro"], exp: "'El ratón' es 'the mouse'. Los ratones son pequeños." },
+        { sentence: "El _____ tiene orejas largas.", missing: "conejo", options: ["conejo", "mono", "gato", "rana"], exp: "'El conejo' es 'the rabbit'. Tienen orejas largas." },
+        { sentence: "El _____ es grande y fuerte en el bosque.", missing: "oso", options: ["cerdo", "oso", "ratón", "perro"], exp: "'El oso' es 'the bear'. Son animales grandes y fuertes." },
+        { sentence: "El _____ es el rey de la selva.", missing: "león", options: ["gato", "conejo", "vaca", "león"], exp: "'El león' es 'the lion', conocido como el rey." },
+        { sentence: "La _____ nos da leche.", missing: "vaca", options: ["rana", "vaca", "león", "oso"], exp: "'La vaca' es 'the cow', produce leche." },
+        { sentence: "El _____ es gordito y rosa.", missing: "cerdo", options: ["mono", "cerdo", "perro", "gato"], exp: "'El cerdo' es 'the pig'. Son a menudo rosados." },
+        { sentence: "La _____ salta en el agua.", missing: "rana", options: ["vaca", "rana", "conejo", "oso"], exp: "'La rana' es 'the frog'. Les gusta saltar en el agua." },
+        { sentence: "El _____ come bananas en los árboles.", missing: "mono", options: ["perro", "ratón", "mono", "cerdo"], exp: "'El mono' es 'the monkey'. A los monos les gustan las bananas." },
+        
+        { sentence: "Vamos a caminar con el _____ por el parque.", missing: "perro", options: ["rana", "vaca", "perro", "león"], exp: "Normalmente caminas con 'el perro' (the dog) por el parque." },
+        { sentence: "El _____ está durmiendo en el sofá.", missing: "gato", options: ["oso", "gato", "vaca", "cerdo"], exp: "'El gato' (the cat) a menudo duerme en el sofá de la casa." },
+        { sentence: "Yo no quiero ver un _____ en la cocina.", missing: "ratón", options: ["ratón", "león", "oso", "vaca"], exp: "No quieres ver un 'ratón' (mouse) en tu cocina." },
+        { sentence: "El _____ salta muy alto en el jardín.", missing: "conejo", options: ["cerdo", "conejo", "vaca", "oso"], exp: "'El conejo' (the rabbit) es conocido por saltar." },
+        { sentence: "En el zoológico, yo quiero ver el _____ polar.", missing: "oso", options: ["perro", "gato", "ratón", "oso"], exp: "El 'oso' (bear) polar es un animal de zoológico, los otros son mascotas/plagas." },
+        { sentence: "El _____ tiene una melena grande.", missing: "león", options: ["mono", "rana", "león", "cerdo"], exp: "El 'león' (lion) macho tiene una gran melena." },
+        { sentence: "La _____ hace 'muuuu' por la mañana.", missing: "vaca", options: ["rana", "vaca", "gato", "perro"], exp: "'La vaca' (the cow) hace el sonido 'muuuu'." },
+        { sentence: "El _____ hace 'oink oink'.", missing: "cerdo", options: ["cerdo", "mono", "león", "conejo"], exp: "'El cerdo' (the pig) hace el sonido 'oink oink'." },
+        { sentence: "La _____ es verde y muy pequeña.", missing: "rana", options: ["vaca", "rana", "león", "oso"], exp: "De las opciones, solo la 'rana' (frog) es verde y pequeña." },
+        { sentence: "El _____ juega en las ramas largas.", missing: "mono", options: ["mono", "perro", "cerdo", "vaca"], exp: "El 'mono' (monkey) juega en las ramas de los árboles." },
+        
+        { sentence: "Yo tengo que alimentar al _____.", missing: "perro", options: ["león", "oso", "perro", "mono"], exp: "Normalmente tienes que alimentar a tu mascota, 'el perro' (the dog)." },
+        { sentence: "El _____ quiere comer pescado.", missing: "gato", options: ["vaca", "gato", "conejo", "cerdo"], exp: "A 'el gato' (the cat) le gusta comer pescado." },
+        { sentence: "El _____ tiene miedo del gato.", missing: "ratón", options: ["león", "oso", "perro", "ratón"], exp: "'El ratón' (the mouse) le tiene miedo a los gatos." },
+        { sentence: "El _____ come zanahorias.", missing: "conejo", options: ["cerdo", "león", "rana", "conejo"], exp: "Al 'conejo' (the rabbit) le gusta comer zanahorias." },
+        { sentence: "Vamos a correr como un _____ en el bosque.", missing: "oso", options: ["oso", "rana", "vaca", "cerdo"], exp: "Un 'oso' (bear) corre por el bosque." },
+        { sentence: "El _____ duerme en la sabana.", missing: "león", options: ["ratón", "león", "gato", "cerdo"], exp: "El 'león' (lion) vive y duerme en la sabana." },
+        { sentence: "Nosotros tenemos que ordeñar a la _____.", missing: "vaca", options: ["vaca", "rana", "gato", "mono"], exp: "Tienes que ordeñar (milk) a 'la vaca' (the cow)." },
+        { sentence: "El _____ vive en la granja.", missing: "cerdo", options: ["león", "mono", "oso", "cerdo"], exp: "El 'cerdo' (pig) es un animal típico de granja." },
+        { sentence: "La _____ tiene la piel húmeda.", missing: "rana", options: ["vaca", "perro", "gato", "rana"], exp: "La 'rana' (frog) es un anfibio con piel húmeda." },
+        { sentence: "El _____ es muy inteligente y divertido.", missing: "mono", options: ["mono", "vaca", "rana", "cerdo"], exp: "El 'mono' (monkey) es conocido por ser inteligente y divertido." },
+        
+        { sentence: "Mi animal favorito es el _____ grande.", missing: "perro", options: ["rana", "ratón", "perro", "conejo"], exp: "El 'perro' (dog) puede ser una mascota grande." },
+        { sentence: "El _____ maúlla por la noche.", missing: "gato", options: ["gato", "vaca", "cerdo", "mono"], exp: "El 'gato' (cat) maúlla." },
+        { sentence: "El _____ se esconde en la pared.", missing: "ratón", options: ["vaca", "oso", "ratón", "león"], exp: "El 'ratón' (mouse) se esconde en pequeños agujeros en la pared." },
+        { sentence: "El _____ es muy rápido y suave.", missing: "conejo", options: ["conejo", "vaca", "cerdo", "rana"], exp: "El 'conejo' (rabbit) es rápido y de pelaje suave." },
+        { sentence: "El _____ come miel.", missing: "oso", options: ["perro", "gato", "oso", "león"], exp: "El 'oso' (bear) a menudo come miel." },
+        { sentence: "El _____ caza por la tarde.", missing: "león", options: ["rana", "león", "vaca", "cerdo"], exp: "El 'león' (lion) es un cazador de la tarde/noche." },
+        { sentence: "La _____ come mucha hierba.", missing: "vaca", options: ["vaca", "rana", "león", "gato"], exp: "La 'vaca' (cow) come hierba." },
+        { sentence: "El _____ está sucio en el lodo.", missing: "cerdo", options: ["mono", "conejo", "gato", "cerdo"], exp: "Al 'cerdo' (pig) le gusta ensuciarse en el lodo." },
+        { sentence: "La _____ atrapa moscas con su lengua.", missing: "rana", options: ["vaca", "rana", "perro", "cerdo"], exp: "La 'rana' (frog) usa su lengua para atrapar moscas." },
+        { sentence: "El _____ tiene una cola larga.", missing: "mono", options: ["rana", "cerdo", "oso", "mono"], exp: "El 'mono' (monkey) tiene una larga cola para colgarse." },
+        
+        { sentence: "Yo quiero caminar con mi _____.", missing: "perro", options: ["rana", "león", "oso", "perro"], exp: "Usualmente quieres caminar con tu mascota, 'mi perro' (my dog)." },
+        { sentence: "El _____ tiene bigotes bonitos.", missing: "gato", options: ["vaca", "gato", "rana", "cerdo"], exp: "El 'gato' (cat) tiene bigotes largos y bonitos." },
+        { sentence: "Nosotros tenemos que atrapar al _____.", missing: "ratón", options: ["ratón", "león", "oso", "vaca"], exp: "Si hay un 'ratón' (mouse) en casa, hay que atraparlo." },
+        { sentence: "El _____ blanco es mi mascota.", missing: "conejo", options: ["conejo", "león", "oso", "mono"], exp: "Un 'conejo' (rabbit) blanco puede ser una mascota adorable." },
+        { sentence: "El _____ pardo está en el río.", missing: "oso", options: ["cerdo", "vaca", "perro", "oso"], exp: "El 'oso' (bear) pardo pesca en los ríos." },
+        { sentence: "El _____ ruge muy fuerte.", missing: "león", options: ["conejo", "ratón", "león", "gato"], exp: "El 'león' (lion) hace el sonido de rugir." },
+        { sentence: "La _____ es blanca y negra.", missing: "vaca", options: ["rana", "león", "vaca", "mono"], exp: "Muchas veces, la 'vaca' (cow) tiene manchas blancas y negras." },
+        { sentence: "El _____ no quiere caminar hoy.", missing: "cerdo", options: ["cerdo", "león", "rana", "mono"], exp: "Un 'cerdo' (pig) perezoso no quiere caminar." },
+        { sentence: "La _____ canta en el estanque.", missing: "rana", options: ["vaca", "gato", "rana", "perro"], exp: "La 'rana' (frog) canta/croa cerca del agua." },
+        { sentence: "El _____ hace travesuras.", missing: "mono", options: ["vaca", "rana", "mono", "cerdo"], exp: "El 'mono' (monkey) es juguetón y travieso." }
+    ];
+
+    let currentQuestions = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function startQuiz() {
+        // Seleccionar 10 preguntas al azar
+        const shuffled = [...questionBank].sort(() => 0.5 - Math.random());
+        currentQuestions = shuffled.slice(0, 10);
+        
+        currentQuestionIndex = 0;
+        score = 0;
+        
+        document.getElementById('quiz-box').style.display = 'block';
+        document.getElementById('result-box').style.display = 'none';
+        
+        loadQuestion();
+    }
+
+    function loadQuestion() {
+        const q = currentQuestions[currentQuestionIndex];
+        document.getElementById('progress').innerText = `Pregunta ${currentQuestionIndex + 1} de 10`;
+        
+        // Reemplazar la palabra correcta por el espacio en blanco
+        let displaySentence = q.sentence.replace(q.missing, '<span class="blank">?</span>');
+        document.getElementById('question-text').innerHTML = displaySentence;
+        
+        // Limpiar feedback
+        document.getElementById('feedback').innerHTML = '';
+        document.getElementById('explanation').innerHTML = '';
+        document.getElementById('next-btn').style.display = 'none';
+        
+        // Generar botones
+        const optionsContainer = document.getElementById('options-container');
+        optionsContainer.innerHTML = '';
+        
+        // Mezclar las opciones de esta pregunta
+        const shuffledOptions = [...q.options].sort(() => 0.5 - Math.random());
+        
+        shuffledOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerText = opt;
+            btn.onclick = () => checkAnswer(btn, opt, q);
+            optionsContainer.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(selectedBtn, selectedText, questionData) {
+        // Deshabilitar todos los botones
+        const buttons = document.querySelectorAll('.option-btn');
+        buttons.forEach(btn => btn.disabled = true);
+        
+        const isCorrect = selectedText === questionData.missing;
+        
+        if (isCorrect) {
+            selectedBtn.classList.add('correct');
+            document.getElementById('feedback').innerHTML = '✅ ¡Correcto!';
+            document.getElementById('feedback').style.color = '#28a745';
+            score++;
+            // Llenar el espacio en blanco
+            document.getElementById('question-text').innerHTML = questionData.sentence.replace(questionData.missing, `<span class="blank" style="color: #28a745; border-color: #28a745;">${questionData.missing}</span>`);
+        } else {
+            selectedBtn.classList.add('wrong');
+            // Encontrar y marcar el correcto
+            buttons.forEach(btn => {
+                if(btn.innerText === questionData.missing) {
+                    btn.classList.add('correct');
+                }
+            });
+            document.getElementById('feedback').innerHTML = '❌ Incorrecto';
+            document.getElementById('feedback').style.color = '#dc3545';
+            // Llenar el espacio en blanco con la correcta
+            document.getElementById('question-text').innerHTML = questionData.sentence.replace(questionData.missing, `<span class="blank" style="color: #dc3545; border-color: #dc3545;">${questionData.missing}</span>`);
+        }
+        
+        document.getElementById('explanation').innerText = questionData.exp;
+        document.getElementById('next-btn').style.display = 'block';
+    }
+
+    function nextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < 10) {
+            loadQuestion();
+        } else {
+            showResults();
+        }
+    }
+
+    function showResults() {
+        document.getElementById('quiz-box').style.display = 'none';
+        document.getElementById('result-box').style.display = 'block';
+        document.getElementById('score-display').innerText = `${score}/10`;
+    }
+
+    // Iniciar el quiz al cargar la página
+    window.onload = startQuiz;
+</script>
+</body>
+</html>
