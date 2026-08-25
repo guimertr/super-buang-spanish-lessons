@@ -5,141 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Práctica de Animales</title>
 <style>
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #e6ffe6;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        text-align: center;
-    }
-    .back-btn {
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        text-decoration: none;
-        background-color: white;
-        color: #333;
-        padding: 10px 20px;
-        border-radius: 10px;
-        font-weight: bold;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+    body { font-family: 'Arial', sans-serif; background-color: #e6ffe6; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
+    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #333; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
     .back-btn:hover { background-color: #eee; }
-    .quiz-container {
-        background-color: white;
-        border-radius: 20px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        padding: 40px;
-        width: 600px;
-        max-width: 90%;
-        position: relative;
-    }
-    .progress {
-        font-size: 16px;
-        color: #777;
-        margin-bottom: 20px;
-        font-weight: bold;
-    }
-    .question {
-        font-size: 28px;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 10px;
-    }
-    .english-translation {
-        font-size: 16px;
-        color: #666;
-        margin-bottom: 30px;
-        font-style: italic;
-    }
-    .blank {
-        display: inline-block;
-        width: 150px;
-        border-bottom: 3px solid #333;
-        margin: 0 10px;
-        text-align: center;
-        font-style: italic;
-        color: #007bff;
-    }
-    .options {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        margin-bottom: 30px;
-    }
-    .option-btn {
-        background-color: #f0f0f0;
-        border: 2px solid #ddd;
-        padding: 15px;
-        font-size: 20px;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: all 0.2s;
-        font-weight: bold;
-        color: #333;
-    }
-    .option-btn:hover {
-        background-color: #e0e0e0;
-        border-color: #ccc;
-    }
-    .option-btn:disabled {
-        cursor: default;
-    }
-    .option-btn.correct {
-        background-color: #d4edda;
-        border-color: #28a745;
-        color: #155724;
-    }
-    .option-btn.wrong {
-        background-color: #f8d7da;
-        border-color: #dc3545;
-        color: #721c24;
-    }
-    .feedback {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        min-height: 30px;
-    }
-    .explanation {
-        font-size: 14px;
-        color: #555;
-        margin-bottom: 20px;
-        min-height: 20px;
-    }
-    .next-btn {
-        background-color: #28a745;
-        border: none;
-        padding: 10px 30px;
-        font-size: 18px;
-        border-radius: 10px;
-        cursor: pointer;
-        color: white;
-        font-weight: bold;
-        display: none;
-        margin: 0 auto;
-    }
+    .quiz-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 40px; width: 600px; max-width: 90%; position: relative; }
+    .progress { font-size: 16px; color: #777; margin-bottom: 20px; font-weight: bold; }
+    .question { font-size: 28px; font-weight: bold; color: #333; margin-bottom: 10px; }
+    .english-translation { font-size: 16px; color: #666; margin-bottom: 30px; font-style: italic; }
+    .blank { display: inline-block; width: 150px; border-bottom: 3px solid #333; margin: 0 10px; text-align: center; font-style: italic; color: #007bff; }
+    .options { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
+    .option-btn { background-color: #f0f0f0; border: 2px solid #ddd; padding: 15px; font-size: 20px; border-radius: 10px; cursor: pointer; transition: all 0.2s; font-weight: bold; color: #333; }
+    .option-btn:hover { background-color: #e0e0e0; border-color: #ccc; }
+    .option-btn:disabled { cursor: default; }
+    .option-btn.correct { background-color: #d4edda; border-color: #28a745; color: #155724; }
+    .option-btn.wrong { background-color: #f8d7da; border-color: #dc3545; color: #721c24; }
+    .feedback { font-size: 24px; font-weight: bold; margin-bottom: 10px; min-height: 30px; }
+    .explanation { font-size: 14px; color: #555; margin-bottom: 20px; min-height: 20px; }
+    .next-btn { background-color: #28a745; border: none; padding: 10px 30px; font-size: 18px; border-radius: 10px; cursor: pointer; color: white; font-weight: bold; display: none; margin: 0 auto; }
     .next-btn:hover { background-color: #218838; }
     
-    .final-score {
-        display: none;
-    }
-    .restart-btn {
-        background-color: #007bff;
-        border: none;
-        padding: 15px 30px;
-        font-size: 20px;
-        border-radius: 10px;
-        cursor: pointer;
-        color: white;
-        font-weight: bold;
-        margin-top: 20px;
-    }
+    .final-score { display: none; }
+    .name-input { padding: 12px; font-size: 18px; border-radius: 8px; border: 2px solid #ccc; width: 80%; margin: 20px 0; outline: none; }
+    .name-input:focus { border-color: #007bff; }
+    .save-btn { background-color: #28a745; border: none; padding: 12px 25px; font-size: 18px; border-radius: 10px; cursor: pointer; color: white; font-weight: bold; }
+    .save-btn:hover { background-color: #218838; }
+    .restart-btn { background-color: #007bff; border: none; padding: 12px 25px; font-size: 18px; border-radius: 10px; cursor: pointer; color: white; font-weight: bold; margin-top: 15px; display: none; }
     .restart-btn:hover { background-color: #0069d9; }
+    .success-msg { color: #28a745; font-size: 18px; font-weight: bold; margin-top: 15px; display: none; }
 </style>
 </head>
 <body>
@@ -148,8 +40,7 @@
     <div class="progress" id="progress">Pregunta 1 de 10</div>
     <div class="question" id="question-text"></div>
     <div class="english-translation" id="english-translation"></div>
-    <div class="options" id="options-container">
-    </div>
+    <div class="options" id="options-container"></div>
     <div class="feedback" id="feedback"></div>
     <div class="explanation" id="explanation"></div>
     <button class="next-btn" id="next-btn" onclick="nextQuestion()">Siguiente ➡️</button>
@@ -158,7 +49,17 @@
 <div class="quiz-container final-score" id="result-box">
     <h1>¡Práctica Completada! 🎉</h1>
     <p style="font-size: 24px;">Tu puntaje: <strong id="score-display">0/10</strong></p>
-    <button class="restart-btn" onclick="startQuiz()">Reintentar con nuevas preguntas 🔄</button>
+    
+    <div id="save-section">
+        <p>Ingresa tu nombre para guardar el resultado:</p>
+        <input type="text" id="student-name" class="name-input" placeholder="Tu nombre y apellido">
+        <br>
+        <button class="save-btn" onclick="saveAndSend()">Guardar y Enviar 💾</button>
+    </div>
+    
+    <div id="success-message" class="success-msg">¡Resultado guardado correctamente!</div>
+    
+    <button id="restart-btn" class="restart-btn" onclick="startQuiz()">Intentar de nuevo 🔄</button>
 </div>
 
 <script>
@@ -173,7 +74,6 @@
         { sentence: "El _____ es gordito y rosa.", engFull: "The pig is chubby and pink.", missing: "cerdo", options: ["mono", "cerdo", "perro", "gato"], exp: "'El cerdo' es 'the pig'. Son a menudo rosados." },
         { sentence: "La _____ salta en el agua.", engFull: "The frog jumps in the water.", missing: "rana", options: ["vaca", "rana", "conejo", "oso"], exp: "'La rana' es 'the frog'. Les gusta saltar en el agua." },
         { sentence: "El _____ come bananas en los árboles.", engFull: "The monkey eats bananas in the trees.", missing: "mono", options: ["perro", "ratón", "mono", "cerdo"], exp: "'El mono' es 'the monkey'. A los monos les gustan las bananas." },
-        
         { sentence: "Vamos a caminar con el _____ por el parque.", engFull: "Let's walk with the dog in the park.", missing: "perro", options: ["rana", "vaca", "perro", "león"], exp: "Normalmente caminas con 'el perro' (the dog) por el parque." },
         { sentence: "El _____ está durmiendo en el sofá.", engFull: "The cat is sleeping on the couch.", missing: "gato", options: ["oso", "gato", "vaca", "cerdo"], exp: "'El gato' (the cat) a menudo duerme en el sofá de la casa." },
         { sentence: "Yo no quiero ver un _____ en la cocina.", engFull: "I don't want to see a mouse in the kitchen.", missing: "ratón", options: ["ratón", "león", "oso", "vaca"], exp: "No quieres ver un 'ratón' (mouse) en tu cocina." },
@@ -183,18 +83,7 @@
         { sentence: "La _____ hace 'muuuu' por la mañana.", engFull: "The cow goes 'moooo' in the morning.", missing: "vaca", options: ["rana", "vaca", "gato", "perro"], exp: "'La vaca' (the cow) hace el sonido 'muuuu'." },
         { sentence: "El _____ hace 'oink oink'.", engFull: "The pig goes 'oink oink'.", missing: "cerdo", options: ["cerdo", "mono", "león", "conejo"], exp: "'El cerdo' (the pig) hace el sonido 'oink oink'." },
         { sentence: "La _____ es verde y muy pequeña.", engFull: "The frog is green and very small.", missing: "rana", options: ["vaca", "rana", "león", "oso"], exp: "De las opciones, solo la 'rana' (frog) es verde y pequeña." },
-        { sentence: "El _____ juega en las ramas largas.", engFull: "The monkey plays in the long branches.", missing: "mono", options: ["mono", "perro", "cerdo", "vaca"], exp: "El 'mono' (monkey) juega en las ramas de los árboles." },
-        
-        { sentence: "Yo tengo que alimentar al _____.", engFull: "I have to feed the dog.", missing: "perro", options: ["león", "oso", "perro", "mono"], exp: "Normalmente tienes que alimentar a tu mascota, 'el perro' (the dog)." },
-        { sentence: "El _____ quiere comer pescado.", engFull: "The cat wants to eat fish.", missing: "gato", options: ["vaca", "gato", "conejo", "cerdo"], exp: "A 'el gato' (the cat) le gusta comer pescado." },
-        { sentence: "El _____ tiene miedo del gato.", engFull: "The mouse is afraid of the cat.", missing: "ratón", options: ["león", "oso", "perro", "ratón"], exp: "'El ratón' (the mouse) le tiene miedo a los gatos." },
-        { sentence: "El _____ come zanahorias.", engFull: "The rabbit eats carrots.", missing: "conejo", options: ["cerdo", "león", "rana", "conejo"], exp: "Al 'conejo' (the rabbit) le gusta comer zanahorias." },
-        { sentence: "Vamos a correr como un _____ en el bosque.", engFull: "Let's run like a bear in the forest.", missing: "oso", options: ["oso", "rana", "vaca", "cerdo"], exp: "Un 'oso' (bear) corre por el bosque." },
-        { sentence: "El _____ duerme en la sabana.", engFull: "The lion sleeps in the savanna.", missing: "león", options: ["ratón", "león", "gato", "cerdo"], exp: "El 'león' (lion) vive y duerme en la sabana." },
-        { sentence: "Nosotros tenemos que ordeñar a la _____.", engFull: "We have to milk the cow.", missing: "vaca", options: ["vaca", "rana", "gato", "mono"], exp: "Tienes que ordeñar (milk) a 'la vaca' (the cow)." },
-        { sentence: "El _____ vive en la granja.", engFull: "The pig lives on the farm.", missing: "cerdo", options: ["león", "mono", "oso", "cerdo"], exp: "El 'cerdo' (pig) es un animal típico de granja." },
-        { sentence: "La _____ tiene la piel húmeda.", engFull: "The frog has wet skin.", missing: "rana", options: ["vaca", "perro", "gato", "rana"], exp: "La 'rana' (frog) es un anfibio con piel húmeda." },
-        { sentence: "El _____ es muy inteligente y divertido.", engFull: "The monkey is very smart and funny.", missing: "mono", options: ["mono", "vaca", "rana", "cerdo"], exp: "El 'mono' (monkey) es conocido por ser inteligente y divertido." }
+        { sentence: "El _____ juega en las ramas largas.", engFull: "The monkey plays in the long branches.", missing: "mono", options: ["mono", "perro", "cerdo", "vaca"], exp: "El 'mono' (monkey) juega en las ramas de los árboles." }
     ];
 
     let currentQuestions = [];
@@ -204,9 +93,14 @@
     function startQuiz() {
         const shuffled = [...questionBank].sort(() => 0.5 - Math.random());
         currentQuestions = shuffled.slice(0, 10);
-        
         currentQuestionIndex = 0;
         score = 0;
+        
+        // Reiniciar la vista final
+        document.getElementById('save-section').style.display = 'block';
+        document.getElementById('success-message').style.display = 'none';
+        document.getElementById('restart-btn').style.display = 'none';
+        document.getElementById('student-name').value = '';
         
         document.getElementById('quiz-box').style.display = 'block';
         document.getElementById('result-box').style.display = 'none';
@@ -220,7 +114,6 @@
         
         let displaySentence = q.sentence.replace(q.missing, '<span class="blank">?</span>');
         document.getElementById('question-text').innerHTML = displaySentence;
-        
         document.getElementById('english-translation').innerText = "(" + q.engFull + ")";
         
         document.getElementById('feedback').innerHTML = '';
@@ -282,6 +175,59 @@
         document.getElementById('quiz-box').style.display = 'none';
         document.getElementById('result-box').style.display = 'block';
         document.getElementById('score-display').innerText = `${score}/10`;
+        
+        // Sugerir el nombre si ya lo ingresó en un intento anterior
+        const lastNames = localStorage.getItem('lastStudentName');
+        if(lastNames) {
+            document.getElementById('student-name').value = lastNames;
+        }
+    }
+
+    function saveAndSend() {
+        const nameInput = document.getElementById('student-name').value.trim();
+        
+        if(nameInput === "") {
+            alert("Por favor, ingresa tu nombre antes de guardar.");
+            return;
+        }
+        
+        // Guardar nombre para sugerirlo la próxima vez
+        localStorage.setItem('lastStudentName', nameInput);
+        
+        const now = new Date();
+        const dateStr = now.toLocaleDateString('es-ES'); 
+        const timeStr = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }); 
+        
+        const record = {
+            name: nameInput,
+            score: score,
+            total: 10,
+            date: dateStr,
+            time: timeStr
+        };
+        
+        // 1. Guardar en LocalStorage
+        let history = JSON.parse(localStorage.getItem('animalesHistory')) || [];
+        history.push(record);
+        localStorage.setItem('animalesHistory', JSON.stringify(history));
+
+        // 2. Enviar a Google Sheets
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw1BxtqYUMinRLcVe-e-lLXgQZyAN3X-VFUU3a6CDJX_HfBBv3_5lidAgS4Ow0DU4i-8w/exec';
+        
+        // Cambiamos la interfaz a estado de carga/éxito inmediatamente
+        document.getElementById('save-section').style.display = 'none';
+        document.getElementById('success-message').style.display = 'block';
+        document.getElementById('restart-btn').style.display = 'inline-block';
+        
+        fetch(scriptURL, {
+            method: 'POST',
+            body: JSON.stringify(record),
+            headers: {
+                'Content-Type': 'text/plain;charset=utf-8',
+            }
+        })
+        .then(response => console.log('¡Guardado en Sheets con éxito!'))
+        .catch(error => console.error('Error al guardar en Sheets:', error));
     }
 
     window.onload = startQuiz;

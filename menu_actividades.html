@@ -5,85 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menú de Actividades</title>
 <style>
-    body { 
-        font-family: 'Arial', sans-serif; 
-        background-color: #fdf5e6; 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        height: 100vh; 
-        margin: 0; 
-        text-align: center; 
-    }
-    .back-btn { 
-        position: absolute; 
-        top: 30px; 
-        left: 30px; 
-        text-decoration: none; 
-        background-color: white; 
-        color: #333; 
-        padding: 10px 20px; 
-        border-radius: 10px; 
-        font-weight: bold; 
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-    }
+    body { font-family: 'Arial', sans-serif; background-color: #fdf5e6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
+    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #333; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
     .back-btn:hover { background-color: #eee; }
-    .menu-container { 
-        background-color: white; 
-        border-radius: 20px; 
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
-        padding: 50px; 
-        width: 500px; 
-        max-width: 90%; 
-    }
+    .menu-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 50px; width: 500px; max-width: 90%; }
     h1 { color: #333; margin-bottom: 10px; font-size: 36px; }
     p { color: #777; margin-bottom: 40px; font-size: 18px; }
-    
-    /* Contenedor Flex para alinear los botones lado a lado */
-    .activity-row {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-        margin: 15px auto;
-        width: 90%;
-    }
-    
-    .menu-button { 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #28a745; 
-        text-decoration: none; 
-        color: white; 
-        font-size: 22px; 
-        font-weight: bold; 
-        padding: 15px 20px; 
-        border-radius: 15px; 
-        flex-grow: 1; /* Para que ocupe el mayor espacio posible */
-        transition: transform 0.2s, background-color 0.2s; 
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-    }
+    .activity-row { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 15px auto; width: 90%; }
+    .menu-button { display: flex; align-items: center; justify-content: center; background-color: #28a745; text-decoration: none; color: white; font-size: 22px; font-weight: bold; padding: 15px 20px; border-radius: 15px; flex-grow: 1; transition: transform 0.2s, background-color 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
     .menu-button:hover { background-color: #218838; transform: scale(1.02); }
-
-    /* Estilo para el botón cuadrado del historial */
-    .history-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #6c757d; /* Gris para diferenciarlo */
-        text-decoration: none;
-        color: white;
-        font-size: 28px;
-        width: 60px;
-        height: 60px;
-        border-radius: 15px;
-        transition: transform 0.2s, background-color 0.2s;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        flex-shrink: 0; /* Evita que se encoja */
-    }
+    .history-button { display: flex; justify-content: center; align-items: center; background-color: #6c757d; text-decoration: none; color: white; font-size: 28px; width: 60px; height: 60px; border-radius: 15px; transition: transform 0.2s, background-color 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-shrink: 0; }
     .history-button:hover { background-color: #5a6268; transform: scale(1.05); }
-
 </style>
 </head>
 <body>
@@ -91,7 +23,6 @@
 <div class="menu-container">
     <h1>Actividades 📝</h1>
     <p>Selecciona una práctica</p>
-    
     <div class="activity-row">
         <a href="actividad_animales.html" class="menu-button">🐾 Práctica de Animales</a>
         <a href="registro_animales.html" class="history-button" title="Ver registro de intentos">&#9776;</a>
