@@ -8,60 +8,78 @@
     body { font-family: 'Arial', sans-serif; background-color: #fdf5e6; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
     .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #333; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
     .back-btn:hover { background-color: #eee; }
-    .history-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 40px; width: 650px; max-width: 95%; max-height: 80vh; overflow-y: auto; }
-    h1 { color: #333; margin-bottom: 20px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    .history-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 40px; width: 650px; max-width: 95%; max-height: 80vh; overflow-y: hidden; display: flex; flex-direction: column; }
+    h1 { color: #333; margin-bottom: 10px; }
+    p { color: #777; margin-bottom: 20px; font-size: 18px; }
+    
+    .scroll-area { overflow-y: auto; flex-grow: 1; padding-right: 10px; }
+    
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
     th, td { padding: 12px; border-bottom: 1px solid #ddd; font-size: 16px; }
-    th { background-color: #f0f0f0; color: #333; }
+    th { background-color: #f0f0f0; color: #333; position: sticky; top: 0; }
     td { color: #555; }
     .score-good { color: #28a745; font-weight: bold; }
     .score-avg { color: #fd7e14; font-weight: bold; }
     .score-bad { color: #dc3545; font-weight: bold; }
     .empty-msg { font-size: 18px; color: #777; margin: 30px 0; font-style: italic; }
-    .clear-btn { background-color: #dc3545; border: none; padding: 10px 20px; font-size: 16px; border-radius: 10px; cursor: pointer; color: white; font-weight: bold; margin-top: 30px; }
-    .clear-btn:hover { background-color: #c82333; }
 </style>
 </head>
 <body>
 <a href="menu_actividades.html" class="back-btn">⬅️ Volver a Actividades</a>
 <div class="history-container">
-    <h1>Historial de Intentos 📊</h1>
-    <p>Práctica de Animales</p>
-    <div id="table-container"></div>
-    <button class="clear-btn" id="clear-btn" onclick="clearHistory()" style="display:none;">Borrar Historial Local</button>
+    <h1>Historial de Intentos ☁️</h1>
+    <p>Conectado a Google Sheets</p>
+    
+    <div class="scroll-area" id="table-container">
+        <p class="empty-msg">Conectando con la base de datos... ⏳</p>
+    </div>
 </div>
+
 <script>
-    function loadHistory() {
-        const history = JSON.parse(localStorage.getItem('animalesHistory')) || [];
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw1BxtqYUMinRLcVe-e-lLXgQZyAN3X-VFUU3a6CDJX_HfBBv3_5lidAgS4Ow0DU4i-8w/exec';
+
+    function renderTable(historyData) {
         const container = document.getElementById('table-container');
-        const clearBtn = document.getElementById('clear-btn');
-        if (history.length === 0) {
-            container.innerHTML = '<p class="empty-msg">Aún no hay registros. ¡Ve a practicar para ver tus resultados aquí!</p>';
-            clearBtn.style.display = 'none';
+        
+        if (historyData.length === 0) {
+            container.innerHTML = `<p class="empty-msg">No se encontraron registros en Google Sheets.</p>`;
             return;
         }
+        
         let tableHTML = `<table><thead><tr><th>Nombre</th><th>Fecha</th><th>Hora</th><th>Puntaje</th></tr></thead><tbody>`;
-        history.slice().reverse().forEach((record, index) => {
-            let scoreClass = 'score-bad';
-            if (record.score >= 8) scoreClass = 'score-good';
-            else if (record.score >= 5) scoreClass = 'score-avg';
+        
+        // Invertimos para ver el más reciente primero
+        historyData.slice().reverse().forEach((record) => {
+            let scoreVal = parseInt(record.score) || 0;
+            let totalVal = parseInt(record.total) || 10;
             
-            // Si el nombre no existe (por ser un registro viejo), se muestra 'Anónimo'
+            let scoreClass = 'score-bad';
+            if (scoreVal >= 8) scoreClass = 'score-good';
+            else if (scoreVal >= 5) scoreClass = 'score-avg';
+            
             let displayName = record.name ? record.name : 'Anónimo';
             
-            tableHTML += `<tr><td><strong>${displayName}</strong></td><td>${record.date}</td><td>${record.time}</td><td class="${scoreClass}">${record.score} / ${record.total}</td></tr>`;
+            tableHTML += `<tr><td><strong>${displayName}</strong></td><td>${record.date}</td><td>${record.time}</td><td class="${scoreClass}">${scoreVal} / ${totalVal}</td></tr>`;
         });
+        
         tableHTML += `</tbody></table>`;
         container.innerHTML = tableHTML;
-        clearBtn.style.display = 'inline-block';
     }
-    function clearHistory() {
-        if(confirm('¿Estás seguro de que quieres borrar el historial de ESTE dispositivo? (Esto no borrará lo de Google Sheets)')) {
-            localStorage.removeItem('animalesHistory');
-            loadHistory();
-        }
+
+    function loadCloudData() {
+        fetch(scriptURL)
+            .then(response => response.json())
+            .then(data => {
+                renderTable(data);
+            })
+            .catch(error => {
+                document.getElementById('table-container').innerHTML = `<p class="empty-msg" style="color:red;">Error al conectar con Google Sheets.<br>Asegúrate de tener conexión a internet.</p>`;
+                console.error('Error fetching data:', error);
+            });
     }
-    window.onload = loadHistory;
+
+    // Iniciar conexión al abrir la página
+    window.onload = loadCloudData;
 </script>
 </body>
 </html>

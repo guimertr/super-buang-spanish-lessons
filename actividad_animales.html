@@ -54,7 +54,7 @@
         <p>Ingresa tu nombre para guardar el resultado:</p>
         <input type="text" id="student-name" class="name-input" placeholder="Tu nombre y apellido">
         <br>
-        <button class="save-btn" onclick="saveAndSend()">Guardar y Enviar 💾</button>
+        <button class="save-btn" onclick="saveAndSend()">Guardar en la Nube ☁️</button>
     </div>
     
     <div id="success-message" class="success-msg">¡Resultado guardado correctamente!</div>
@@ -96,7 +96,6 @@
         currentQuestionIndex = 0;
         score = 0;
         
-        // Reiniciar la vista final
         document.getElementById('save-section').style.display = 'block';
         document.getElementById('success-message').style.display = 'none';
         document.getElementById('restart-btn').style.display = 'none';
@@ -176,7 +175,6 @@
         document.getElementById('result-box').style.display = 'block';
         document.getElementById('score-display').innerText = `${score}/10`;
         
-        // Sugerir el nombre si ya lo ingresó en un intento anterior
         const lastNames = localStorage.getItem('lastStudentName');
         if(lastNames) {
             document.getElementById('student-name').value = lastNames;
@@ -191,7 +189,6 @@
             return;
         }
         
-        // Guardar nombre para sugerirlo la próxima vez
         localStorage.setItem('lastStudentName', nameInput);
         
         const now = new Date();
@@ -206,15 +203,9 @@
             time: timeStr
         };
         
-        // 1. Guardar en LocalStorage
-        let history = JSON.parse(localStorage.getItem('animalesHistory')) || [];
-        history.push(record);
-        localStorage.setItem('animalesHistory', JSON.stringify(history));
-
-        // 2. Enviar a Google Sheets
+        // SOLO enviar a Google Sheets (sin guardar en localStorage)
         const scriptURL = 'https://script.google.com/macros/s/AKfycbw1BxtqYUMinRLcVe-e-lLXgQZyAN3X-VFUU3a6CDJX_HfBBv3_5lidAgS4Ow0DU4i-8w/exec';
         
-        // Cambiamos la interfaz a estado de carga/éxito inmediatamente
         document.getElementById('save-section').style.display = 'none';
         document.getElementById('success-message').style.display = 'block';
         document.getElementById('restart-btn').style.display = 'inline-block';
