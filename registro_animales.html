@@ -12,6 +12,10 @@
     h1 { color: #333; margin-bottom: 10px; }
     p { color: #777; margin-bottom: 20px; font-size: 18px; }
     
+    .top-controls { display: flex; justify-content: center; margin-bottom: 15px; }
+    .refresh-btn { background-color: #17a2b8; border: none; padding: 10px 20px; font-size: 16px; border-radius: 10px; cursor: pointer; color: white; font-weight: bold; transition: background-color 0.2s; }
+    .refresh-btn:hover { background-color: #138496; }
+
     .scroll-area { overflow-y: auto; flex-grow: 1; padding-right: 10px; }
     
     table { width: 100%; border-collapse: collapse; margin-top: 10px; }
@@ -28,10 +32,14 @@
 <a href="menu_actividades.html" class="back-btn">⬅️ Volver a Actividades</a>
 <div class="history-container">
     <h1>Historial de Intentos ☁️</h1>
-    <p>Conectado a Google Sheets</p>
+    <p>Registros de Práctica</p>
+    
+    <div class="top-controls">
+        <button class="refresh-btn" onclick="loadCloudData()">Actualizar 🔄</button>
+    </div>
     
     <div class="scroll-area" id="table-container">
-        <p class="empty-msg">Conectando con la base de datos... ⏳</p>
+        <p class="empty-msg">Cargando registros... ⏳</p>
     </div>
 </div>
 
@@ -42,7 +50,7 @@
         const container = document.getElementById('table-container');
         
         if (historyData.length === 0) {
-            container.innerHTML = `<p class="empty-msg">No se encontraron registros en Google Sheets.</p>`;
+            container.innerHTML = `<p class="empty-msg">No se encontraron registros.</p>`;
             return;
         }
         
@@ -67,13 +75,16 @@
     }
 
     function loadCloudData() {
+        const container = document.getElementById('table-container');
+        container.innerHTML = `<p class="empty-msg">Cargando registros... ⏳</p>`;
+        
         fetch(scriptURL)
             .then(response => response.json())
             .then(data => {
                 renderTable(data);
             })
             .catch(error => {
-                document.getElementById('table-container').innerHTML = `<p class="empty-msg" style="color:red;">Error al conectar con Google Sheets.<br>Asegúrate de tener conexión a internet.</p>`;
+                container.innerHTML = `<p class="empty-msg" style="color:red;">Error al conectar con los registros.<br>Asegúrate de tener conexión a internet.</p>`;
                 console.error('Error fetching data:', error);
             });
     }
