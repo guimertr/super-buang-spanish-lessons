@@ -63,34 +63,1216 @@
 </div>
 
 <script>
+    // Banco de 100 preguntas inyectado desde Python
     const questionBank = [
-        { sentence: "El _____ come huesos en la casa.", engFull: "The dog eats bones in the house.", missing: "perro", options: ["gato", "ratón", "perro", "conejo"], exp: "'El perro' es 'the dog'. Los perros comen huesos." },
-        { sentence: "El _____ persigue al ratón.", engFull: "The cat chases the mouse.", missing: "gato", options: ["mono", "gato", "cerdo", "vaca"], exp: "'El gato' es 'the cat'. Los gatos cazan ratones." },
-        { sentence: "El _____ es pequeño y come queso.", engFull: "The mouse is small and eats cheese.", missing: "ratón", options: ["oso", "león", "ratón", "perro"], exp: "'El ratón' es 'the mouse'. Los ratones son pequeños." },
-        { sentence: "El _____ tiene orejas largas.", engFull: "The rabbit has long ears.", missing: "conejo", options: ["conejo", "mono", "gato", "rana"], exp: "'El conejo' es 'the rabbit'. Tienen orejas largas." },
-        { sentence: "El _____ es grande y fuerte en el bosque.", engFull: "The bear is big and strong in the forest.", missing: "oso", options: ["cerdo", "oso", "ratón", "perro"], exp: "'El oso' es 'the bear'. Son animales grandes y fuertes." },
-        { sentence: "El _____ es el rey de la selva.", engFull: "The lion is the king of the jungle.", missing: "león", options: ["gato", "conejo", "vaca", "león"], exp: "'El león' es 'the lion', conocido como el rey." },
-        { sentence: "La _____ nos da leche.", engFull: "The cow gives us milk.", missing: "vaca", options: ["rana", "vaca", "león", "oso"], exp: "'La vaca' es 'the cow', produce leche." },
-        { sentence: "El _____ es gordito y rosa.", engFull: "The pig is chubby and pink.", missing: "cerdo", options: ["mono", "cerdo", "perro", "gato"], exp: "'El cerdo' es 'the pig'. Son a menudo rosados." },
-        { sentence: "La _____ salta en el agua.", engFull: "The frog jumps in the water.", missing: "rana", options: ["vaca", "rana", "conejo", "oso"], exp: "'La rana' es 'the frog'. Les gusta saltar en el agua." },
-        { sentence: "El _____ come bananas en los árboles.", engFull: "The monkey eats bananas in the trees.", missing: "mono", options: ["perro", "ratón", "mono", "cerdo"], exp: "'El mono' es 'the monkey'. A los monos les gustan las bananas." },
-        { sentence: "Vamos a caminar con el _____ por el parque.", engFull: "Let's walk with the dog in the park.", missing: "perro", options: ["rana", "vaca", "perro", "león"], exp: "Normalmente caminas con 'el perro' (the dog) por el parque." },
-        { sentence: "El _____ está durmiendo en el sofá.", engFull: "The cat is sleeping on the couch.", missing: "gato", options: ["oso", "gato", "vaca", "cerdo"], exp: "'El gato' (the cat) a menudo duerme en el sofá de la casa." },
-        { sentence: "Yo no quiero ver un _____ en la cocina.", engFull: "I don't want to see a mouse in the kitchen.", missing: "ratón", options: ["ratón", "león", "oso", "vaca"], exp: "No quieres ver un 'ratón' (mouse) en tu cocina." },
-        { sentence: "El _____ salta muy alto en el jardín.", engFull: "The rabbit jumps very high in the garden.", missing: "conejo", options: ["cerdo", "conejo", "vaca", "oso"], exp: "'El conejo' (the rabbit) es conocido por saltar." },
-        { sentence: "En el zoológico, yo quiero ver el _____ polar.", engFull: "At the zoo, I want to see the polar bear.", missing: "oso", options: ["perro", "gato", "ratón", "oso"], exp: "El 'oso' (bear) polar es un animal de zoológico, los otros son mascotas/plagas." },
-        { sentence: "El _____ tiene una melena grande.", engFull: "The lion has a big mane.", missing: "león", options: ["mono", "rana", "león", "cerdo"], exp: "El 'león' (lion) macho tiene una gran melena." },
-        { sentence: "La _____ hace 'muuuu' por la mañana.", engFull: "The cow goes 'moooo' in the morning.", missing: "vaca", options: ["rana", "vaca", "gato", "perro"], exp: "'La vaca' (the cow) hace el sonido 'muuuu'." },
-        { sentence: "El _____ hace 'oink oink'.", engFull: "The pig goes 'oink oink'.", missing: "cerdo", options: ["cerdo", "mono", "león", "conejo"], exp: "'El cerdo' (the pig) hace el sonido 'oink oink'." },
-        { sentence: "La _____ es verde y muy pequeña.", engFull: "The frog is green and very small.", missing: "rana", options: ["vaca", "rana", "león", "oso"], exp: "De las opciones, solo la 'rana' (frog) es verde y pequeña." },
-        { sentence: "El _____ juega en las ramas largas.", engFull: "The monkey plays in the long branches.", missing: "mono", options: ["mono", "perro", "cerdo", "vaca"], exp: "El 'mono' (monkey) juega en las ramas de los árboles." }
-    ];
+    {
+        "sentence": "El _____ come huesos en la casa.",
+        "engFull": "The dog eats bones in the house.",
+        "missing": "perro",
+        "options": [
+            "mono",
+            "cerdo",
+            "gato",
+            "perro"
+        ],
+        "exp": "'El perro' es 'the dog'."
+    },
+    {
+        "sentence": "Vamos a caminar con el _____ por el parque.",
+        "engFull": "Let's walk with the dog in the park.",
+        "missing": "perro",
+        "options": [
+            "mono",
+            "perro",
+            "oso",
+            "león"
+        ],
+        "exp": "'El perro' es 'the dog'."
+    },
+    {
+        "sentence": "El _____ duerme en la cama.",
+        "engFull": "The dog sleeps on the bed.",
+        "missing": "perro",
+        "options": [
+            "mono",
+            "ratón",
+            "león",
+            "perro"
+        ],
+        "exp": "'El perro' es 'the dog'."
+    },
+    {
+        "sentence": "El _____ grande corre rápido.",
+        "engFull": "The big dog runs fast.",
+        "missing": "perro",
+        "options": [
+            "cerdo",
+            "león",
+            "perro",
+            "rana"
+        ],
+        "exp": "'El perro' es 'the dog'."
+    },
+    {
+        "sentence": "El _____ juega con la pelota.",
+        "engFull": "The dog plays with the ball.",
+        "missing": "perro",
+        "options": [
+            "ratón",
+            "conejo",
+            "oso",
+            "perro"
+        ],
+        "exp": "'El perro' es 'the dog'."
+    },
+    {
+        "sentence": "El _____ hace 'guau guau'.",
+        "engFull": "The dog goes 'woof woof'.",
+        "missing": "perro",
+        "options": [
+            "conejo",
+            "vaca",
+            "oso",
+            "perro"
+        ],
+        "exp": "'El perro' es 'the dog'."
+    },
+    {
+        "sentence": "El _____ feliz salta.",
+        "engFull": "The happy dog jumps.",
+        "missing": "perro",
+        "options": [
+            "mono",
+            "rana",
+            "cerdo",
+            "perro"
+        ],
+        "exp": "'El perro' es 'the dog'."
+    },
+    {
+        "sentence": "El _____ espera en la puerta.",
+        "engFull": "The dog waits at the door.",
+        "missing": "perro",
+        "options": [
+            "león",
+            "ratón",
+            "perro",
+            "mono"
+        ],
+        "exp": "'El perro' es 'the dog'."
+    },
+    {
+        "sentence": "Yo tengo que alimentar al _____.",
+        "engFull": "I have to feed the dog.",
+        "missing": "perro",
+        "options": [
+            "mono",
+            "león",
+            "perro",
+            "oso"
+        ],
+        "exp": "'El perro' es 'the dog'."
+    },
+    {
+        "sentence": "El _____ es mi animal favorito.",
+        "engFull": "The dog is my favorite animal.",
+        "missing": "perro",
+        "options": [
+            "perro",
+            "ratón",
+            "conejo",
+            "cerdo"
+        ],
+        "exp": "'El perro' es 'the dog'."
+    },
+    {
+        "sentence": "El _____ persigue al ratón.",
+        "engFull": "The cat chases the mouse.",
+        "missing": "gato",
+        "options": [
+            "rana",
+            "vaca",
+            "conejo",
+            "gato"
+        ],
+        "exp": "'El gato' es 'the cat'."
+    },
+    {
+        "sentence": "El _____ está durmiendo en el sofá.",
+        "engFull": "The cat is sleeping on the couch.",
+        "missing": "gato",
+        "options": [
+            "mono",
+            "gato",
+            "rana",
+            "oso"
+        ],
+        "exp": "'El gato' es 'the cat'."
+    },
+    {
+        "sentence": "El _____ quiere comer pescado.",
+        "engFull": "The cat wants to eat fish.",
+        "missing": "gato",
+        "options": [
+            "perro",
+            "gato",
+            "león",
+            "rana"
+        ],
+        "exp": "'El gato' es 'the cat'."
+    },
+    {
+        "sentence": "El _____ maúlla por la noche.",
+        "engFull": "The cat meows at night.",
+        "missing": "gato",
+        "options": [
+            "león",
+            "gato",
+            "conejo",
+            "rana"
+        ],
+        "exp": "'El gato' es 'the cat'."
+    },
+    {
+        "sentence": "El _____ camina sin hacer ruido.",
+        "engFull": "The cat walks without making noise.",
+        "missing": "gato",
+        "options": [
+            "conejo",
+            "mono",
+            "cerdo",
+            "gato"
+        ],
+        "exp": "'El gato' es 'the cat'."
+    },
+    {
+        "sentence": "El _____ tiene bigotes bonitos.",
+        "engFull": "The cat has pretty whiskers.",
+        "missing": "gato",
+        "options": [
+            "ratón",
+            "vaca",
+            "gato",
+            "conejo"
+        ],
+        "exp": "'El gato' es 'the cat'."
+    },
+    {
+        "sentence": "El _____ salta en la mesa.",
+        "engFull": "The cat jumps on the table.",
+        "missing": "gato",
+        "options": [
+            "gato",
+            "león",
+            "rana",
+            "perro"
+        ],
+        "exp": "'El gato' es 'the cat'."
+    },
+    {
+        "sentence": "El _____ negro es inteligente.",
+        "engFull": "The black cat is smart.",
+        "missing": "gato",
+        "options": [
+            "perro",
+            "cerdo",
+            "vaca",
+            "gato"
+        ],
+        "exp": "'El gato' es 'the cat'."
+    },
+    {
+        "sentence": "Vamos a jugar con el _____.",
+        "engFull": "Let's play with the cat.",
+        "missing": "gato",
+        "options": [
+            "gato",
+            "cerdo",
+            "ratón",
+            "oso"
+        ],
+        "exp": "'El gato' es 'the cat'."
+    },
+    {
+        "sentence": "El _____ bebe leche.",
+        "engFull": "The cat drinks milk.",
+        "missing": "gato",
+        "options": [
+            "gato",
+            "vaca",
+            "rana",
+            "perro"
+        ],
+        "exp": "'El gato' es 'the cat'."
+    },
+    {
+        "sentence": "El _____ es pequeño y come queso.",
+        "engFull": "The mouse is small and eats cheese.",
+        "missing": "ratón",
+        "options": [
+            "vaca",
+            "mono",
+            "león",
+            "ratón"
+        ],
+        "exp": "'El ratón' es 'the mouse'."
+    },
+    {
+        "sentence": "Yo no quiero ver un _____ en la cocina.",
+        "engFull": "I don't want to see a mouse in the kitchen.",
+        "missing": "ratón",
+        "options": [
+            "oso",
+            "gato",
+            "conejo",
+            "ratón"
+        ],
+        "exp": "'El ratón' es 'the mouse'."
+    },
+    {
+        "sentence": "El _____ tiene miedo del gato.",
+        "engFull": "The mouse is afraid of the cat.",
+        "missing": "ratón",
+        "options": [
+            "oso",
+            "mono",
+            "gato",
+            "ratón"
+        ],
+        "exp": "'El ratón' es 'the mouse'."
+    },
+    {
+        "sentence": "El _____ se esconde en la pared.",
+        "engFull": "The mouse hides in the wall.",
+        "missing": "ratón",
+        "options": [
+            "león",
+            "oso",
+            "gato",
+            "ratón"
+        ],
+        "exp": "'El ratón' es 'the mouse'."
+    },
+    {
+        "sentence": "Nosotros tenemos que atrapar al _____.",
+        "engFull": "We have to catch the mouse.",
+        "missing": "ratón",
+        "options": [
+            "rana",
+            "vaca",
+            "perro",
+            "ratón"
+        ],
+        "exp": "'El ratón' es 'the mouse'."
+    },
+    {
+        "sentence": "El _____ corre rápido.",
+        "engFull": "The mouse runs fast.",
+        "missing": "ratón",
+        "options": [
+            "ratón",
+            "león",
+            "rana",
+            "vaca"
+        ],
+        "exp": "'El ratón' es 'the mouse'."
+    },
+    {
+        "sentence": "El _____ gris duerme.",
+        "engFull": "The gray mouse sleeps.",
+        "missing": "ratón",
+        "options": [
+            "conejo",
+            "oso",
+            "perro",
+            "ratón"
+        ],
+        "exp": "'El ratón' es 'the mouse'."
+    },
+    {
+        "sentence": "El _____ juega en la oscuridad.",
+        "engFull": "The mouse plays in the dark.",
+        "missing": "ratón",
+        "options": [
+            "vaca",
+            "rana",
+            "ratón",
+            "perro"
+        ],
+        "exp": "'El ratón' es 'the mouse'."
+    },
+    {
+        "sentence": "El _____ busca comida por la noche.",
+        "engFull": "The mouse looks for food at night.",
+        "missing": "ratón",
+        "options": [
+            "león",
+            "gato",
+            "rana",
+            "ratón"
+        ],
+        "exp": "'El ratón' es 'the mouse'."
+    },
+    {
+        "sentence": "El _____ es muy rápido.",
+        "engFull": "The mouse is very fast.",
+        "missing": "ratón",
+        "options": [
+            "vaca",
+            "gato",
+            "oso",
+            "ratón"
+        ],
+        "exp": "'El ratón' es 'the mouse'."
+    },
+    {
+        "sentence": "El _____ tiene orejas largas.",
+        "engFull": "The rabbit has long ears.",
+        "missing": "conejo",
+        "options": [
+            "ratón",
+            "conejo",
+            "león",
+            "rana"
+        ],
+        "exp": "'El conejo' es 'the rabbit'."
+    },
+    {
+        "sentence": "El _____ salta muy alto en el jardín.",
+        "engFull": "The rabbit jumps very high in the garden.",
+        "missing": "conejo",
+        "options": [
+            "perro",
+            "conejo",
+            "oso",
+            "león"
+        ],
+        "exp": "'El conejo' es 'the rabbit'."
+    },
+    {
+        "sentence": "El _____ come zanahorias.",
+        "engFull": "The rabbit eats carrots.",
+        "missing": "conejo",
+        "options": [
+            "perro",
+            "conejo",
+            "cerdo",
+            "rana"
+        ],
+        "exp": "'El conejo' es 'the rabbit'."
+    },
+    {
+        "sentence": "El _____ es muy rápido y suave.",
+        "engFull": "The rabbit is very fast and soft.",
+        "missing": "conejo",
+        "options": [
+            "gato",
+            "cerdo",
+            "conejo",
+            "ratón"
+        ],
+        "exp": "'El conejo' es 'the rabbit'."
+    },
+    {
+        "sentence": "El _____ blanco es mi mascota.",
+        "engFull": "The white rabbit is my pet.",
+        "missing": "conejo",
+        "options": [
+            "gato",
+            "ratón",
+            "oso",
+            "conejo"
+        ],
+        "exp": "'El conejo' es 'the rabbit'."
+    },
+    {
+        "sentence": "El _____ duerme en el campo.",
+        "engFull": "The rabbit sleeps in the field.",
+        "missing": "conejo",
+        "options": [
+            "ratón",
+            "conejo",
+            "león",
+            "perro"
+        ],
+        "exp": "'El conejo' es 'the rabbit'."
+    },
+    {
+        "sentence": "Vamos a correr con el _____.",
+        "engFull": "Let's run with the rabbit.",
+        "missing": "conejo",
+        "options": [
+            "conejo",
+            "león",
+            "cerdo",
+            "mono"
+        ],
+        "exp": "'El conejo' es 'the rabbit'."
+    },
+    {
+        "sentence": "El _____ es un animal silencioso.",
+        "engFull": "The rabbit is a silent animal.",
+        "missing": "conejo",
+        "options": [
+            "conejo",
+            "vaca",
+            "león",
+            "rana"
+        ],
+        "exp": "'El conejo' es 'the rabbit'."
+    },
+    {
+        "sentence": "El _____ juega en la hierba.",
+        "engFull": "The rabbit plays in the grass.",
+        "missing": "conejo",
+        "options": [
+            "león",
+            "conejo",
+            "ratón",
+            "gato"
+        ],
+        "exp": "'El conejo' es 'the rabbit'."
+    },
+    {
+        "sentence": "El _____ está feliz hoy.",
+        "engFull": "The rabbit is happy today.",
+        "missing": "conejo",
+        "options": [
+            "cerdo",
+            "gato",
+            "conejo",
+            "rana"
+        ],
+        "exp": "'El conejo' es 'the rabbit'."
+    },
+    {
+        "sentence": "El _____ es grande y fuerte en el bosque.",
+        "engFull": "The bear is big and strong in the forest.",
+        "missing": "oso",
+        "options": [
+            "león",
+            "mono",
+            "oso",
+            "rana"
+        ],
+        "exp": "'El oso' es 'the bear'."
+    },
+    {
+        "sentence": "En el zoológico, yo quiero ver el _____ polar.",
+        "engFull": "At the zoo, I want to see the polar bear.",
+        "missing": "oso",
+        "options": [
+            "perro",
+            "gato",
+            "vaca",
+            "oso"
+        ],
+        "exp": "'El oso' es 'the bear'."
+    },
+    {
+        "sentence": "Vamos a correr como un _____ en el bosque.",
+        "engFull": "Let's run like a bear in the forest.",
+        "missing": "oso",
+        "options": [
+            "gato",
+            "león",
+            "oso",
+            "mono"
+        ],
+        "exp": "'El oso' es 'the bear'."
+    },
+    {
+        "sentence": "El _____ come miel.",
+        "engFull": "The bear eats honey.",
+        "missing": "oso",
+        "options": [
+            "rana",
+            "oso",
+            "mono",
+            "cerdo"
+        ],
+        "exp": "'El oso' es 'the bear'."
+    },
+    {
+        "sentence": "El _____ pardo está en el río.",
+        "engFull": "The brown bear is in the river.",
+        "missing": "oso",
+        "options": [
+            "mono",
+            "conejo",
+            "león",
+            "oso"
+        ],
+        "exp": "'El oso' es 'the bear'."
+    },
+    {
+        "sentence": "El _____ duerme mucho en invierno.",
+        "engFull": "The bear sleeps a lot in winter.",
+        "missing": "oso",
+        "options": [
+            "oso",
+            "conejo",
+            "cerdo",
+            "vaca"
+        ],
+        "exp": "'El oso' es 'the bear'."
+    },
+    {
+        "sentence": "El _____ camina despacio.",
+        "engFull": "The bear walks slowly.",
+        "missing": "oso",
+        "options": [
+            "gato",
+            "oso",
+            "león",
+            "vaca"
+        ],
+        "exp": "'El oso' es 'the bear'."
+    },
+    {
+        "sentence": "El _____ atrapa peces en el agua.",
+        "engFull": "The bear catches fish in the water.",
+        "missing": "oso",
+        "options": [
+            "rana",
+            "mono",
+            "gato",
+            "oso"
+        ],
+        "exp": "'El oso' es 'the bear'."
+    },
+    {
+        "sentence": "El _____ es un animal salvaje.",
+        "engFull": "The bear is a wild animal.",
+        "missing": "oso",
+        "options": [
+            "rana",
+            "perro",
+            "oso",
+            "conejo"
+        ],
+        "exp": "'El oso' es 'the bear'."
+    },
+    {
+        "sentence": "El _____ descansa en la montaña.",
+        "engFull": "The bear rests on the mountain.",
+        "missing": "oso",
+        "options": [
+            "conejo",
+            "cerdo",
+            "oso",
+            "mono"
+        ],
+        "exp": "'El oso' es 'the bear'."
+    },
+    {
+        "sentence": "El _____ es el rey de la selva.",
+        "engFull": "The lion is the king of the jungle.",
+        "missing": "león",
+        "options": [
+            "gato",
+            "oso",
+            "león",
+            "cerdo"
+        ],
+        "exp": "'El león' es 'the lion'."
+    },
+    {
+        "sentence": "El _____ tiene una melena grande.",
+        "engFull": "The lion has a big mane.",
+        "missing": "león",
+        "options": [
+            "perro",
+            "oso",
+            "león",
+            "vaca"
+        ],
+        "exp": "'El león' es 'the lion'."
+    },
+    {
+        "sentence": "El _____ duerme en la sabana.",
+        "engFull": "The lion sleeps in the savanna.",
+        "missing": "león",
+        "options": [
+            "cerdo",
+            "león",
+            "mono",
+            "ratón"
+        ],
+        "exp": "'El león' es 'the lion'."
+    },
+    {
+        "sentence": "El _____ caza por la tarde.",
+        "engFull": "The lion hunts in the afternoon.",
+        "missing": "león",
+        "options": [
+            "león",
+            "conejo",
+            "oso",
+            "mono"
+        ],
+        "exp": "'El león' es 'the lion'."
+    },
+    {
+        "sentence": "El _____ ruge muy fuerte.",
+        "engFull": "The lion roars very loudly.",
+        "missing": "león",
+        "options": [
+            "mono",
+            "león",
+            "conejo",
+            "gato"
+        ],
+        "exp": "'El león' es 'the lion'."
+    },
+    {
+        "sentence": "El _____ amarillo corre rápido.",
+        "engFull": "The yellow lion runs fast.",
+        "missing": "león",
+        "options": [
+            "cerdo",
+            "león",
+            "oso",
+            "gato"
+        ],
+        "exp": "'El león' es 'the lion'."
+    },
+    {
+        "sentence": "El _____ bebe agua en el lago.",
+        "engFull": "The lion drinks water at the lake.",
+        "missing": "león",
+        "options": [
+            "conejo",
+            "gato",
+            "vaca",
+            "león"
+        ],
+        "exp": "'El león' es 'the lion'."
+    },
+    {
+        "sentence": "Vamos a dibujar un _____.",
+        "engFull": "Let's draw a lion.",
+        "missing": "león",
+        "options": [
+            "león",
+            "oso",
+            "gato",
+            "mono"
+        ],
+        "exp": "'El león' es 'the lion'."
+    },
+    {
+        "sentence": "El _____ descansa al sol.",
+        "engFull": "The lion rests in the sun.",
+        "missing": "león",
+        "options": [
+            "conejo",
+            "mono",
+            "gato",
+            "león"
+        ],
+        "exp": "'El león' es 'the lion'."
+    },
+    {
+        "sentence": "El _____ es peligroso.",
+        "engFull": "The lion is dangerous.",
+        "missing": "león",
+        "options": [
+            "perro",
+            "oso",
+            "mono",
+            "león"
+        ],
+        "exp": "'El león' es 'the lion'."
+    },
+    {
+        "sentence": "La _____ nos da leche.",
+        "engFull": "The cow gives us milk.",
+        "missing": "vaca",
+        "options": [
+            "oso",
+            "vaca",
+            "león",
+            "cerdo"
+        ],
+        "exp": "'La vaca' es 'the cow'."
+    },
+    {
+        "sentence": "La _____ hace 'muuuu' por la mañana.",
+        "engFull": "The cow goes 'moooo' in the morning.",
+        "missing": "vaca",
+        "options": [
+            "vaca",
+            "oso",
+            "ratón",
+            "gato"
+        ],
+        "exp": "'La vaca' es 'the cow'."
+    },
+    {
+        "sentence": "Nosotros tenemos que ordeñar a la _____.",
+        "engFull": "We have to milk the cow.",
+        "missing": "vaca",
+        "options": [
+            "ratón",
+            "cerdo",
+            "vaca",
+            "conejo"
+        ],
+        "exp": "'La vaca' es 'the cow'."
+    },
+    {
+        "sentence": "La _____ come mucha hierba.",
+        "engFull": "The cow eats a lot of grass.",
+        "missing": "vaca",
+        "options": [
+            "conejo",
+            "vaca",
+            "ratón",
+            "perro"
+        ],
+        "exp": "'La vaca' es 'the cow'."
+    },
+    {
+        "sentence": "La _____ es blanca y negra.",
+        "engFull": "The cow is white and black.",
+        "missing": "vaca",
+        "options": [
+            "cerdo",
+            "león",
+            "ratón",
+            "vaca"
+        ],
+        "exp": "'La vaca' es 'the cow'."
+    },
+    {
+        "sentence": "La _____ vive en la granja.",
+        "engFull": "The cow lives on the farm.",
+        "missing": "vaca",
+        "options": [
+            "vaca",
+            "león",
+            "conejo",
+            "gato"
+        ],
+        "exp": "'La vaca' es 'the cow'."
+    },
+    {
+        "sentence": "La _____ camina despacio.",
+        "engFull": "The cow walks slowly.",
+        "missing": "vaca",
+        "options": [
+            "oso",
+            "perro",
+            "vaca",
+            "cerdo"
+        ],
+        "exp": "'La vaca' es 'the cow'."
+    },
+    {
+        "sentence": "La _____ duerme en el establo.",
+        "engFull": "The cow sleeps in the stable.",
+        "missing": "vaca",
+        "options": [
+            "cerdo",
+            "conejo",
+            "vaca",
+            "perro"
+        ],
+        "exp": "'La vaca' es 'the cow'."
+    },
+    {
+        "sentence": "La _____ bebe mucha agua.",
+        "engFull": "The cow drinks a lot of water.",
+        "missing": "vaca",
+        "options": [
+            "gato",
+            "perro",
+            "cerdo",
+            "vaca"
+        ],
+        "exp": "'La vaca' es 'the cow'."
+    },
+    {
+        "sentence": "La _____ es grande y tranquila.",
+        "engFull": "The cow is big and quiet.",
+        "missing": "vaca",
+        "options": [
+            "cerdo",
+            "oso",
+            "vaca",
+            "mono"
+        ],
+        "exp": "'La vaca' es 'the cow'."
+    },
+    {
+        "sentence": "El _____ es gordito y rosa.",
+        "engFull": "The pig is chubby and pink.",
+        "missing": "cerdo",
+        "options": [
+            "león",
+            "cerdo",
+            "mono",
+            "ratón"
+        ],
+        "exp": "'El cerdo' es 'the pig'."
+    },
+    {
+        "sentence": "El _____ hace 'oink oink'.",
+        "engFull": "The pig goes 'oink oink'.",
+        "missing": "cerdo",
+        "options": [
+            "cerdo",
+            "rana",
+            "perro",
+            "oso"
+        ],
+        "exp": "'El cerdo' es 'the pig'."
+    },
+    {
+        "sentence": "El _____ vive en la granja.",
+        "engFull": "The pig lives on the farm.",
+        "missing": "cerdo",
+        "options": [
+            "león",
+            "ratón",
+            "cerdo",
+            "perro"
+        ],
+        "exp": "'El cerdo' es 'the pig'."
+    },
+    {
+        "sentence": "El _____ está sucio en el lodo.",
+        "engFull": "The pig is dirty in the mud.",
+        "missing": "cerdo",
+        "options": [
+            "ratón",
+            "oso",
+            "cerdo",
+            "perro"
+        ],
+        "exp": "'El cerdo' es 'the pig'."
+    },
+    {
+        "sentence": "El _____ no quiere caminar hoy.",
+        "engFull": "The pig doesn't want to walk today.",
+        "missing": "cerdo",
+        "options": [
+            "cerdo",
+            "ratón",
+            "gato",
+            "oso"
+        ],
+        "exp": "'El cerdo' es 'the pig'."
+    },
+    {
+        "sentence": "El _____ come manzanas.",
+        "engFull": "The pig eats apples.",
+        "missing": "cerdo",
+        "options": [
+            "mono",
+            "gato",
+            "perro",
+            "cerdo"
+        ],
+        "exp": "'El cerdo' es 'the pig'."
+    },
+    {
+        "sentence": "El _____ duerme mucho.",
+        "engFull": "The pig sleeps a lot.",
+        "missing": "cerdo",
+        "options": [
+            "perro",
+            "rana",
+            "vaca",
+            "cerdo"
+        ],
+        "exp": "'El cerdo' es 'the pig'."
+    },
+    {
+        "sentence": "El _____ juega con otros animales.",
+        "engFull": "The pig plays with other animals.",
+        "missing": "cerdo",
+        "options": [
+            "gato",
+            "león",
+            "cerdo",
+            "ratón"
+        ],
+        "exp": "'El cerdo' es 'the pig'."
+    },
+    {
+        "sentence": "El _____ corre en el campo.",
+        "engFull": "The pig runs in the field.",
+        "missing": "cerdo",
+        "options": [
+            "rana",
+            "cerdo",
+            "ratón",
+            "oso"
+        ],
+        "exp": "'El cerdo' es 'the pig'."
+    },
+    {
+        "sentence": "El _____ tiene una cola pequeña.",
+        "engFull": "The pig has a small tail.",
+        "missing": "cerdo",
+        "options": [
+            "gato",
+            "oso",
+            "conejo",
+            "cerdo"
+        ],
+        "exp": "'El cerdo' es 'the pig'."
+    },
+    {
+        "sentence": "La _____ salta en el agua.",
+        "engFull": "The frog jumps in the water.",
+        "missing": "rana",
+        "options": [
+            "rana",
+            "vaca",
+            "mono",
+            "cerdo"
+        ],
+        "exp": "'La rana' es 'the frog'."
+    },
+    {
+        "sentence": "La _____ es verde y muy pequeña.",
+        "engFull": "The frog is green and very small.",
+        "missing": "rana",
+        "options": [
+            "cerdo",
+            "oso",
+            "vaca",
+            "rana"
+        ],
+        "exp": "'La rana' es 'the frog'."
+    },
+    {
+        "sentence": "La _____ tiene la piel húmeda.",
+        "engFull": "The frog has wet skin.",
+        "missing": "rana",
+        "options": [
+            "ratón",
+            "gato",
+            "león",
+            "rana"
+        ],
+        "exp": "'La rana' es 'the frog'."
+    },
+    {
+        "sentence": "La _____ atrapa moscas con su lengua.",
+        "engFull": "The frog catches flies with its tongue.",
+        "missing": "rana",
+        "options": [
+            "león",
+            "mono",
+            "vaca",
+            "rana"
+        ],
+        "exp": "'La rana' es 'the frog'."
+    },
+    {
+        "sentence": "La _____ canta en el estanque.",
+        "engFull": "The frog sings in the pond.",
+        "missing": "rana",
+        "options": [
+            "rana",
+            "cerdo",
+            "vaca",
+            "gato"
+        ],
+        "exp": "'La rana' es 'the frog'."
+    },
+    {
+        "sentence": "La _____ nada rápido.",
+        "engFull": "The frog swims fast.",
+        "missing": "rana",
+        "options": [
+            "rana",
+            "perro",
+            "oso",
+            "conejo"
+        ],
+        "exp": "'La rana' es 'the frog'."
+    },
+    {
+        "sentence": "La _____ salta muy alto.",
+        "engFull": "The frog jumps very high.",
+        "missing": "rana",
+        "options": [
+            "cerdo",
+            "mono",
+            "rana",
+            "ratón"
+        ],
+        "exp": "'La rana' es 'the frog'."
+    },
+    {
+        "sentence": "La _____ hace 'croac croac'.",
+        "engFull": "The frog goes 'ribbit ribbit'.",
+        "missing": "rana",
+        "options": [
+            "león",
+            "gato",
+            "perro",
+            "rana"
+        ],
+        "exp": "'La rana' es 'the frog'."
+    },
+    {
+        "sentence": "La _____ descansa en una hoja.",
+        "engFull": "The frog rests on a leaf.",
+        "missing": "rana",
+        "options": [
+            "cerdo",
+            "perro",
+            "oso",
+            "rana"
+        ],
+        "exp": "'La rana' es 'the frog'."
+    },
+    {
+        "sentence": "Vamos a atrapar una _____.",
+        "engFull": "Let's catch a frog.",
+        "missing": "rana",
+        "options": [
+            "oso",
+            "rana",
+            "perro",
+            "ratón"
+        ],
+        "exp": "'La rana' es 'the frog'."
+    },
+    {
+        "sentence": "El _____ come bananas en los árboles.",
+        "engFull": "The monkey eats bananas in the trees.",
+        "missing": "mono",
+        "options": [
+            "ratón",
+            "mono",
+            "cerdo",
+            "vaca"
+        ],
+        "exp": "'El mono' es 'the monkey'."
+    },
+    {
+        "sentence": "El _____ juega en las ramas largas.",
+        "engFull": "The monkey plays in the long branches.",
+        "missing": "mono",
+        "options": [
+            "vaca",
+            "mono",
+            "oso",
+            "cerdo"
+        ],
+        "exp": "'El mono' es 'the monkey'."
+    },
+    {
+        "sentence": "El _____ es muy inteligente y divertido.",
+        "engFull": "The monkey is very smart and funny.",
+        "missing": "mono",
+        "options": [
+            "ratón",
+            "oso",
+            "mono",
+            "cerdo"
+        ],
+        "exp": "'El mono' es 'the monkey'."
+    },
+    {
+        "sentence": "El _____ tiene una cola larga.",
+        "engFull": "The monkey has a long tail.",
+        "missing": "mono",
+        "options": [
+            "vaca",
+            "león",
+            "perro",
+            "mono"
+        ],
+        "exp": "'El mono' es 'the monkey'."
+    },
+    {
+        "sentence": "El _____ hace travesuras.",
+        "engFull": "The monkey makes mischief.",
+        "missing": "mono",
+        "options": [
+            "cerdo",
+            "mono",
+            "vaca",
+            "gato"
+        ],
+        "exp": "'El mono' es 'the monkey'."
+    },
+    {
+        "sentence": "El _____ salta de rama en rama.",
+        "engFull": "The monkey jumps from branch to branch.",
+        "missing": "mono",
+        "options": [
+            "ratón",
+            "mono",
+            "perro",
+            "cerdo"
+        ],
+        "exp": "'El mono' es 'the monkey'."
+    },
+    {
+        "sentence": "El _____ corre por la selva.",
+        "engFull": "The monkey runs through the jungle.",
+        "missing": "mono",
+        "options": [
+            "mono",
+            "vaca",
+            "gato",
+            "león"
+        ],
+        "exp": "'El mono' es 'the monkey'."
+    },
+    {
+        "sentence": "El _____ grita fuerte.",
+        "engFull": "The monkey screams loudly.",
+        "missing": "mono",
+        "options": [
+            "ratón",
+            "mono",
+            "gato",
+            "oso"
+        ],
+        "exp": "'El mono' es 'the monkey'."
+    },
+    {
+        "sentence": "El _____ duerme en el árbol.",
+        "engFull": "The monkey sleeps in the tree.",
+        "missing": "mono",
+        "options": [
+            "mono",
+            "perro",
+            "conejo",
+            "oso"
+        ],
+        "exp": "'El mono' es 'the monkey'."
+    },
+    {
+        "sentence": "Vamos a ver al _____ en el zoológico.",
+        "engFull": "Let's see the monkey at the zoo.",
+        "missing": "mono",
+        "options": [
+            "mono",
+            "vaca",
+            "oso",
+            "cerdo"
+        ],
+        "exp": "'El mono' es 'the monkey'."
+    }
+];
 
     let currentQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
 
     function startQuiz() {
+        // Seleccionamos siempre 10 aleatorias para la partida
         const shuffled = [...questionBank].sort(() => 0.5 - Math.random());
         currentQuestions = shuffled.slice(0, 10);
         currentQuestionIndex = 0;
@@ -122,9 +1304,8 @@
         const optionsContainer = document.getElementById('options-container');
         optionsContainer.innerHTML = '';
         
-        const shuffledOptions = [...q.options].sort(() => 0.5 - Math.random());
-        
-        shuffledOptions.forEach(opt => {
+        // Las opciones ya vienen mezcladas desde el array base
+        q.options.forEach(opt => {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
             btn.innerText = opt;
@@ -195,7 +1376,9 @@
         const dateStr = now.toLocaleDateString('es-ES'); 
         const timeStr = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }); 
         
+        // ¡AGREGAMOS EL CAMPO ACTIVIDAD AQUÍ!
         const record = {
+            actividad: 'Animales',
             name: nameInput,
             score: score,
             total: 10,
@@ -203,7 +1386,6 @@
             time: timeStr
         };
         
-        // SOLO enviar a Google Sheets (sin guardar en localStorage)
         const scriptURL = 'https://script.google.com/macros/s/AKfycbw1BxtqYUMinRLcVe-e-lLXgQZyAN3X-VFUU3a6CDJX_HfBBv3_5lidAgS4Ow0DU4i-8w/exec';
         
         document.getElementById('save-section').style.display = 'none';
