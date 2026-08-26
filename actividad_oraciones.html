@@ -3,37 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Práctica de Reloj</title>
+<title>Práctica de Oraciones</title>
 <style>
     body { font-family: 'Arial', sans-serif; background-color: #e6ffe6; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
     .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #333; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
     .back-btn:hover { background-color: #eee; }
     .quiz-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 40px; width: 650px; max-width: 90%; position: relative; }
     .progress { font-size: 16px; color: #777; margin-bottom: 20px; font-weight: bold; }
-    .question { font-size: 22px; font-weight: bold; color: #333; margin-bottom: 20px; }
+    .question { font-size: 20px; font-weight: bold; color: #333; margin-bottom: 10px; }
+    .english-translation { font-size: 18px; color: #007bff; margin-bottom: 30px; font-style: italic; font-weight: bold; }
     
-    /* Relojes */
-    .clock-display { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 160px; margin-bottom: 20px; }
+    /* Cajas de palabras */
+    .word-area { min-height: 80px; background-color: #f8f9fa; border: 2px dashed #ccc; border-radius: 15px; padding: 15px; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; }
+    .word-area.active-box { border-color: #007bff; background-color: #eaf4ff; }
     
-    .digital-clock { font-size: 54px; font-family: 'Courier New', Courier, monospace; font-weight: bold; background: #222; color: #0f0; padding: 15px 30px; border-radius: 15px; border: 4px solid #555; box-shadow: inset 0 0 10px black; }
+    .word-pill { background-color: #fff; border: 2px solid #6c757d; padding: 10px 20px; font-size: 18px; font-weight: bold; border-radius: 25px; cursor: pointer; color: #333; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.1s; }
+    .word-pill:hover { transform: scale(1.05); border-color: #343a40; background-color: #f1f3f5; }
     
-    .analog-wrapper { display: flex; flex-direction: column; align-items: center; }
-    .analog-clock { width: 120px; height: 120px; border: 6px solid #333; border-radius: 50%; position: relative; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom center; background: #333; border-radius: 5px; }
-    .hour-hand { width: 6px; height: 35px; margin-left: -3px; }
-    .min-hand { width: 4px; height: 50px; margin-left: -2px; background: #d32f2f; }
-    .center-dot { position: absolute; top: 50%; left: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; background: #333; border-radius: 50%; }
-    .ampm-label { font-size: 18px; font-weight: bold; color: #555; margin-top: 10px; background: #eee; padding: 5px 15px; border-radius: 20px; }
-
-    .options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
-    .option-btn { background-color: #f0f0f0; border: 2px solid #ddd; padding: 15px; font-size: 18px; border-radius: 10px; cursor: pointer; transition: all 0.2s; font-weight: bold; color: #333; text-align: left; }
-    .option-btn:hover { background-color: #e0e0e0; border-color: #ccc; }
-    .option-btn:disabled { cursor: default; }
-    .option-btn.correct { background-color: #d4edda; border-color: #28a745; color: #155724; }
-    .option-btn.wrong { background-color: #f8d7da; border-color: #dc3545; color: #721c24; }
+    .check-btn { background-color: #ffc107; border: none; padding: 12px 30px; font-size: 18px; border-radius: 10px; cursor: pointer; color: #333; font-weight: bold; display: none; margin: 0 auto 20px auto; }
+    .check-btn:hover { background-color: #e0a800; }
     
     .feedback { font-size: 24px; font-weight: bold; margin-bottom: 10px; min-height: 30px; }
-    .explanation { font-size: 16px; color: #555; margin-bottom: 20px; min-height: 20px; font-style: italic; }
     .next-btn { background-color: #28a745; border: none; padding: 10px 30px; font-size: 18px; border-radius: 10px; cursor: pointer; color: white; font-weight: bold; display: none; margin: 0 auto; }
     .next-btn:hover { background-color: #218838; }
     
@@ -53,26 +43,17 @@
 <div class="quiz-container" id="quiz-box">
     <div class="beta-banner">🚧 Versión de Prueba / En Construcción 🚧</div>
     <div class="progress" id="progress">Pregunta 1 de 3</div>
-    <div class="question">Selecciona la frase correcta para la hora mostrada:</div>
+    <div class="question">Traduce y ordena la oración:</div>
+    <div class="english-translation" id="english-translation"></div>
     
-    <div class="clock-display">
-        <!-- Reloj Digital -->
-        <div id="digital-clock" class="digital-clock" style="display:none;">12:00 AM</div>
-        
-        <!-- Reloj Analógico -->
-        <div id="analog-wrapper" class="analog-wrapper" style="display:none;">
-            <div class="analog-clock">
-                <div class="hand hour-hand" id="hour-hand"></div>
-                <div class="hand min-hand" id="min-hand"></div>
-                <div class="center-dot"></div>
-            </div>
-            <div class="ampm-label" id="ampm-label">Mañana (AM)</div>
-        </div>
-    </div>
-
-    <div class="options" id="options-container"></div>
+    <div style="font-size: 14px; color: #777; margin-bottom: 5px; text-align: left;">Tu respuesta (Haz clic para quitar palabras):</div>
+    <div class="word-area active-box" id="chosen-words"></div>
+    
+    <div style="font-size: 14px; color: #777; margin-bottom: 5px; text-align: left;">Palabras disponibles (Haz clic para agregar):</div>
+    <div class="word-area" id="available-words"></div>
+    
+    <button class="check-btn" id="check-btn" onclick="checkAnswer()">Comprobar ✅</button>
     <div class="feedback" id="feedback"></div>
-    <div class="explanation" id="explanation"></div>
     <button class="next-btn" id="next-btn" onclick="nextQuestion()">Siguiente ➡️</button>
 </div>
 
@@ -92,40 +73,19 @@
 </div>
 
 <script>
-    // Banco de preguntas de prueba
+    // Banco de oraciones de prueba
     const questionBank = [
         {
-            time: "04:00", isMorning: true,
-            correct: "Son las cuatro en punto de la mañana.",
-            options: [
-                "Son las tres en punto de la mañana.",
-                "Son las cuatro y media de la tarde.",
-                "Son las cinco en punto de la mañana.",
-                "Son las cuatro en punto de la mañana."
-            ],
-            exp: "04:00 AM = Cuatro en punto de la mañana."
+            engFull: "I want to learn Spanish.",
+            words: ["Yo", "quiero", "aprender", "español."]
         },
         {
-            time: "02:15", isMorning: false,
-            correct: "Son las dos y cuarto de la tarde.",
-            options: [
-                "Es la una y cuarto de la tarde.",
-                "Son las dos y media de la noche.",
-                "Son las dos y cuarto de la tarde.",
-                "Son las dos en punto de la tarde."
-            ],
-            exp: "02:15 PM = Dos y cuarto de la tarde."
+            engFull: "Let's sleep at night.",
+            words: ["Vamos", "a", "dormir", "por", "la", "noche."]
         },
         {
-            time: "10:30", isMorning: false,
-            correct: "Son las diez y media de la noche.",
-            options: [
-                "Son las diez y media de la noche.",
-                "Son las nueve y media de la noche.",
-                "Son las diez en punto de la mañana.",
-                "Son las once y cuarto de la noche."
-            ],
-            exp: "10:30 PM = Diez y media de la noche."
+            engFull: "The dog eats bones in the house.",
+            words: ["El", "perro", "come", "huesos", "en", "la", "casa."]
         }
     ];
 
@@ -133,6 +93,9 @@
     let currentQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
+    
+    let availableArray = [];
+    let chosenArray = [];
 
     function startQuiz() {
         const shuffled = [...questionBank].sort(() => 0.5 - Math.random());
@@ -154,77 +117,95 @@
     function loadQuestion() {
         const q = currentQuestions[currentQuestionIndex];
         document.getElementById('progress').innerText = `Pregunta ${currentQuestionIndex + 1} de ${totalQuestions}`;
+        document.getElementById('english-translation').innerText = `"${q.engFull}"`;
         
-        // Decidir aleatoriamente qué reloj mostrar
-        const showAnalog = Math.random() > 0.5;
-        
-        if (showAnalog) {
-            document.getElementById('digital-clock').style.display = 'none';
-            document.getElementById('analog-wrapper').style.display = 'flex';
-            
-            // Calcular manecillas
-            let parts = q.time.split(':');
-            let h = parseInt(parts[0]);
-            let m = parseInt(parts[1]);
-            
-            let hAngle = (h % 12) * 30 + (m / 60) * 30;
-            let mAngle = m * 6;
-            
-            document.getElementById('hour-hand').style.transform = `rotate(${hAngle}deg)`;
-            document.getElementById('min-hand').style.transform = `rotate(${mAngle}deg)`;
-            document.getElementById('ampm-label').innerText = q.isMorning ? '☀️ Mañana (AM)' : '🌙 Tarde/Noche (PM)';
-            
-        } else {
-            document.getElementById('analog-wrapper').style.display = 'none';
-            document.getElementById('digital-clock').style.display = 'block';
-            document.getElementById('digital-clock').innerText = `${q.time} ${q.isMorning ? 'AM' : 'PM'}`;
-        }
+        // Desordenar palabras
+        availableArray = [...q.words].sort(() => 0.5 - Math.random());
+        chosenArray = [];
         
         document.getElementById('feedback').innerHTML = '';
-        document.getElementById('explanation').innerHTML = '';
         document.getElementById('next-btn').style.display = 'none';
+        document.getElementById('check-btn').style.display = 'none';
         
-        const optionsContainer = document.getElementById('options-container');
-        optionsContainer.innerHTML = '';
-        
-        const shuffledOptions = [...q.options].sort(() => 0.5 - Math.random());
-        
-        shuffledOptions.forEach(opt => {
-            const btn = document.createElement('button');
-            btn.className = 'option-btn';
-            btn.innerText = opt;
-            btn.onclick = () => checkAnswer(btn, opt, q);
-            optionsContainer.appendChild(btn);
-        });
+        renderWords();
     }
 
-    function checkAnswer(selectedBtn, selectedText, questionData) {
-        const buttons = document.querySelectorAll('.option-btn');
-        buttons.forEach(btn => btn.disabled = true);
+    function renderWords() {
+        const availBox = document.getElementById('available-words');
+        const chosenBox = document.getElementById('chosen-words');
         
-        const isCorrect = selectedText === questionData.correct;
+        availBox.innerHTML = '';
+        chosenBox.innerHTML = '';
         
-        if (isCorrect) {
-            selectedBtn.classList.add('correct');
+        availableArray.forEach((word, index) => {
+            const btn = document.createElement('div');
+            btn.className = 'word-pill';
+            btn.innerText = word;
+            btn.onclick = () => moveToChosen(index);
+            availBox.appendChild(btn);
+        });
+        
+        chosenArray.forEach((word, index) => {
+            const btn = document.createElement('div');
+            btn.className = 'word-pill';
+            btn.innerText = word;
+            btn.onclick = () => moveToAvailable(index);
+            chosenBox.appendChild(btn);
+        });
+        
+        // Mostrar botón comprobar si eligió todas
+        const q = currentQuestions[currentQuestionIndex];
+        if (chosenArray.length === q.words.length) {
+            document.getElementById('check-btn').style.display = 'block';
+        } else {
+            document.getElementById('check-btn').style.display = 'none';
+        }
+    }
+
+    function moveToChosen(index) {
+        chosenArray.push(availableArray.splice(index, 1)[0]);
+        renderWords();
+    }
+
+    function moveToAvailable(index) {
+        availableArray.push(chosenArray.splice(index, 1)[0]);
+        renderWords();
+    }
+
+    function checkAnswer() {
+        const q = currentQuestions[currentQuestionIndex];
+        document.getElementById('check-btn').style.display = 'none';
+        
+        // Bloquear clicks
+        document.querySelectorAll('.word-pill').forEach(btn => {
+            btn.style.pointerEvents = 'none';
+            btn.style.opacity = '0.7';
+        });
+        
+        const answerStr = chosenArray.join(" ");
+        const correctStr = q.words.join(" ");
+        
+        if (answerStr === correctStr) {
             document.getElementById('feedback').innerHTML = '✅ ¡Correcto!';
             document.getElementById('feedback').style.color = '#28a745';
             score++;
+            document.getElementById('chosen-words').style.borderColor = '#28a745';
+            document.getElementById('chosen-words').style.backgroundColor = '#d4edda';
         } else {
-            selectedBtn.classList.add('wrong');
-            buttons.forEach(btn => {
-                if(btn.innerText === questionData.correct) {
-                    btn.classList.add('correct');
-                }
-            });
-            document.getElementById('feedback').innerHTML = '❌ Incorrecto';
+            document.getElementById('feedback').innerHTML = '❌ Incorrecto<br><span style="font-size: 16px; color: #555;">La respuesta era: ' + correctStr + '</span>';
             document.getElementById('feedback').style.color = '#dc3545';
+            document.getElementById('chosen-words').style.borderColor = '#dc3545';
+            document.getElementById('chosen-words').style.backgroundColor = '#f8d7da';
         }
         
-        document.getElementById('explanation').innerText = questionData.exp;
         document.getElementById('next-btn').style.display = 'block';
     }
 
     function nextQuestion() {
+        // Restaurar estilos de caja
+        document.getElementById('chosen-words').style.borderColor = '#007bff';
+        document.getElementById('chosen-words').style.backgroundColor = '#eaf4ff';
+        
         currentQuestionIndex++;
         if (currentQuestionIndex < totalQuestions) {
             loadQuestion();
@@ -267,7 +248,7 @@
         const dateStr = now.toLocaleDateString('es-ES'); 
         const timeStr = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }); 
         
-        const record = { actividad: 'Reloj', name: name, location: location, score: score, total: totalQuestions, date: dateStr, time: timeStr };
+        const record = { actividad: 'Oraciones', name: name, location: location, score: score, total: totalQuestions, date: dateStr, time: timeStr };
         const scriptURL = 'https://script.google.com/macros/s/AKfycbw1BxtqYUMinRLcVe-e-lLXgQZyAN3X-VFUU3a6CDJX_HfBBv3_5lidAgS4Ow0DU4i-8w/exec';
         
         fetch(scriptURL, { method: 'POST', body: JSON.stringify(record), headers: { 'Content-Type': 'text/plain;charset=utf-8', } })
