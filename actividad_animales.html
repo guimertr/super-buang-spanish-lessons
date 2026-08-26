@@ -32,11 +32,13 @@
     .restart-btn { background-color: #007bff; border: none; padding: 12px 25px; font-size: 18px; border-radius: 10px; cursor: pointer; color: white; font-weight: bold; margin-top: 15px; display: none; }
     .restart-btn:hover { background-color: #0069d9; }
     .success-msg { color: #28a745; font-size: 18px; font-weight: bold; margin-top: 15px; display: none; }
+    .beta-banner { background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 10px; border-radius: 10px; margin-bottom: 20px; font-weight: bold; font-size: 14px; }
 </style>
 </head>
 <body>
 <a href="menu_actividades.html" class="back-btn">⬅️ Volver a Actividades</a>
 <div class="quiz-container" id="quiz-box">
+    
     <div class="progress" id="progress">Pregunta 1 de 10</div>
     <div class="question" id="question-text"></div>
     <div class="english-translation" id="english-translation"></div>
@@ -57,23 +59,22 @@
         <button class="save-btn" onclick="saveAndSend()">Guardar en la Nube ☁️</button>
     </div>
     
-    <div id="success-message" class="success-msg">¡Resultado guardado correctamente!</div>
+    <div id="success-message" class="success-msg">Obteniendo ubicación y guardando... ⏳</div>
     
     <button id="restart-btn" class="restart-btn" onclick="startQuiz()">Intentar de nuevo 🔄</button>
 </div>
 
 <script>
-    // Banco de 100 preguntas inyectado desde Python
     const questionBank = [
     {
         "sentence": "El _____ come huesos en la casa.",
         "engFull": "The dog eats bones in the house.",
         "missing": "perro",
         "options": [
-            "mono",
-            "cerdo",
-            "gato",
-            "perro"
+            "perro",
+            "vaca",
+            "conejo",
+            "ratón"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -82,10 +83,10 @@
         "engFull": "Let's walk with the dog in the park.",
         "missing": "perro",
         "options": [
-            "mono",
+            "león",
             "perro",
-            "oso",
-            "león"
+            "ratón",
+            "oso"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -94,10 +95,10 @@
         "engFull": "The dog sleeps on the bed.",
         "missing": "perro",
         "options": [
+            "conejo",
+            "perro",
             "mono",
-            "ratón",
-            "león",
-            "perro"
+            "gato"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -106,10 +107,10 @@
         "engFull": "The big dog runs fast.",
         "missing": "perro",
         "options": [
-            "cerdo",
-            "león",
-            "perro",
-            "rana"
+            "oso",
+            "gato",
+            "vaca",
+            "perro"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -118,10 +119,10 @@
         "engFull": "The dog plays with the ball.",
         "missing": "perro",
         "options": [
-            "ratón",
-            "conejo",
-            "oso",
-            "perro"
+            "león",
+            "gato",
+            "perro",
+            "cerdo"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -130,9 +131,9 @@
         "engFull": "The dog goes 'woof woof'.",
         "missing": "perro",
         "options": [
-            "conejo",
             "vaca",
-            "oso",
+            "conejo",
+            "gato",
             "perro"
         ],
         "exp": "'El perro' es 'the dog'."
@@ -142,10 +143,10 @@
         "engFull": "The happy dog jumps.",
         "missing": "perro",
         "options": [
-            "mono",
             "rana",
-            "cerdo",
-            "perro"
+            "gato",
+            "perro",
+            "ratón"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -154,10 +155,10 @@
         "engFull": "The dog waits at the door.",
         "missing": "perro",
         "options": [
-            "león",
-            "ratón",
+            "rana",
             "perro",
-            "mono"
+            "oso",
+            "vaca"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -166,10 +167,10 @@
         "engFull": "I have to feed the dog.",
         "missing": "perro",
         "options": [
-            "mono",
-            "león",
             "perro",
-            "oso"
+            "león",
+            "cerdo",
+            "ratón"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -178,10 +179,10 @@
         "engFull": "The dog is my favorite animal.",
         "missing": "perro",
         "options": [
+            "cerdo",
             "perro",
-            "ratón",
             "conejo",
-            "cerdo"
+            "león"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -190,10 +191,10 @@
         "engFull": "The cat chases the mouse.",
         "missing": "gato",
         "options": [
-            "rana",
-            "vaca",
-            "conejo",
-            "gato"
+            "gato",
+            "oso",
+            "perro",
+            "vaca"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -202,10 +203,10 @@
         "engFull": "The cat is sleeping on the couch.",
         "missing": "gato",
         "options": [
-            "mono",
+            "vaca",
             "gato",
-            "rana",
-            "oso"
+            "cerdo",
+            "león"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -214,10 +215,10 @@
         "engFull": "The cat wants to eat fish.",
         "missing": "gato",
         "options": [
-            "perro",
+            "ratón",
             "gato",
-            "león",
-            "rana"
+            "conejo",
+            "oso"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -226,10 +227,10 @@
         "engFull": "The cat meows at night.",
         "missing": "gato",
         "options": [
-            "león",
-            "gato",
-            "conejo",
-            "rana"
+            "rana",
+            "mono",
+            "ratón",
+            "gato"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -238,9 +239,9 @@
         "engFull": "The cat walks without making noise.",
         "missing": "gato",
         "options": [
-            "conejo",
             "mono",
             "cerdo",
+            "rana",
             "gato"
         ],
         "exp": "'El gato' es 'the cat'."
@@ -250,10 +251,10 @@
         "engFull": "The cat has pretty whiskers.",
         "missing": "gato",
         "options": [
-            "ratón",
             "vaca",
+            "mono",
             "gato",
-            "conejo"
+            "león"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -262,10 +263,10 @@
         "engFull": "The cat jumps on the table.",
         "missing": "gato",
         "options": [
+            "oso",
             "gato",
-            "león",
-            "rana",
-            "perro"
+            "conejo",
+            "ratón"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -274,10 +275,10 @@
         "engFull": "The black cat is smart.",
         "missing": "gato",
         "options": [
-            "perro",
             "cerdo",
-            "vaca",
-            "gato"
+            "mono",
+            "gato",
+            "vaca"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -286,10 +287,10 @@
         "engFull": "Let's play with the cat.",
         "missing": "gato",
         "options": [
-            "gato",
-            "cerdo",
             "ratón",
-            "oso"
+            "perro",
+            "oso",
+            "gato"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -298,10 +299,10 @@
         "engFull": "The cat drinks milk.",
         "missing": "gato",
         "options": [
+            "mono",
             "gato",
-            "vaca",
-            "rana",
-            "perro"
+            "cerdo",
+            "león"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -310,10 +311,10 @@
         "engFull": "The mouse is small and eats cheese.",
         "missing": "ratón",
         "options": [
-            "vaca",
             "mono",
-            "león",
-            "ratón"
+            "ratón",
+            "perro",
+            "vaca"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -322,10 +323,10 @@
         "engFull": "I don't want to see a mouse in the kitchen.",
         "missing": "ratón",
         "options": [
-            "oso",
-            "gato",
-            "conejo",
-            "ratón"
+            "mono",
+            "león",
+            "ratón",
+            "cerdo"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -334,10 +335,10 @@
         "engFull": "The mouse is afraid of the cat.",
         "missing": "ratón",
         "options": [
-            "oso",
-            "mono",
             "gato",
-            "ratón"
+            "ratón",
+            "león",
+            "cerdo"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -346,10 +347,10 @@
         "engFull": "The mouse hides in the wall.",
         "missing": "ratón",
         "options": [
-            "león",
-            "oso",
-            "gato",
-            "ratón"
+            "rana",
+            "ratón",
+            "mono",
+            "gato"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -358,10 +359,10 @@
         "engFull": "We have to catch the mouse.",
         "missing": "ratón",
         "options": [
-            "rana",
-            "vaca",
             "perro",
-            "ratón"
+            "ratón",
+            "cerdo",
+            "mono"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -371,9 +372,9 @@
         "missing": "ratón",
         "options": [
             "ratón",
-            "león",
-            "rana",
-            "vaca"
+            "vaca",
+            "gato",
+            "conejo"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -382,9 +383,9 @@
         "engFull": "The gray mouse sleeps.",
         "missing": "ratón",
         "options": [
+            "gato",
+            "vaca",
             "conejo",
-            "oso",
-            "perro",
             "ratón"
         ],
         "exp": "'El ratón' es 'the mouse'."
@@ -394,10 +395,10 @@
         "engFull": "The mouse plays in the dark.",
         "missing": "ratón",
         "options": [
-            "vaca",
-            "rana",
             "ratón",
-            "perro"
+            "gato",
+            "conejo",
+            "rana"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -406,10 +407,10 @@
         "engFull": "The mouse looks for food at night.",
         "missing": "ratón",
         "options": [
-            "león",
-            "gato",
-            "rana",
-            "ratón"
+            "mono",
+            "ratón",
+            "cerdo",
+            "conejo"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -418,10 +419,10 @@
         "engFull": "The mouse is very fast.",
         "missing": "ratón",
         "options": [
-            "vaca",
-            "gato",
-            "oso",
-            "ratón"
+            "ratón",
+            "conejo",
+            "rana",
+            "vaca"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -430,10 +431,10 @@
         "engFull": "The rabbit has long ears.",
         "missing": "conejo",
         "options": [
-            "ratón",
             "conejo",
-            "león",
-            "rana"
+            "vaca",
+            "perro",
+            "oso"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -442,9 +443,9 @@
         "engFull": "The rabbit jumps very high in the garden.",
         "missing": "conejo",
         "options": [
-            "perro",
             "conejo",
             "oso",
+            "mono",
             "león"
         ],
         "exp": "'El conejo' es 'the rabbit'."
@@ -454,10 +455,10 @@
         "engFull": "The rabbit eats carrots.",
         "missing": "conejo",
         "options": [
-            "perro",
-            "conejo",
-            "cerdo",
-            "rana"
+            "oso",
+            "gato",
+            "mono",
+            "conejo"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -466,10 +467,10 @@
         "engFull": "The rabbit is very fast and soft.",
         "missing": "conejo",
         "options": [
-            "gato",
-            "cerdo",
             "conejo",
-            "ratón"
+            "rana",
+            "perro",
+            "vaca"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -478,10 +479,10 @@
         "engFull": "The white rabbit is my pet.",
         "missing": "conejo",
         "options": [
+            "conejo",
             "gato",
-            "ratón",
-            "oso",
-            "conejo"
+            "vaca",
+            "león"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -490,10 +491,10 @@
         "engFull": "The rabbit sleeps in the field.",
         "missing": "conejo",
         "options": [
-            "ratón",
             "conejo",
-            "león",
-            "perro"
+            "gato",
+            "mono",
+            "cerdo"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -502,10 +503,10 @@
         "engFull": "Let's run with the rabbit.",
         "missing": "conejo",
         "options": [
+            "vaca",
             "conejo",
-            "león",
             "cerdo",
-            "mono"
+            "león"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -515,9 +516,9 @@
         "missing": "conejo",
         "options": [
             "conejo",
+            "ratón",
             "vaca",
-            "león",
-            "rana"
+            "oso"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -526,10 +527,10 @@
         "engFull": "The rabbit plays in the grass.",
         "missing": "conejo",
         "options": [
-            "león",
-            "conejo",
             "ratón",
-            "gato"
+            "oso",
+            "gato",
+            "conejo"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -538,10 +539,10 @@
         "engFull": "The rabbit is happy today.",
         "missing": "conejo",
         "options": [
-            "cerdo",
-            "gato",
-            "conejo",
-            "rana"
+            "perro",
+            "rana",
+            "vaca",
+            "conejo"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -550,10 +551,10 @@
         "engFull": "The bear is big and strong in the forest.",
         "missing": "oso",
         "options": [
-            "león",
-            "mono",
+            "perro",
+            "ratón",
             "oso",
-            "rana"
+            "vaca"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -562,9 +563,9 @@
         "engFull": "At the zoo, I want to see the polar bear.",
         "missing": "oso",
         "options": [
+            "león",
+            "conejo",
             "perro",
-            "gato",
-            "vaca",
             "oso"
         ],
         "exp": "'El oso' es 'the bear'."
@@ -574,10 +575,10 @@
         "engFull": "Let's run like a bear in the forest.",
         "missing": "oso",
         "options": [
-            "gato",
-            "león",
+            "perro",
+            "ratón",
             "oso",
-            "mono"
+            "león"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -586,10 +587,10 @@
         "engFull": "The bear eats honey.",
         "missing": "oso",
         "options": [
-            "rana",
+            "perro",
+            "ratón",
             "oso",
-            "mono",
-            "cerdo"
+            "vaca"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -598,9 +599,9 @@
         "engFull": "The brown bear is in the river.",
         "missing": "oso",
         "options": [
-            "mono",
-            "conejo",
-            "león",
+            "gato",
+            "rana",
+            "ratón",
             "oso"
         ],
         "exp": "'El oso' es 'the bear'."
@@ -611,9 +612,9 @@
         "missing": "oso",
         "options": [
             "oso",
-            "conejo",
-            "cerdo",
-            "vaca"
+            "ratón",
+            "rana",
+            "perro"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -622,10 +623,10 @@
         "engFull": "The bear walks slowly.",
         "missing": "oso",
         "options": [
-            "gato",
             "oso",
-            "león",
-            "vaca"
+            "rana",
+            "vaca",
+            "cerdo"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -634,10 +635,10 @@
         "engFull": "The bear catches fish in the water.",
         "missing": "oso",
         "options": [
-            "rana",
-            "mono",
-            "gato",
-            "oso"
+            "oso",
+            "vaca",
+            "león",
+            "rana"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -646,10 +647,10 @@
         "engFull": "The bear is a wild animal.",
         "missing": "oso",
         "options": [
-            "rana",
-            "perro",
+            "león",
+            "ratón",
             "oso",
-            "conejo"
+            "cerdo"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -659,8 +660,8 @@
         "missing": "oso",
         "options": [
             "conejo",
-            "cerdo",
             "oso",
+            "vaca",
             "mono"
         ],
         "exp": "'El oso' es 'the bear'."
@@ -670,10 +671,10 @@
         "engFull": "The lion is the king of the jungle.",
         "missing": "león",
         "options": [
-            "gato",
-            "oso",
-            "león",
-            "cerdo"
+            "cerdo",
+            "ratón",
+            "vaca",
+            "león"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -682,10 +683,10 @@
         "engFull": "The lion has a big mane.",
         "missing": "león",
         "options": [
-            "perro",
-            "oso",
+            "rana",
             "león",
-            "vaca"
+            "cerdo",
+            "perro"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -694,10 +695,10 @@
         "engFull": "The lion sleeps in the savanna.",
         "missing": "león",
         "options": [
-            "cerdo",
             "león",
-            "mono",
-            "ratón"
+            "oso",
+            "rana",
+            "mono"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -706,10 +707,10 @@
         "engFull": "The lion hunts in the afternoon.",
         "missing": "león",
         "options": [
+            "gato",
             "león",
-            "conejo",
-            "oso",
-            "mono"
+            "mono",
+            "ratón"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -718,10 +719,10 @@
         "engFull": "The lion roars very loudly.",
         "missing": "león",
         "options": [
-            "mono",
-            "león",
-            "conejo",
-            "gato"
+            "rana",
+            "cerdo",
+            "ratón",
+            "león"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -733,7 +734,7 @@
             "cerdo",
             "león",
             "oso",
-            "gato"
+            "mono"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -742,10 +743,10 @@
         "engFull": "The lion drinks water at the lake.",
         "missing": "león",
         "options": [
-            "conejo",
-            "gato",
+            "mono",
             "vaca",
-            "león"
+            "león",
+            "rana"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -754,10 +755,10 @@
         "engFull": "Let's draw a lion.",
         "missing": "león",
         "options": [
-            "león",
-            "oso",
             "gato",
-            "mono"
+            "león",
+            "mono",
+            "vaca"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -766,10 +767,10 @@
         "engFull": "The lion rests in the sun.",
         "missing": "león",
         "options": [
-            "conejo",
+            "oso",
             "mono",
-            "gato",
-            "león"
+            "león",
+            "conejo"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -779,9 +780,9 @@
         "missing": "león",
         "options": [
             "perro",
-            "oso",
-            "mono",
-            "león"
+            "león",
+            "cerdo",
+            "rana"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -790,10 +791,10 @@
         "engFull": "The cow gives us milk.",
         "missing": "vaca",
         "options": [
-            "oso",
             "vaca",
+            "perro",
             "león",
-            "cerdo"
+            "conejo"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -803,9 +804,9 @@
         "missing": "vaca",
         "options": [
             "vaca",
-            "oso",
-            "ratón",
-            "gato"
+            "león",
+            "rana",
+            "mono"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -814,10 +815,10 @@
         "engFull": "We have to milk the cow.",
         "missing": "vaca",
         "options": [
-            "ratón",
-            "cerdo",
+            "mono",
+            "león",
             "vaca",
-            "conejo"
+            "perro"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -826,10 +827,10 @@
         "engFull": "The cow eats a lot of grass.",
         "missing": "vaca",
         "options": [
-            "conejo",
+            "perro",
             "vaca",
-            "ratón",
-            "perro"
+            "león",
+            "oso"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -838,7 +839,7 @@
         "engFull": "The cow is white and black.",
         "missing": "vaca",
         "options": [
-            "cerdo",
+            "rana",
             "león",
             "ratón",
             "vaca"
@@ -851,9 +852,9 @@
         "missing": "vaca",
         "options": [
             "vaca",
-            "león",
-            "conejo",
-            "gato"
+            "perro",
+            "mono",
+            "ratón"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -863,9 +864,9 @@
         "missing": "vaca",
         "options": [
             "oso",
-            "perro",
             "vaca",
-            "cerdo"
+            "rana",
+            "conejo"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -874,9 +875,9 @@
         "engFull": "The cow sleeps in the stable.",
         "missing": "vaca",
         "options": [
-            "cerdo",
-            "conejo",
+            "oso",
             "vaca",
+            "rana",
             "perro"
         ],
         "exp": "'La vaca' es 'the cow'."
@@ -886,9 +887,9 @@
         "engFull": "The cow drinks a lot of water.",
         "missing": "vaca",
         "options": [
-            "gato",
-            "perro",
-            "cerdo",
+            "rana",
+            "mono",
+            "ratón",
             "vaca"
         ],
         "exp": "'La vaca' es 'the cow'."
@@ -898,10 +899,10 @@
         "engFull": "The cow is big and quiet.",
         "missing": "vaca",
         "options": [
-            "cerdo",
+            "ratón",
             "oso",
-            "vaca",
-            "mono"
+            "conejo",
+            "vaca"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -910,10 +911,10 @@
         "engFull": "The pig is chubby and pink.",
         "missing": "cerdo",
         "options": [
-            "león",
-            "cerdo",
-            "mono",
-            "ratón"
+            "rana",
+            "oso",
+            "perro",
+            "cerdo"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -922,10 +923,10 @@
         "engFull": "The pig goes 'oink oink'.",
         "missing": "cerdo",
         "options": [
-            "cerdo",
-            "rana",
-            "perro",
-            "oso"
+            "gato",
+            "león",
+            "ratón",
+            "cerdo"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -934,9 +935,9 @@
         "engFull": "The pig lives on the farm.",
         "missing": "cerdo",
         "options": [
-            "león",
-            "ratón",
             "cerdo",
+            "oso",
+            "vaca",
             "perro"
         ],
         "exp": "'El cerdo' es 'the pig'."
@@ -946,10 +947,10 @@
         "engFull": "The pig is dirty in the mud.",
         "missing": "cerdo",
         "options": [
-            "ratón",
-            "oso",
+            "rana",
             "cerdo",
-            "perro"
+            "gato",
+            "mono"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -958,10 +959,10 @@
         "engFull": "The pig doesn't want to walk today.",
         "missing": "cerdo",
         "options": [
-            "cerdo",
             "ratón",
-            "gato",
-            "oso"
+            "cerdo",
+            "león",
+            "conejo"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -970,10 +971,10 @@
         "engFull": "The pig eats apples.",
         "missing": "cerdo",
         "options": [
-            "mono",
-            "gato",
+            "león",
+            "cerdo",
             "perro",
-            "cerdo"
+            "oso"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -982,9 +983,9 @@
         "engFull": "The pig sleeps a lot.",
         "missing": "cerdo",
         "options": [
-            "perro",
-            "rana",
+            "mono",
             "vaca",
+            "rana",
             "cerdo"
         ],
         "exp": "'El cerdo' es 'the pig'."
@@ -994,10 +995,10 @@
         "engFull": "The pig plays with other animals.",
         "missing": "cerdo",
         "options": [
-            "gato",
-            "león",
+            "mono",
             "cerdo",
-            "ratón"
+            "vaca",
+            "conejo"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -1006,10 +1007,10 @@
         "engFull": "The pig runs in the field.",
         "missing": "cerdo",
         "options": [
-            "rana",
             "cerdo",
-            "ratón",
-            "oso"
+            "oso",
+            "mono",
+            "conejo"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -1018,9 +1019,9 @@
         "engFull": "The pig has a small tail.",
         "missing": "cerdo",
         "options": [
-            "gato",
-            "oso",
-            "conejo",
+            "mono",
+            "vaca",
+            "león",
             "cerdo"
         ],
         "exp": "'El cerdo' es 'the pig'."
@@ -1030,10 +1031,10 @@
         "engFull": "The frog jumps in the water.",
         "missing": "rana",
         "options": [
-            "rana",
+            "ratón",
+            "león",
             "vaca",
-            "mono",
-            "cerdo"
+            "rana"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -1042,9 +1043,9 @@
         "engFull": "The frog is green and very small.",
         "missing": "rana",
         "options": [
-            "cerdo",
-            "oso",
-            "vaca",
+            "mono",
+            "conejo",
+            "ratón",
             "rana"
         ],
         "exp": "'La rana' es 'the frog'."
@@ -1054,10 +1055,10 @@
         "engFull": "The frog has wet skin.",
         "missing": "rana",
         "options": [
-            "ratón",
             "gato",
-            "león",
-            "rana"
+            "mono",
+            "rana",
+            "vaca"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -1066,10 +1067,10 @@
         "engFull": "The frog catches flies with its tongue.",
         "missing": "rana",
         "options": [
-            "león",
-            "mono",
-            "vaca",
-            "rana"
+            "gato",
+            "perro",
+            "rana",
+            "conejo"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -1079,9 +1080,9 @@
         "missing": "rana",
         "options": [
             "rana",
+            "conejo",
             "cerdo",
-            "vaca",
-            "gato"
+            "mono"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -1090,10 +1091,10 @@
         "engFull": "The frog swims fast.",
         "missing": "rana",
         "options": [
-            "rana",
             "perro",
-            "oso",
-            "conejo"
+            "rana",
+            "vaca",
+            "mono"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -1102,9 +1103,9 @@
         "engFull": "The frog jumps very high.",
         "missing": "rana",
         "options": [
-            "cerdo",
-            "mono",
+            "perro",
             "rana",
+            "gato",
             "ratón"
         ],
         "exp": "'La rana' es 'the frog'."
@@ -1114,10 +1115,10 @@
         "engFull": "The frog goes 'ribbit ribbit'.",
         "missing": "rana",
         "options": [
+            "vaca",
+            "rana",
             "león",
-            "gato",
-            "perro",
-            "rana"
+            "cerdo"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -1126,9 +1127,9 @@
         "engFull": "The frog rests on a leaf.",
         "missing": "rana",
         "options": [
-            "cerdo",
-            "perro",
-            "oso",
+            "ratón",
+            "vaca",
+            "león",
             "rana"
         ],
         "exp": "'La rana' es 'the frog'."
@@ -1138,10 +1139,10 @@
         "engFull": "Let's catch a frog.",
         "missing": "rana",
         "options": [
-            "oso",
+            "vaca",
             "rana",
-            "perro",
-            "ratón"
+            "cerdo",
+            "gato"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -1150,10 +1151,10 @@
         "engFull": "The monkey eats bananas in the trees.",
         "missing": "mono",
         "options": [
-            "ratón",
+            "oso",
             "mono",
-            "cerdo",
-            "vaca"
+            "león",
+            "ratón"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1163,9 +1164,9 @@
         "missing": "mono",
         "options": [
             "vaca",
+            "cerdo",
             "mono",
-            "oso",
-            "cerdo"
+            "león"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1174,10 +1175,10 @@
         "engFull": "The monkey is very smart and funny.",
         "missing": "mono",
         "options": [
-            "ratón",
-            "oso",
+            "conejo",
+            "perro",
             "mono",
-            "cerdo"
+            "gato"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1186,10 +1187,10 @@
         "engFull": "The monkey has a long tail.",
         "missing": "mono",
         "options": [
-            "vaca",
-            "león",
-            "perro",
-            "mono"
+            "gato",
+            "mono",
+            "cerdo",
+            "conejo"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1198,10 +1199,10 @@
         "engFull": "The monkey makes mischief.",
         "missing": "mono",
         "options": [
-            "cerdo",
-            "mono",
-            "vaca",
-            "gato"
+            "ratón",
+            "oso",
+            "rana",
+            "mono"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1210,10 +1211,10 @@
         "engFull": "The monkey jumps from branch to branch.",
         "missing": "mono",
         "options": [
-            "ratón",
-            "mono",
+            "vaca",
+            "cerdo",
             "perro",
-            "cerdo"
+            "mono"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1223,9 +1224,9 @@
         "missing": "mono",
         "options": [
             "mono",
-            "vaca",
             "gato",
-            "león"
+            "ratón",
+            "perro"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1236,7 +1237,7 @@
         "options": [
             "ratón",
             "mono",
-            "gato",
+            "cerdo",
             "oso"
         ],
         "exp": "'El mono' es 'the monkey'."
@@ -1247,9 +1248,9 @@
         "missing": "mono",
         "options": [
             "mono",
-            "perro",
-            "conejo",
-            "oso"
+            "ratón",
+            "oso",
+            "perro"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1258,23 +1259,22 @@
         "engFull": "Let's see the monkey at the zoo.",
         "missing": "mono",
         "options": [
+            "rana",
+            "perro",
             "mono",
-            "vaca",
-            "oso",
             "cerdo"
         ],
         "exp": "'El mono' es 'the monkey'."
     }
 ];
-
+    const limitQuestions = 10;
     let currentQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
 
     function startQuiz() {
-        // Seleccionamos siempre 10 aleatorias para la partida
         const shuffled = [...questionBank].sort(() => 0.5 - Math.random());
-        currentQuestions = shuffled.slice(0, 10);
+        currentQuestions = shuffled.slice(0, limitQuestions);
         currentQuestionIndex = 0;
         score = 0;
         
@@ -1291,7 +1291,7 @@
 
     function loadQuestion() {
         const q = currentQuestions[currentQuestionIndex];
-        document.getElementById('progress').innerText = `Pregunta ${currentQuestionIndex + 1} de 10`;
+        document.getElementById('progress').innerText = `Pregunta ${currentQuestionIndex + 1} de ${limitQuestions}`;
         
         let displaySentence = q.sentence.replace(q.missing, '<span class="blank">?</span>');
         document.getElementById('question-text').innerHTML = displaySentence;
@@ -1304,8 +1304,9 @@
         const optionsContainer = document.getElementById('options-container');
         optionsContainer.innerHTML = '';
         
-        // Las opciones ya vienen mezcladas desde el array base
-        q.options.forEach(opt => {
+        const shuffledOptions = [...q.options].sort(() => 0.5 - Math.random());
+        
+        shuffledOptions.forEach(opt => {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
             btn.innerText = opt;
@@ -1344,7 +1345,7 @@
 
     function nextQuestion() {
         currentQuestionIndex++;
-        if (currentQuestionIndex < 10) {
+        if (currentQuestionIndex < limitQuestions) {
             loadQuestion();
         } else {
             showResults();
@@ -1354,7 +1355,7 @@
     function showResults() {
         document.getElementById('quiz-box').style.display = 'none';
         document.getElementById('result-box').style.display = 'block';
-        document.getElementById('score-display').innerText = `${score}/10`;
+        document.getElementById('score-display').innerText = `${score}/${limitQuestions}`;
         
         const lastNames = localStorage.getItem('lastStudentName');
         if(lastNames) {
@@ -1364,7 +1365,6 @@
 
     function saveAndSend() {
         const nameInput = document.getElementById('student-name').value.trim();
-        
         if(nameInput === "") {
             alert("Por favor, ingresa tu nombre antes de guardar.");
             return;
@@ -1372,25 +1372,40 @@
         
         localStorage.setItem('lastStudentName', nameInput);
         
+        document.getElementById('save-section').style.display = 'none';
+        document.getElementById('success-message').innerText = "Obteniendo ubicación y guardando... ⏳";
+        document.getElementById('success-message').style.display = 'block';
+        document.getElementById('success-message').style.color = '#555';
+
+        // 1. Obtener Ubicación (Usando API gratuita geojs.io)
+        fetch('https://get.geojs.io/v1/ip/geo.json')
+            .then(res => res.json())
+            .then(geo => {
+                const locationStr = (geo.city && geo.country) ? `${geo.city}, ${geo.country}` : 'Desconocida';
+                sendDataToSheets(nameInput, locationStr);
+            })
+            .catch(err => {
+                console.error('Error getting location', err);
+                sendDataToSheets(nameInput, 'Desconocida (Error)');
+            });
+    }
+
+    function sendDataToSheets(name, location) {
         const now = new Date();
         const dateStr = now.toLocaleDateString('es-ES'); 
         const timeStr = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }); 
         
-        // ¡AGREGAMOS EL CAMPO ACTIVIDAD AQUÍ!
         const record = {
             actividad: 'Animales',
-            name: nameInput,
+            name: name,
+            location: location,
             score: score,
-            total: 10,
+            total: limitQuestions,
             date: dateStr,
             time: timeStr
         };
         
         const scriptURL = 'https://script.google.com/macros/s/AKfycbw1BxtqYUMinRLcVe-e-lLXgQZyAN3X-VFUU3a6CDJX_HfBBv3_5lidAgS4Ow0DU4i-8w/exec';
-        
-        document.getElementById('save-section').style.display = 'none';
-        document.getElementById('success-message').style.display = 'block';
-        document.getElementById('restart-btn').style.display = 'inline-block';
         
         fetch(scriptURL, {
             method: 'POST',
@@ -1399,8 +1414,17 @@
                 'Content-Type': 'text/plain;charset=utf-8',
             }
         })
-        .then(response => console.log('¡Guardado en Sheets con éxito!'))
-        .catch(error => console.error('Error al guardar en Sheets:', error));
+        .then(response => {
+            document.getElementById('success-message').innerText = "¡Resultado guardado correctamente! ✅";
+            document.getElementById('success-message').style.color = "#28a745";
+            document.getElementById('restart-btn').style.display = 'inline-block';
+        })
+        .catch(error => {
+            document.getElementById('success-message').innerText = "Error de red al guardar en Sheets.";
+            document.getElementById('success-message').style.color = "#dc3545";
+            document.getElementById('restart-btn').style.display = 'inline-block';
+            console.error('Error:', error);
+        });
     }
 
     window.onload = startQuiz;

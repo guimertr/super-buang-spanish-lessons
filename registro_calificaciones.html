@@ -8,11 +8,10 @@
     body { font-family: 'Arial', sans-serif; background-color: #fdf5e6; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
     .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #333; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
     .back-btn:hover { background-color: #eee; }
-    .history-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 40px; width: 800px; max-width: 95%; height: 85vh; display: flex; flex-direction: column; }
+    .history-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 40px; width: 900px; max-width: 95%; height: 85vh; display: flex; flex-direction: column; }
     h1 { color: #333; margin-bottom: 5px; }
     p { color: #777; margin-bottom: 20px; font-size: 16px; }
     
-    /* Filtro Desplegable */
     .filter-container { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
     .filter-label { font-size: 18px; font-weight: bold; color: #333; }
     .activity-select { padding: 10px 15px; font-size: 16px; border-radius: 8px; border: 2px solid #ccc; cursor: pointer; outline: none; font-family: inherit; background-color: #f8f9fa; color: #333; font-weight: bold; transition: border-color 0.2s; }
@@ -80,7 +79,7 @@
         
         let tableHTML = `<table><thead><tr>`;
         if (showActivityColumn) tableHTML += `<th>Actividad</th>`;
-        tableHTML += `<th>Nombre</th><th>Fecha</th><th>Hora</th><th>Puntaje</th></tr></thead><tbody>`;
+        tableHTML += `<th>Nombre</th><th>Ubicación 📍</th><th>Fecha</th><th>Hora</th><th>Puntaje</th></tr></thead><tbody>`;
         
         records.slice().reverse().forEach((record) => {
             let scoreVal = parseInt(record.score) || 0;
@@ -92,12 +91,13 @@
             
             let displayName = record.name ? record.name : 'Anónimo';
             let actName = record.actividad ? record.actividad : 'Sin clasificar';
+            let locName = record.location ? record.location : 'Desconocida';
             
             tableHTML += `<tr>`;
             if (showActivityColumn) {
                 tableHTML += `<td><span class="activity-badge">${actName}</span></td>`;
             }
-            tableHTML += `<td><strong>${displayName}</strong></td><td>${record.date}</td><td>${record.time}</td><td class="${scoreClass}">${scoreVal} / ${totalVal}</td></tr>`;
+            tableHTML += `<td><strong>${displayName}</strong></td><td><small>${locName}</small></td><td>${record.date}</td><td>${record.time}</td><td class="${scoreClass}">${scoreVal} / ${totalVal}</td></tr>`;
         });
         
         tableHTML += `</tbody></table>`;
