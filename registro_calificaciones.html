@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro Central de Calificaciones</title>
+<style>
+    body { font-family: 'Arial', sans-serif; background-color: #fdf5e6; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
+    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #333; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .back-btn:hover { background-color: #eee; }
+    .history-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 40px; width: 800px; max-width: 95%; height: 85vh; display: flex; flex-direction: column; }
+    h1 { color: #333; margin-bottom: 5px; }
+    p { color: #777; margin-bottom: 20px; font-size: 16px; }
+    
+    /* Pestañas */
+    .tabs-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
+    .tab-btn { background-color: #f0f0f0; border: none; padding: 10px 15px; font-size: 15px; border-radius: 8px; cursor: pointer; font-weight: bold; color: #555; transition: 0.2s; }
+    .tab-btn.active { background-color: #007bff; color: white; box-shadow: 0 4px 6px rgba(0,123,255,0.3); }
+    .tab-btn:hover:not(.active) { background-color: #e0e0e0; }
+    
+    .top-controls { display: flex; justify-content: flex-end; margin-bottom: 10px; }
+    .refresh-btn { background-color: #17a2b8; border: none; padding: 8px 15px; font-size: 14px; border-radius: 8px; cursor: pointer; color: white; font-weight: bold; transition: 0.2s; }
+    .refresh-btn:hover { background-color: #138496; }
+
+    .scroll-area { overflow-y: auto; flex-grow: 1; padding-right: 10px; }
+    
+    table { width: 100%; border-collapse: collapse; margin-top: 0; }
+    th, td { padding: 12px; border-bottom: 1px solid #ddd; font-size: 16px; text-align: center; }
+    th { background-color: #f8f9fa; color: #333; position: sticky; top: 0; z-index: 1; box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1); }
+    td { color: #555; }
+    .score-good { color: #28a745; font-weight: bold; }
+    .score-avg { color: #fd7e14; font-weight: bold; }
+    .score-bad { color: #dc3545; font-weight: bold; }
+    .empty-msg { font-size: 18px; color: #777; margin: 50px 0; font-style: italic; }
+    .activity-badge { background-color: #e9ecef; padding: 4px 8px; border-radius: 6px; font-size: 14px; font-weight: bold; color: #495057; }
+</style>
+</head>
+<body>
+<a href="menu_actividades.html" class="back-btn">⬅️ Volver a Actividades</a>
+<div class="history-container">
+    <h1>Panel de Calificaciones 📊</h1>
+    <p>Conectado a la base de datos central</p>
+    
+    <div class="tabs-container">
+        <button class="tab-btn active" onclick="filterData('Todas', this)" id="tab-todas">Todas</button>
+        <button class="tab-btn" onclick="filterData('Animales', this)" id="tab-animales">🐾 Animales</button>
+        <button class="tab-btn" onclick="filterData('Vamos a', this)" id="tab-vamos">🚶 Vamos a...</button>
+        <button class="tab-btn" onclick="filterData('Gramática', this)" id="tab-gramatica">💡 Gramática</button>
+        <button class="tab-btn" onclick="filterData('Reloj', this)" id="tab-reloj">⌚ Reloj</button>
+        <button class="tab-btn" onclick="filterData('Lectura', this)" id="tab-lectura">📖 Lectura</button>
+    </div>
+    
+    <div class="top-controls">
+        <button class="refresh-btn" onclick="loadCloudData()">Actualizar Datos 🔄</button>
+    </div>
+    
+    <div class="scroll-area" id="table-container">
+        <p class="empty-msg">Cargando registros... ⏳</p>
+    </div>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw1BxtqYUMinRLcVe-e-lLXgQZyAN3X-VFUU3a6CDJX_HfBBv3_5lidAgS4Ow0DU4i-8w/exec';
+    
+    let allRecords = []; // Variable global para guardar todos los datos
+    let currentFilter = 'Todas';
+
+    function renderTable(records) {
+        const container = document.getElementById('table-container');
+        
+        if (records.length === 0) {
+            container.innerHTML = `<p class="empty-msg">No se encontraron registros para esta sección.</p>`;
+            return;
+        }
+        
+        // Determinar si mostramos la columna "Actividad"
+        const showActivityColumn = currentFilter === 'Todas';
+        
+        let tableHTML = `<table><thead><tr>`;
+        if (showActivityColumn) tableHTML += `<th>Actividad</th>`;
+        tableHTML += `<th>Nombre</th><th>Fecha</th><th>Hora</th><th>Puntaje</th></tr></thead><tbody>`;
+        
+        // Invertimos para ver el más reciente primero
+        records.slice().reverse().forEach((record) => {
+            let scoreVal = parseInt(record.score) || 0;
+            let totalVal = parseInt(record.total) || 10;
+            
+            let scoreClass = 'score-bad';
+            if (scoreVal / totalVal >= 0.8) scoreClass = 'score-good';
+            else if (scoreVal / totalVal >= 0.5) scoreClass = 'score-avg';
+            
+            let displayName = record.name ? record.name : 'Anónimo';
+            let actName = record.actividad ? record.actividad : 'Sin clasificar';
+            
+            tableHTML += `<tr>`;
+            if (showActivityColumn) {
+                tableHTML += `<td><span class="activity-badge">${actName}</span></td>`;
+            }
+            tableHTML += `<td><strong>${displayName}</strong></td><td>${record.date}</td><td>${record.time}</td><td class="${scoreClass}">${scoreVal} / ${totalVal}</td></tr>`;
+        });
+        
+        tableHTML += `</tbody></table>`;
+        container.innerHTML = tableHTML;
+    }
+
+    function filterData(activityName, btnElement) {
+        currentFilter = activityName;
+        
+        // Cambiar estilo visual de los botones
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        if(btnElement) {
+            btnElement.classList.add('active');
+        }
+        
+        // Filtrar datos
+        if (activityName === 'Todas') {
+            renderTable(allRecords);
+        } else {
+            const filtered = allRecords.filter(record => record.actividad === activityName);
+            renderTable(filtered);
+        }
+    }
+
+    function checkUrlParameter() {
+        // Leer el parámetro ?act= de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const actParam = urlParams.get('act');
+        
+        if (actParam) {
+            // Mapeamos el parámetro corto al nombre exacto de la pestaña
+            const map = {
+                'animales': 'Animales',
+                'vamos': 'Vamos a',
+                'gramatica': 'Gramática',
+                'reloj': 'Reloj',
+                'lectura': 'Lectura'
+            };
+            
+            const exactName = map[actParam];
+            if(exactName) {
+                const btn = document.getElementById('tab-' + actParam);
+                filterData(exactName, btn);
+                return;
+            }
+        }
+        // Si no hay parámetro, por defecto "Todas"
+        filterData('Todas', document.getElementById('tab-todas'));
+    }
+
+    function loadCloudData() {
+        const container = document.getElementById('table-container');
+        container.innerHTML = `<p class="empty-msg">Cargando registros... ⏳</p>`;
+        
+        fetch(scriptURL)
+            .then(response => response.json())
+            .then(data => {
+                allRecords = data;
+                checkUrlParameter(); // Aplica el filtro correcto al cargar
+            })
+            .catch(error => {
+                container.innerHTML = `<p class="empty-msg" style="color:red;">Error al conectar con la base de datos.<br>Revisa tu conexión a internet.</p>`;
+                console.error('Error fetching data:', error);
+            });
+    }
+
+    // Iniciar conexión al abrir la página
+    window.onload = loadCloudData;
+</script>
+</body>
+</html>
