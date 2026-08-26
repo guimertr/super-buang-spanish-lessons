@@ -12,11 +12,11 @@
     h1 { color: #333; margin-bottom: 5px; }
     p { color: #777; margin-bottom: 20px; font-size: 16px; }
     
-    /* Pestañas */
-    .tabs-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
-    .tab-btn { background-color: #f0f0f0; border: none; padding: 10px 15px; font-size: 15px; border-radius: 8px; cursor: pointer; font-weight: bold; color: #555; transition: 0.2s; }
-    .tab-btn.active { background-color: #007bff; color: white; box-shadow: 0 4px 6px rgba(0,123,255,0.3); }
-    .tab-btn:hover:not(.active) { background-color: #e0e0e0; }
+    /* Filtro Desplegable */
+    .filter-container { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
+    .filter-label { font-size: 18px; font-weight: bold; color: #333; }
+    .activity-select { padding: 10px 15px; font-size: 16px; border-radius: 8px; border: 2px solid #ccc; cursor: pointer; outline: none; font-family: inherit; background-color: #f8f9fa; color: #333; font-weight: bold; transition: border-color 0.2s; }
+    .activity-select:focus { border-color: #007bff; }
     
     .top-controls { display: flex; justify-content: flex-end; margin-bottom: 10px; }
     .refresh-btn { background-color: #17a2b8; border: none; padding: 8px 15px; font-size: 14px; border-radius: 8px; cursor: pointer; color: white; font-weight: bold; transition: 0.2s; }
@@ -41,13 +41,16 @@
     <h1>Panel de Calificaciones 📊</h1>
     <p>Conectado a la base de datos central</p>
     
-    <div class="tabs-container">
-        <button class="tab-btn active" onclick="filterData('Todas', this)" id="tab-todas">Todas</button>
-        <button class="tab-btn" onclick="filterData('Animales', this)" id="tab-animales">🐾 Animales</button>
-        <button class="tab-btn" onclick="filterData('Vamos a', this)" id="tab-vamos">🚶 Vamos a...</button>
-        <button class="tab-btn" onclick="filterData('Gramática', this)" id="tab-gramatica">💡 Gramática</button>
-        <button class="tab-btn" onclick="filterData('Reloj', this)" id="tab-reloj">⌚ Reloj</button>
-        <button class="tab-btn" onclick="filterData('Lectura', this)" id="tab-lectura">📖 Lectura</button>
+    <div class="filter-container">
+        <label for="activity-filter" class="filter-label">Filtrar por actividad:</label>
+        <select id="activity-filter" class="activity-select" onchange="handleFilterChange()">
+            <option value="Todas">📋 Mostrar Todas</option>
+            <option value="Animales">🐾 Animales</option>
+            <option value="Vamos a">🚶 Vamos a...</option>
+            <option value="Gramática">💡 Gramática</option>
+            <option value="Reloj">⌚ Reloj</option>
+            <option value="Lectura">📖 Lectura</option>
+        </select>
     </div>
     
     <div class="top-controls">
@@ -62,7 +65,7 @@
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbw1BxtqYUMinRLcVe-e-lLXgQZyAN3X-VFUU3a6CDJX_HfBBv3_5lidAgS4Ow0DU4i-8w/exec';
     
-    let allRecords = []; // Variable global para guardar todos los datos
+    let allRecords = []; 
     let currentFilter = 'Todas';
 
     function renderTable(records) {
@@ -73,14 +76,12 @@
             return;
         }
         
-        // Determinar si mostramos la columna "Actividad"
         const showActivityColumn = currentFilter === 'Todas';
         
         let tableHTML = `<table><thead><tr>`;
         if (showActivityColumn) tableHTML += `<th>Actividad</th>`;
         tableHTML += `<th>Nombre</th><th>Fecha</th><th>Hora</th><th>Puntaje</th></tr></thead><tbody>`;
         
-        // Invertimos para ver el más reciente primero
         records.slice().reverse().forEach((record) => {
             let scoreVal = parseInt(record.score) || 0;
             let totalVal = parseInt(record.total) || 10;
@@ -103,16 +104,14 @@
         container.innerHTML = tableHTML;
     }
 
-    function filterData(activityName, btnElement) {
+    function handleFilterChange() {
+        const selectEl = document.getElementById('activity-filter');
+        filterData(selectEl.value);
+    }
+
+    function filterData(activityName) {
         currentFilter = activityName;
         
-        // Cambiar estilo visual de los botones
-        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-        if(btnElement) {
-            btnElement.classList.add('active');
-        }
-        
-        // Filtrar datos
         if (activityName === 'Todas') {
             renderTable(allRecords);
         } else {
@@ -122,12 +121,11 @@
     }
 
     function checkUrlParameter() {
-        // Leer el parámetro ?act= de la URL
         const urlParams = new URLSearchParams(window.location.search);
         const actParam = urlParams.get('act');
+        const selectEl = document.getElementById('activity-filter');
         
         if (actParam) {
-            // Mapeamos el parámetro corto al nombre exacto de la pestaña
             const map = {
                 'animales': 'Animales',
                 'vamos': 'Vamos a',
@@ -138,13 +136,13 @@
             
             const exactName = map[actParam];
             if(exactName) {
-                const btn = document.getElementById('tab-' + actParam);
-                filterData(exactName, btn);
+                selectEl.value = exactName;
+                filterData(exactName);
                 return;
             }
         }
-        // Si no hay parámetro, por defecto "Todas"
-        filterData('Todas', document.getElementById('tab-todas'));
+        selectEl.value = 'Todas';
+        filterData('Todas');
     }
 
     function loadCloudData() {
@@ -155,7 +153,7 @@
             .then(response => response.json())
             .then(data => {
                 allRecords = data;
-                checkUrlParameter(); // Aplica el filtro correcto al cargar
+                checkUrlParameter(); 
             })
             .catch(error => {
                 container.innerHTML = `<p class="empty-msg" style="color:red;">Error al conectar con la base de datos.<br>Revisa tu conexión a internet.</p>`;
@@ -163,7 +161,6 @@
             });
     }
 
-    // Iniciar conexión al abrir la página
     window.onload = loadCloudData;
 </script>
 </body>
