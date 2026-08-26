@@ -1,0 +1,1 @@
+Renombra la imagen de los gatos a 'gatos_verbos.jpg' y ponla aquí adentro.
