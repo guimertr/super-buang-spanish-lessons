@@ -5,8 +5,8 @@ const questionBank = [
         "missing": "Vamos",
         "options": [
             "Vas",
+            "Quiero",
             "Queremos",
-            "Voy",
             "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -17,9 +17,9 @@ const questionBank = [
         "missing": "Vamos",
         "options": [
             "Tienen",
-            "Tiene",
+            "Quiero",
             "Vamos",
-            "Va"
+            "Vas"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -28,9 +28,9 @@ const questionBank = [
         "engFull": "Let's eat at night.",
         "missing": "Vamos",
         "options": [
+            "Vas",
             "Tiene",
-            "Quiero",
-            "Queremos",
+            "Voy",
             "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -41,9 +41,9 @@ const questionBank = [
         "missing": "Vamos",
         "options": [
             "Vamos",
+            "Tiene",
             "Quiero",
-            "Voy",
-            "Tiene"
+            "Van"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -52,10 +52,10 @@ const questionBank = [
         "engFull": "Let's eat now.",
         "missing": "Vamos",
         "options": [
+            "Tiene",
+            "Vas",
             "Quiero",
-            "Tienen",
-            "Vamos",
-            "Voy"
+            "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -65,8 +65,8 @@ const questionBank = [
         "missing": "Vamos",
         "options": [
             "Vamos",
-            "Quiero",
             "Voy",
+            "Quiero",
             "Tiene"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -76,10 +76,10 @@ const questionBank = [
         "engFull": "Let's eat together.",
         "missing": "Vamos",
         "options": [
-            "Quiero",
-            "Va",
             "Vamos",
-            "Vas"
+            "Va",
+            "Voy",
+            "Quiero"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -88,9 +88,9 @@ const questionBank = [
         "engFull": "Let's eat in the house.",
         "missing": "Vamos",
         "options": [
+            "Voy",
             "Tiene",
-            "Van",
-            "Queremos",
+            "Quiero",
             "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -100,10 +100,10 @@ const questionBank = [
         "engFull": "Let's eat in the park.",
         "missing": "Vamos",
         "options": [
-            "Queremos",
-            "Tiene",
             "Vamos",
-            "Quiero"
+            "Quiero",
+            "Vas",
+            "Voy"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -112,10 +112,10 @@ const questionBank = [
         "engFull": "Let's eat tomorrow.",
         "missing": "Vamos",
         "options": [
-            "Voy",
-            "Vas",
-            "Vamos",
-            "Tienen"
+            "Van",
+            "Tiene",
+            "Va",
+            "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -124,9 +124,9 @@ const questionBank = [
         "engFull": "Let's sleep in the morning.",
         "missing": "Vamos",
         "options": [
-            "Vamos",
             "Van",
             "Voy",
+            "Vamos",
             "Queremos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -136,10 +136,10 @@ const questionBank = [
         "engFull": "Let's sleep in the afternoon.",
         "missing": "Vamos",
         "options": [
-            "Va",
-            "Quiero",
-            "Voy",
-            "Vamos"
+            "Van",
+            "Vamos",
+            "Vas",
+            "Queremos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -148,10 +148,10 @@ const questionBank = [
         "engFull": "Let's sleep at night.",
         "missing": "Vamos",
         "options": [
-            "Quiero",
-            "Tienen",
+            "Voy",
             "Vamos",
-            "Vas"
+            "Tienen",
+            "Van"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -160,10 +160,10 @@ const questionBank = [
         "engFull": "Let's sleep today.",
         "missing": "Vamos",
         "options": [
-            "Quiero",
             "Vamos",
             "Tiene",
-            "Van"
+            "Voy",
+            "Va"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -172,10 +172,10 @@ const questionBank = [
         "engFull": "Let's sleep now.",
         "missing": "Vamos",
         "options": [
-            "Quiero",
-            "Vas",
+            "Tienen",
+            "Vamos",
             "Queremos",
-            "Vamos"
+            "Quiero"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -184,10 +184,10 @@ const questionBank = [
         "engFull": "Let's sleep a lot.",
         "missing": "Vamos",
         "options": [
-            "Voy",
-            "Tienen",
+            "Queremos",
             "Tiene",
-            "Vamos"
+            "Vamos",
+            "Va"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -196,10 +196,10 @@ const questionBank = [
         "engFull": "Let's sleep together.",
         "missing": "Vamos",
         "options": [
-            "Queremos",
             "Vamos",
-            "Va",
-            "Voy"
+            "Vas",
+            "Van",
+            "Tienen"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -208,10 +208,10 @@ const questionBank = [
         "engFull": "Let's sleep in the house.",
         "missing": "Vamos",
         "options": [
-            "Queremos",
-            "Vamos",
-            "Va",
-            "Van"
+            "Tienen",
+            "Vas",
+            "Tiene",
+            "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -220,10 +220,10 @@ const questionBank = [
         "engFull": "Let's sleep in the park.",
         "missing": "Vamos",
         "options": [
-            "Queremos",
-            "Va",
-            "Vamos",
-            "Tiene"
+            "Voy",
+            "Tienen",
+            "Van",
+            "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -232,8 +232,8 @@ const questionBank = [
         "engFull": "Let's sleep tomorrow.",
         "missing": "Vamos",
         "options": [
-            "Vamos",
             "Van",
+            "Vamos",
             "Queremos",
             "Vas"
         ],
@@ -244,9 +244,9 @@ const questionBank = [
         "engFull": "Let's play in the morning.",
         "missing": "Vamos",
         "options": [
-            "Vas",
+            "Queremos",
             "Va",
-            "Van",
+            "Quiero",
             "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -257,9 +257,9 @@ const questionBank = [
         "missing": "Vamos",
         "options": [
             "Queremos",
-            "Van",
-            "Vamos",
-            "Quiero"
+            "Quiero",
+            "Va",
+            "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -268,9 +268,9 @@ const questionBank = [
         "engFull": "Let's play at night.",
         "missing": "Vamos",
         "options": [
-            "Va",
-            "Tienen",
             "Vamos",
+            "Quiero",
+            "Queremos",
             "Vas"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -280,10 +280,10 @@ const questionBank = [
         "engFull": "Let's play today.",
         "missing": "Vamos",
         "options": [
-            "Tiene",
-            "Queremos",
             "Vamos",
-            "Tienen"
+            "Van",
+            "Vas",
+            "Va"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -292,280 +292,16 @@ const questionBank = [
         "engFull": "Let's play now.",
         "missing": "Vamos",
         "options": [
-            "Queremos",
-            "Tiene",
+            "Va",
             "Vamos",
-            "Va"
+            "Tiene",
+            "Van"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
         "sentence": "_____ a jugar mucho.",
         "engFull": "Let's play a lot.",
-        "missing": "Vamos",
-        "options": [
-            "Voy",
-            "Va",
-            "Tiene",
-            "Vamos"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a jugar juntos.",
-        "engFull": "Let's play together.",
-        "missing": "Vamos",
-        "options": [
-            "Va",
-            "Vamos",
-            "Tienen",
-            "Voy"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a jugar en la casa.",
-        "engFull": "Let's play in the house.",
-        "missing": "Vamos",
-        "options": [
-            "Vamos",
-            "Quiero",
-            "Va",
-            "Queremos"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a jugar en el parque.",
-        "engFull": "Let's play in the park.",
-        "missing": "Vamos",
-        "options": [
-            "Voy",
-            "Vamos",
-            "Van",
-            "Tiene"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a jugar mañana.",
-        "engFull": "Let's play tomorrow.",
-        "missing": "Vamos",
-        "options": [
-            "Vamos",
-            "Vas",
-            "Queremos",
-            "Tienen"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a caminar por la mañana.",
-        "engFull": "Let's walk in the morning.",
-        "missing": "Vamos",
-        "options": [
-            "Vamos",
-            "Van",
-            "Queremos",
-            "Tienen"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a caminar por la tarde.",
-        "engFull": "Let's walk in the afternoon.",
-        "missing": "Vamos",
-        "options": [
-            "Vamos",
-            "Va",
-            "Voy",
-            "Quiero"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a caminar por la noche.",
-        "engFull": "Let's walk at night.",
-        "missing": "Vamos",
-        "options": [
-            "Vas",
-            "Vamos",
-            "Quiero",
-            "Tienen"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a caminar hoy.",
-        "engFull": "Let's walk today.",
-        "missing": "Vamos",
-        "options": [
-            "Tiene",
-            "Quiero",
-            "Van",
-            "Vamos"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a caminar ahora.",
-        "engFull": "Let's walk now.",
-        "missing": "Vamos",
-        "options": [
-            "Vamos",
-            "Tienen",
-            "Quiero",
-            "Va"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a caminar mucho.",
-        "engFull": "Let's walk a lot.",
-        "missing": "Vamos",
-        "options": [
-            "Vas",
-            "Tienen",
-            "Tiene",
-            "Vamos"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a caminar juntos.",
-        "engFull": "Let's walk together.",
-        "missing": "Vamos",
-        "options": [
-            "Vamos",
-            "Van",
-            "Tienen",
-            "Va"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a caminar en la casa.",
-        "engFull": "Let's walk in the house.",
-        "missing": "Vamos",
-        "options": [
-            "Quiero",
-            "Vas",
-            "Va",
-            "Vamos"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a caminar en el parque.",
-        "engFull": "Let's walk in the park.",
-        "missing": "Vamos",
-        "options": [
-            "Voy",
-            "Van",
-            "Tiene",
-            "Vamos"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a caminar mañana.",
-        "engFull": "Let's walk tomorrow.",
-        "missing": "Vamos",
-        "options": [
-            "Voy",
-            "Van",
-            "Tiene",
-            "Vamos"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a hablar por la mañana.",
-        "engFull": "Let's talk in the morning.",
-        "missing": "Vamos",
-        "options": [
-            "Tiene",
-            "Van",
-            "Vamos",
-            "Voy"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a hablar por la tarde.",
-        "engFull": "Let's talk in the afternoon.",
-        "missing": "Vamos",
-        "options": [
-            "Vas",
-            "Tiene",
-            "Voy",
-            "Vamos"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a hablar por la noche.",
-        "engFull": "Let's talk at night.",
-        "missing": "Vamos",
-        "options": [
-            "Quiero",
-            "Vamos",
-            "Van",
-            "Va"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a hablar hoy.",
-        "engFull": "Let's talk today.",
-        "missing": "Vamos",
-        "options": [
-            "Quiero",
-            "Vamos",
-            "Van",
-            "Voy"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a hablar ahora.",
-        "engFull": "Let's talk now.",
-        "missing": "Vamos",
-        "options": [
-            "Vas",
-            "Queremos",
-            "Vamos",
-            "Va"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a hablar mucho.",
-        "engFull": "Let's talk a lot.",
-        "missing": "Vamos",
-        "options": [
-            "Vamos",
-            "Voy",
-            "Tienen",
-            "Tiene"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a hablar juntos.",
-        "engFull": "Let's talk together.",
-        "missing": "Vamos",
-        "options": [
-            "Voy",
-            "Queremos",
-            "Vamos",
-            "Vas"
-        ],
-        "exp": "'Let's' se traduce como 'Vamos a'."
-    },
-    {
-        "sentence": "_____ a hablar en la casa.",
-        "engFull": "Let's talk in the house.",
         "missing": "Vamos",
         "options": [
             "Quiero",
@@ -576,12 +312,276 @@ const questionBank = [
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "_____ a hablar en el parque.",
-        "engFull": "Let's talk in the park.",
+        "sentence": "_____ a jugar juntos.",
+        "engFull": "Let's play together.",
+        "missing": "Vamos",
+        "options": [
+            "Vamos",
+            "Voy",
+            "Tienen",
+            "Van"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a jugar en la casa.",
+        "engFull": "Let's play in the house.",
+        "missing": "Vamos",
+        "options": [
+            "Vamos",
+            "Vas",
+            "Va",
+            "Voy"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a jugar en el parque.",
+        "engFull": "Let's play in the park.",
+        "missing": "Vamos",
+        "options": [
+            "Van",
+            "Va",
+            "Vamos",
+            "Queremos"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a jugar mañana.",
+        "engFull": "Let's play tomorrow.",
+        "missing": "Vamos",
+        "options": [
+            "Vamos",
+            "Tiene",
+            "Van",
+            "Voy"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a caminar por la mañana.",
+        "engFull": "Let's walk in the morning.",
+        "missing": "Vamos",
+        "options": [
+            "Tiene",
+            "Quiero",
+            "Vamos",
+            "Vas"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a caminar por la tarde.",
+        "engFull": "Let's walk in the afternoon.",
         "missing": "Vamos",
         "options": [
             "Tiene",
             "Vas",
+            "Quiero",
+            "Vamos"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a caminar por la noche.",
+        "engFull": "Let's walk at night.",
+        "missing": "Vamos",
+        "options": [
+            "Tiene",
+            "Va",
+            "Vamos",
+            "Voy"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a caminar hoy.",
+        "engFull": "Let's walk today.",
+        "missing": "Vamos",
+        "options": [
+            "Vamos",
+            "Va",
+            "Van",
+            "Vas"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a caminar ahora.",
+        "engFull": "Let's walk now.",
+        "missing": "Vamos",
+        "options": [
+            "Vas",
+            "Vamos",
+            "Tienen",
+            "Quiero"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a caminar mucho.",
+        "engFull": "Let's walk a lot.",
+        "missing": "Vamos",
+        "options": [
+            "Vamos",
+            "Voy",
+            "Van",
+            "Quiero"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a caminar juntos.",
+        "engFull": "Let's walk together.",
+        "missing": "Vamos",
+        "options": [
+            "Van",
+            "Tiene",
+            "Vas",
+            "Vamos"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a caminar en la casa.",
+        "engFull": "Let's walk in the house.",
+        "missing": "Vamos",
+        "options": [
+            "Vamos",
+            "Queremos",
+            "Tiene",
+            "Van"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a caminar en el parque.",
+        "engFull": "Let's walk in the park.",
+        "missing": "Vamos",
+        "options": [
+            "Va",
+            "Voy",
+            "Tienen",
+            "Vamos"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a caminar mañana.",
+        "engFull": "Let's walk tomorrow.",
+        "missing": "Vamos",
+        "options": [
+            "Va",
+            "Voy",
+            "Vamos",
+            "Van"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a hablar por la mañana.",
+        "engFull": "Let's talk in the morning.",
+        "missing": "Vamos",
+        "options": [
+            "Vas",
+            "Quiero",
+            "Va",
+            "Vamos"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a hablar por la tarde.",
+        "engFull": "Let's talk in the afternoon.",
+        "missing": "Vamos",
+        "options": [
+            "Vamos",
+            "Queremos",
+            "Va",
+            "Voy"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a hablar por la noche.",
+        "engFull": "Let's talk at night.",
+        "missing": "Vamos",
+        "options": [
+            "Tiene",
+            "Tienen",
+            "Voy",
+            "Vamos"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a hablar hoy.",
+        "engFull": "Let's talk today.",
+        "missing": "Vamos",
+        "options": [
+            "Va",
+            "Vas",
+            "Tiene",
+            "Vamos"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a hablar ahora.",
+        "engFull": "Let's talk now.",
+        "missing": "Vamos",
+        "options": [
+            "Vamos",
+            "Tienen",
+            "Va",
+            "Queremos"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a hablar mucho.",
+        "engFull": "Let's talk a lot.",
+        "missing": "Vamos",
+        "options": [
+            "Quiero",
+            "Vamos",
+            "Voy",
+            "Queremos"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a hablar juntos.",
+        "engFull": "Let's talk together.",
+        "missing": "Vamos",
+        "options": [
+            "Tienen",
+            "Vamos",
+            "Quiero",
+            "Va"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a hablar en la casa.",
+        "engFull": "Let's talk in the house.",
+        "missing": "Vamos",
+        "options": [
+            "Vamos",
+            "Vas",
+            "Tiene",
+            "Va"
+        ],
+        "exp": "'Let's' se traduce como 'Vamos a'."
+    },
+    {
+        "sentence": "_____ a hablar en el parque.",
+        "engFull": "Let's talk in the park.",
+        "missing": "Vamos",
+        "options": [
+            "Queremos",
+            "Tiene",
             "Vamos",
             "Van"
         ],
@@ -592,10 +592,10 @@ const questionBank = [
         "engFull": "Let's talk tomorrow.",
         "missing": "Vamos",
         "options": [
-            "Tiene",
-            "Va",
-            "Vamos",
-            "Tienen"
+            "Voy",
+            "Quiero",
+            "Tienen",
+            "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -604,10 +604,10 @@ const questionBank = [
         "engFull": "Let's think in the morning.",
         "missing": "Vamos",
         "options": [
-            "Voy",
+            "Quiero",
             "Va",
-            "Tienen",
-            "Vamos"
+            "Vamos",
+            "Voy"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -616,10 +616,10 @@ const questionBank = [
         "engFull": "Let's think in the afternoon.",
         "missing": "Vamos",
         "options": [
-            "Vamos",
             "Queremos",
-            "Quiero",
-            "Tienen"
+            "Vamos",
+            "Va",
+            "Vas"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -628,10 +628,10 @@ const questionBank = [
         "engFull": "Let's think at night.",
         "missing": "Vamos",
         "options": [
-            "Voy",
-            "Queremos",
             "Vamos",
-            "Quiero"
+            "Vas",
+            "Voy",
+            "Tienen"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -640,10 +640,10 @@ const questionBank = [
         "engFull": "Let's think today.",
         "missing": "Vamos",
         "options": [
-            "Voy",
             "Vamos",
-            "Queremos",
-            "Quiero"
+            "Tienen",
+            "Va",
+            "Vas"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -652,9 +652,9 @@ const questionBank = [
         "engFull": "Let's think now.",
         "missing": "Vamos",
         "options": [
-            "Quiero",
+            "Van",
+            "Voy",
             "Vamos",
-            "Vas",
             "Tiene"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -664,10 +664,10 @@ const questionBank = [
         "engFull": "Let's think a lot.",
         "missing": "Vamos",
         "options": [
-            "Tienen",
             "Vamos",
-            "Quiero",
-            "Tiene"
+            "Va",
+            "Vas",
+            "Quiero"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -676,10 +676,10 @@ const questionBank = [
         "engFull": "Let's think together.",
         "missing": "Vamos",
         "options": [
-            "Voy",
-            "Vas",
             "Vamos",
-            "Quiero"
+            "Queremos",
+            "Vas",
+            "Voy"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -688,10 +688,10 @@ const questionBank = [
         "engFull": "Let's think in the house.",
         "missing": "Vamos",
         "options": [
-            "Vamos",
-            "Va",
             "Tiene",
-            "Voy"
+            "Vamos",
+            "Voy",
+            "Van"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -701,8 +701,8 @@ const questionBank = [
         "missing": "Vamos",
         "options": [
             "Quiero",
+            "Queremos",
             "Vas",
-            "Va",
             "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -712,9 +712,9 @@ const questionBank = [
         "engFull": "Let's think tomorrow.",
         "missing": "Vamos",
         "options": [
-            "Queremos",
+            "Va",
+            "Tienen",
             "Vamos",
-            "Tiene",
             "Van"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -725,8 +725,8 @@ const questionBank = [
         "missing": "Vamos",
         "options": [
             "Tiene",
-            "Van",
-            "Vas",
+            "Queremos",
+            "Va",
             "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -736,10 +736,10 @@ const questionBank = [
         "engFull": "Let's run in the afternoon.",
         "missing": "Vamos",
         "options": [
-            "Quiero",
             "Vamos",
-            "Voy",
-            "Va"
+            "Van",
+            "Queremos",
+            "Vas"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -748,10 +748,10 @@ const questionBank = [
         "engFull": "Let's run at night.",
         "missing": "Vamos",
         "options": [
-            "Voy",
             "Va",
             "Vas",
-            "Vamos"
+            "Vamos",
+            "Quiero"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -760,10 +760,10 @@ const questionBank = [
         "engFull": "Let's run today.",
         "missing": "Vamos",
         "options": [
+            "Vamos",
             "Queremos",
-            "Van",
-            "Quiero",
-            "Vamos"
+            "Tienen",
+            "Tiene"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -773,9 +773,9 @@ const questionBank = [
         "missing": "Vamos",
         "options": [
             "Vamos",
-            "Voy",
-            "Queremos",
-            "Va"
+            "Tiene",
+            "Va",
+            "Quiero"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -785,9 +785,9 @@ const questionBank = [
         "missing": "Vamos",
         "options": [
             "Vas",
-            "Tiene",
             "Voy",
-            "Vamos"
+            "Vamos",
+            "Tiene"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -796,10 +796,10 @@ const questionBank = [
         "engFull": "Let's run together.",
         "missing": "Vamos",
         "options": [
-            "Vamos",
-            "Tienen",
             "Van",
-            "Vas"
+            "Vamos",
+            "Va",
+            "Tienen"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -808,10 +808,10 @@ const questionBank = [
         "engFull": "Let's run in the house.",
         "missing": "Vamos",
         "options": [
-            "Quiero",
+            "Vas",
             "Vamos",
-            "Tiene",
-            "Vas"
+            "Queremos",
+            "Van"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -820,10 +820,10 @@ const questionBank = [
         "engFull": "Let's run in the park.",
         "missing": "Vamos",
         "options": [
-            "Va",
+            "Tienen",
+            "Vamos",
             "Vas",
-            "Van",
-            "Vamos"
+            "Voy"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -832,10 +832,10 @@ const questionBank = [
         "engFull": "Let's run tomorrow.",
         "missing": "Vamos",
         "options": [
-            "Voy",
+            "Tienen",
+            "Tiene",
             "Vamos",
-            "Vas",
-            "Tienen"
+            "Queremos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -844,10 +844,10 @@ const questionBank = [
         "engFull": "Let's sing in the morning.",
         "missing": "Vamos",
         "options": [
-            "Quiero",
-            "Tiene",
+            "Vas",
             "Vamos",
-            "Tienen"
+            "Queremos",
+            "Va"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -856,10 +856,10 @@ const questionBank = [
         "engFull": "Let's sing in the afternoon.",
         "missing": "Vamos",
         "options": [
-            "Voy",
-            "Tienen",
-            "Van",
-            "Vamos"
+            "Vamos",
+            "Queremos",
+            "Tiene",
+            "Vas"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -868,9 +868,9 @@ const questionBank = [
         "engFull": "Let's sing at night.",
         "missing": "Vamos",
         "options": [
-            "Quiero",
-            "Vamos",
             "Queremos",
+            "Voy",
+            "Vamos",
             "Tiene"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -880,10 +880,10 @@ const questionBank = [
         "engFull": "Let's sing today.",
         "missing": "Vamos",
         "options": [
-            "Tienen",
             "Vamos",
-            "Voy",
-            "Tiene"
+            "Quiero",
+            "Va",
+            "Queremos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -893,9 +893,9 @@ const questionBank = [
         "missing": "Vamos",
         "options": [
             "Va",
+            "Voy",
             "Vamos",
-            "Queremos",
-            "Vas"
+            "Tienen"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -904,10 +904,10 @@ const questionBank = [
         "engFull": "Let's sing a lot.",
         "missing": "Vamos",
         "options": [
-            "Va",
+            "Vamos",
             "Queremos",
-            "Van",
-            "Vamos"
+            "Tienen",
+            "Van"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -917,9 +917,9 @@ const questionBank = [
         "missing": "Vamos",
         "options": [
             "Vamos",
-            "Vas",
-            "Va",
-            "Tiene"
+            "Quiero",
+            "Van",
+            "Va"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -928,9 +928,9 @@ const questionBank = [
         "engFull": "Let's sing in the house.",
         "missing": "Vamos",
         "options": [
+            "Queremos",
+            "Vas",
             "Voy",
-            "Quiero",
-            "Tienen",
             "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -940,9 +940,9 @@ const questionBank = [
         "engFull": "Let's sing in the park.",
         "missing": "Vamos",
         "options": [
-            "Tienen",
-            "Voy",
             "Vas",
+            "Quiero",
+            "Queremos",
             "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -952,10 +952,10 @@ const questionBank = [
         "engFull": "Let's sing tomorrow.",
         "missing": "Vamos",
         "options": [
-            "Queremos",
-            "Voy",
-            "Tiene",
-            "Vamos"
+            "Vamos",
+            "Va",
+            "Van",
+            "Quiero"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -964,9 +964,9 @@ const questionBank = [
         "engFull": "Let's wait in the morning.",
         "missing": "Vamos",
         "options": [
-            "Tienen",
-            "Vas",
+            "Va",
             "Queremos",
+            "Van",
             "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -976,10 +976,10 @@ const questionBank = [
         "engFull": "Let's wait in the afternoon.",
         "missing": "Vamos",
         "options": [
-            "Tiene",
-            "Queremos",
             "Vamos",
-            "Tienen"
+            "Vas",
+            "Tiene",
+            "Quiero"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -988,10 +988,10 @@ const questionBank = [
         "engFull": "Let's wait at night.",
         "missing": "Vamos",
         "options": [
-            "Vas",
-            "Tienen",
             "Queremos",
-            "Vamos"
+            "Vamos",
+            "Tiene",
+            "Quiero"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1000,10 +1000,10 @@ const questionBank = [
         "engFull": "Let's wait today.",
         "missing": "Vamos",
         "options": [
-            "Vas",
-            "Vamos",
+            "Quiero",
+            "Tienen",
             "Van",
-            "Tiene"
+            "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1012,10 +1012,10 @@ const questionBank = [
         "engFull": "Let's wait now.",
         "missing": "Vamos",
         "options": [
-            "Vamos",
-            "Quiero",
             "Tiene",
-            "Va"
+            "Vamos",
+            "Tienen",
+            "Van"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1025,9 +1025,9 @@ const questionBank = [
         "missing": "Vamos",
         "options": [
             "Voy",
-            "Queremos",
+            "Tienen",
             "Vamos",
-            "Van"
+            "Quiero"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1036,10 +1036,10 @@ const questionBank = [
         "engFull": "Let's wait together.",
         "missing": "Vamos",
         "options": [
-            "Vamos",
-            "Queremos",
-            "Tiene",
-            "Tienen"
+            "Van",
+            "Quiero",
+            "Va",
+            "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1048,10 +1048,10 @@ const questionBank = [
         "engFull": "Let's wait in the house.",
         "missing": "Vamos",
         "options": [
-            "Tienen",
-            "Vas",
-            "Vamos",
-            "Tiene"
+            "Va",
+            "Quiero",
+            "Voy",
+            "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1060,9 +1060,9 @@ const questionBank = [
         "engFull": "Let's wait in the park.",
         "missing": "Vamos",
         "options": [
-            "Voy",
+            "Tienen",
+            "Queremos",
             "Vamos",
-            "Quiero",
             "Va"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -1072,10 +1072,10 @@ const questionBank = [
         "engFull": "Let's wait tomorrow.",
         "missing": "Vamos",
         "options": [
+            "Queremos",
+            "Va",
             "Vamos",
-            "Voy",
-            "Van",
-            "Tiene"
+            "Vas"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1084,10 +1084,10 @@ const questionBank = [
         "engFull": "Let's draw in the morning.",
         "missing": "Vamos",
         "options": [
-            "Queremos",
-            "Vas",
-            "Quiero",
-            "Vamos"
+            "Tienen",
+            "Vamos",
+            "Va",
+            "Voy"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1096,10 +1096,10 @@ const questionBank = [
         "engFull": "Let's draw in the afternoon.",
         "missing": "Vamos",
         "options": [
-            "Queremos",
+            "Quiero",
+            "Va",
             "Vamos",
-            "Vas",
-            "Va"
+            "Tiene"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1108,10 +1108,10 @@ const questionBank = [
         "engFull": "Let's draw at night.",
         "missing": "Vamos",
         "options": [
-            "Va",
-            "Vamos",
-            "Voy",
-            "Vas"
+            "Van",
+            "Tienen",
+            "Quiero",
+            "Vamos"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1120,10 +1120,10 @@ const questionBank = [
         "engFull": "Let's draw today.",
         "missing": "Vamos",
         "options": [
-            "Voy",
-            "Queremos",
+            "Vamos",
             "Van",
-            "Vamos"
+            "Va",
+            "Tienen"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1132,9 +1132,9 @@ const questionBank = [
         "engFull": "Let's draw now.",
         "missing": "Vamos",
         "options": [
-            "Vamos",
             "Queremos",
-            "Tienen",
+            "Van",
+            "Vamos",
             "Va"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
@@ -1144,10 +1144,10 @@ const questionBank = [
         "engFull": "Let's draw a lot.",
         "missing": "Vamos",
         "options": [
-            "Tienen",
-            "Voy",
+            "Quiero",
             "Vamos",
-            "Van"
+            "Queremos",
+            "Vas"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1156,10 +1156,10 @@ const questionBank = [
         "engFull": "Let's draw together.",
         "missing": "Vamos",
         "options": [
-            "Van",
-            "Va",
             "Vamos",
-            "Vas"
+            "Tiene",
+            "Voy",
+            "Tienen"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1168,10 +1168,10 @@ const questionBank = [
         "engFull": "Let's draw in the house.",
         "missing": "Vamos",
         "options": [
-            "Voy",
+            "Tienen",
+            "Va",
             "Vamos",
-            "Queremos",
-            "Tiene"
+            "Van"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1181,9 +1181,9 @@ const questionBank = [
         "missing": "Vamos",
         "options": [
             "Tiene",
-            "Va",
-            "Quiero",
-            "Vamos"
+            "Tienen",
+            "Vamos",
+            "Quiero"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     },
@@ -1192,10 +1192,10 @@ const questionBank = [
         "engFull": "Let's draw tomorrow.",
         "missing": "Vamos",
         "options": [
-            "Vamos",
+            "Queremos",
             "Tienen",
-            "Va",
-            "Voy"
+            "Vamos",
+            "Tiene"
         ],
         "exp": "'Let's' se traduce como 'Vamos a'."
     }

@@ -4,10 +4,10 @@ const questionBank = [
         "engFull": "I want to eat mucho.",
         "missing": "quiero",
         "options": [
-            "tengo",
-            "quiere",
             "quiero",
-            "queremos"
+            "queremos",
+            "tengo",
+            "quieres"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -17,9 +17,9 @@ const questionBank = [
         "missing": "quiero",
         "options": [
             "tienes",
+            "quieren",
             "quiero",
-            "tengo",
-            "tienen"
+            "quieres"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -28,10 +28,10 @@ const questionBank = [
         "engFull": "I want to eat ahora.",
         "missing": "quiero",
         "options": [
-            "quiero",
-            "tenemos",
-            "quieren",
-            "quiere"
+            "queremos",
+            "quieres",
+            "quiere",
+            "quiero"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -40,10 +40,10 @@ const questionBank = [
         "engFull": "I have to eat mucho.",
         "missing": "tengo",
         "options": [
-            "tengo",
-            "quieren",
+            "tiene",
             "tienes",
-            "tienen"
+            "tengo",
+            "quieren"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -52,10 +52,10 @@ const questionBank = [
         "engFull": "I have to eat hoy.",
         "missing": "tengo",
         "options": [
+            "tenemos",
             "tengo",
-            "quieres",
-            "tiene",
-            "quiero"
+            "tienen",
+            "tienes"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -64,10 +64,10 @@ const questionBank = [
         "engFull": "I have to eat ahora.",
         "missing": "tengo",
         "options": [
-            "tengo",
-            "quiero",
+            "tienes",
             "quiere",
-            "queremos"
+            "tiene",
+            "tengo"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -76,10 +76,10 @@ const questionBank = [
         "engFull": "I want to study mucho.",
         "missing": "quiero",
         "options": [
-            "tenemos",
-            "quiere",
-            "quiero",
-            "queremos"
+            "tengo",
+            "tienes",
+            "quieren",
+            "quiero"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -88,10 +88,10 @@ const questionBank = [
         "engFull": "I want to study hoy.",
         "missing": "quiero",
         "options": [
+            "quieres",
+            "tenemos",
             "quiero",
-            "quieren",
-            "tiene",
-            "tengo"
+            "quiere"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -100,10 +100,10 @@ const questionBank = [
         "engFull": "I want to study ahora.",
         "missing": "quiero",
         "options": [
-            "queremos",
-            "quieres",
-            "tengo",
-            "quiero"
+            "tenemos",
+            "quiere",
+            "quiero",
+            "tienes"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -112,9 +112,9 @@ const questionBank = [
         "engFull": "I have to study mucho.",
         "missing": "tengo",
         "options": [
-            "tienes",
-            "queremos",
-            "quiero",
+            "tenemos",
+            "quieres",
+            "tiene",
             "tengo"
         ],
         "exp": "Subject 'Yo'."
@@ -124,10 +124,10 @@ const questionBank = [
         "engFull": "I have to study hoy.",
         "missing": "tengo",
         "options": [
-            "quieren",
+            "tiene",
+            "queremos",
             "tenemos",
-            "tengo",
-            "quieres"
+            "tengo"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -136,10 +136,10 @@ const questionBank = [
         "engFull": "I have to study ahora.",
         "missing": "tengo",
         "options": [
+            "tienen",
             "tengo",
-            "quieren",
-            "quiero",
-            "tenemos"
+            "queremos",
+            "tiene"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -148,10 +148,10 @@ const questionBank = [
         "engFull": "I want to play mucho.",
         "missing": "quiero",
         "options": [
-            "tengo",
-            "queremos",
             "tiene",
-            "quiero"
+            "quiero",
+            "tenemos",
+            "quieres"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -160,10 +160,10 @@ const questionBank = [
         "engFull": "I want to play hoy.",
         "missing": "quiero",
         "options": [
-            "quiero",
-            "quieres",
+            "tienes",
             "queremos",
-            "tengo"
+            "tengo",
+            "quiero"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -172,10 +172,10 @@ const questionBank = [
         "engFull": "I want to play ahora.",
         "missing": "quiero",
         "options": [
-            "quiero",
-            "tiene",
+            "tengo",
             "quieren",
-            "queremos"
+            "quiero",
+            "quiere"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -184,8 +184,8 @@ const questionBank = [
         "engFull": "I have to play mucho.",
         "missing": "tengo",
         "options": [
-            "quieren",
-            "quiero",
+            "tiene",
+            "tienes",
             "tengo",
             "quiere"
         ],
@@ -196,10 +196,10 @@ const questionBank = [
         "engFull": "I have to play hoy.",
         "missing": "tengo",
         "options": [
+            "quieres",
+            "quiero",
             "tengo",
-            "queremos",
-            "quiere",
-            "quieren"
+            "tenemos"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -208,10 +208,10 @@ const questionBank = [
         "engFull": "I have to play ahora.",
         "missing": "tengo",
         "options": [
-            "tengo",
-            "quieres",
+            "tiene",
             "tenemos",
-            "tienes"
+            "tengo",
+            "quiere"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -221,9 +221,9 @@ const questionBank = [
         "missing": "quiero",
         "options": [
             "tenemos",
-            "quiere",
-            "tienes",
-            "quiero"
+            "quiero",
+            "tengo",
+            "quieres"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -232,10 +232,10 @@ const questionBank = [
         "engFull": "I want to sleep hoy.",
         "missing": "quiero",
         "options": [
-            "tiene",
             "quiero",
-            "tenemos",
-            "quieren"
+            "quieres",
+            "tienes",
+            "tienen"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -244,10 +244,10 @@ const questionBank = [
         "engFull": "I want to sleep ahora.",
         "missing": "quiero",
         "options": [
-            "quieren",
-            "tengo",
             "quiero",
-            "quieres"
+            "tengo",
+            "queremos",
+            "tienes"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -257,9 +257,9 @@ const questionBank = [
         "missing": "tengo",
         "options": [
             "tenemos",
+            "tiene",
             "tengo",
-            "quieres",
-            "tiene"
+            "quieren"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -268,9 +268,9 @@ const questionBank = [
         "engFull": "I have to sleep hoy.",
         "missing": "tengo",
         "options": [
-            "quieres",
             "tengo",
-            "tiene",
+            "tenemos",
+            "tienen",
             "quieren"
         ],
         "exp": "Subject 'Yo'."
@@ -280,10 +280,10 @@ const questionBank = [
         "engFull": "I have to sleep ahora.",
         "missing": "tengo",
         "options": [
-            "tienen",
-            "tengo",
-            "quieren",
-            "queremos"
+            "tenemos",
+            "tienes",
+            "tiene",
+            "tengo"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -292,9 +292,9 @@ const questionBank = [
         "engFull": "I want to run mucho.",
         "missing": "quiero",
         "options": [
+            "quieren",
             "quiero",
-            "tienen",
-            "quiere",
+            "queremos",
             "tengo"
         ],
         "exp": "Subject 'Yo'."
@@ -304,10 +304,10 @@ const questionBank = [
         "engFull": "I want to run hoy.",
         "missing": "quiero",
         "options": [
-            "tiene",
-            "quiero",
-            "quiere",
-            "quieren"
+            "tengo",
+            "tenemos",
+            "tienen",
+            "quiero"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -316,10 +316,10 @@ const questionBank = [
         "engFull": "I want to run ahora.",
         "missing": "quiero",
         "options": [
-            "tiene",
-            "queremos",
+            "quiero",
             "quieren",
-            "quiero"
+            "queremos",
+            "tienen"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -328,10 +328,10 @@ const questionBank = [
         "engFull": "I have to run mucho.",
         "missing": "tengo",
         "options": [
-            "tienes",
-            "tienen",
             "tengo",
-            "queremos"
+            "tienen",
+            "tenemos",
+            "quiero"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -340,10 +340,10 @@ const questionBank = [
         "engFull": "I have to run hoy.",
         "missing": "tengo",
         "options": [
+            "quieren",
             "tengo",
             "quiero",
-            "tenemos",
-            "tienen"
+            "quiere"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -352,10 +352,10 @@ const questionBank = [
         "engFull": "I have to run ahora.",
         "missing": "tengo",
         "options": [
-            "tenemos",
-            "quieren",
-            "queremos",
-            "tengo"
+            "tengo",
+            "quieres",
+            "tienes",
+            "quieren"
         ],
         "exp": "Subject 'Yo'."
     },
@@ -364,9 +364,9 @@ const questionBank = [
         "engFull": "You want to eat mucho.",
         "missing": "quieres",
         "options": [
-            "tiene",
-            "quieren",
+            "tienes",
             "quiere",
+            "tiene",
             "quieres"
         ],
         "exp": "Subject 'Tú'."
@@ -376,10 +376,10 @@ const questionBank = [
         "engFull": "You want to eat hoy.",
         "missing": "quieres",
         "options": [
-            "tienen",
+            "quiere",
+            "quieren",
             "quieres",
-            "tiene",
-            "tengo"
+            "tiene"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -388,10 +388,10 @@ const questionBank = [
         "engFull": "You want to eat ahora.",
         "missing": "quieres",
         "options": [
-            "quiere",
-            "tengo",
+            "quieres",
             "tiene",
-            "quieres"
+            "tenemos",
+            "tengo"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -400,10 +400,10 @@ const questionBank = [
         "engFull": "You have to eat mucho.",
         "missing": "tienes",
         "options": [
-            "quieres",
+            "tienes",
             "quiere",
-            "tenemos",
-            "tienes"
+            "quieres",
+            "tienen"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -412,10 +412,10 @@ const questionBank = [
         "engFull": "You have to eat hoy.",
         "missing": "tienes",
         "options": [
-            "tienes",
             "tiene",
+            "tienes",
             "tenemos",
-            "quiere"
+            "quieren"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -424,10 +424,10 @@ const questionBank = [
         "engFull": "You have to eat ahora.",
         "missing": "tienes",
         "options": [
+            "quiere",
+            "quieres",
             "tienes",
-            "quiero",
-            "queremos",
-            "tenemos"
+            "queremos"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -436,10 +436,10 @@ const questionBank = [
         "engFull": "You want to study mucho.",
         "missing": "quieres",
         "options": [
-            "quiero",
+            "quieres",
             "tengo",
-            "tenemos",
-            "quieres"
+            "tienes",
+            "quieren"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -448,10 +448,10 @@ const questionBank = [
         "engFull": "You want to study hoy.",
         "missing": "quieres",
         "options": [
+            "tenemos",
+            "quiero",
             "quieres",
-            "tengo",
-            "quieren",
-            "tienes"
+            "quiere"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -461,9 +461,9 @@ const questionBank = [
         "missing": "quieres",
         "options": [
             "quieres",
-            "tienen",
+            "quieren",
             "quiere",
-            "tiene"
+            "queremos"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -472,10 +472,10 @@ const questionBank = [
         "engFull": "You have to study mucho.",
         "missing": "tienes",
         "options": [
-            "quiero",
-            "tengo",
-            "quieres",
-            "tienes"
+            "tienes",
+            "queremos",
+            "tienen",
+            "tengo"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -485,9 +485,9 @@ const questionBank = [
         "missing": "tienes",
         "options": [
             "tengo",
-            "quiero",
+            "tiene",
             "tienes",
-            "quiere"
+            "queremos"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -496,10 +496,10 @@ const questionBank = [
         "engFull": "You have to study ahora.",
         "missing": "tienes",
         "options": [
-            "quiero",
+            "tenemos",
             "tienes",
-            "tienen",
-            "tiene"
+            "quiere",
+            "quieres"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -508,10 +508,10 @@ const questionBank = [
         "engFull": "You want to play mucho.",
         "missing": "quieres",
         "options": [
-            "tienen",
+            "tenemos",
             "tienes",
-            "tengo",
-            "quieres"
+            "quieres",
+            "tiene"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -520,10 +520,10 @@ const questionBank = [
         "engFull": "You want to play hoy.",
         "missing": "quieres",
         "options": [
-            "quiero",
+            "tengo",
             "quieren",
             "quieres",
-            "tiene"
+            "queremos"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -532,10 +532,10 @@ const questionBank = [
         "engFull": "You want to play ahora.",
         "missing": "quieres",
         "options": [
+            "quiere",
+            "quiero",
             "queremos",
-            "quieren",
-            "quieres",
-            "tienen"
+            "quieres"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -544,10 +544,10 @@ const questionBank = [
         "engFull": "You have to play mucho.",
         "missing": "tienes",
         "options": [
-            "tiene",
-            "queremos",
+            "tengo",
+            "tienen",
             "tienes",
-            "tienen"
+            "quiere"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -556,10 +556,10 @@ const questionBank = [
         "engFull": "You have to play hoy.",
         "missing": "tienes",
         "options": [
-            "quiere",
             "tienes",
-            "tienen",
-            "tiene"
+            "quieren",
+            "tenemos",
+            "quiero"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -568,10 +568,10 @@ const questionBank = [
         "engFull": "You have to play ahora.",
         "missing": "tienes",
         "options": [
-            "queremos",
             "quieres",
             "tienes",
-            "quiero"
+            "quieren",
+            "tienen"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -580,10 +580,10 @@ const questionBank = [
         "engFull": "You want to sleep mucho.",
         "missing": "quieres",
         "options": [
-            "quiero",
-            "quiere",
+            "tengo",
             "quieres",
-            "queremos"
+            "quieren",
+            "quiere"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -592,10 +592,10 @@ const questionBank = [
         "engFull": "You want to sleep hoy.",
         "missing": "quieres",
         "options": [
-            "quiero",
-            "quieren",
+            "quiere",
+            "tienes",
             "quieres",
-            "tengo"
+            "tienen"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -604,10 +604,10 @@ const questionBank = [
         "engFull": "You want to sleep ahora.",
         "missing": "quieres",
         "options": [
-            "quiere",
-            "tenemos",
-            "quieres",
-            "quieren"
+            "tienes",
+            "tengo",
+            "quieren",
+            "quieres"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -616,10 +616,10 @@ const questionBank = [
         "engFull": "You have to sleep mucho.",
         "missing": "tienes",
         "options": [
-            "tiene",
-            "quieren",
+            "quieres",
+            "tienen",
             "tienes",
-            "quiero"
+            "tiene"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -628,10 +628,10 @@ const questionBank = [
         "engFull": "You have to sleep hoy.",
         "missing": "tienes",
         "options": [
-            "tienen",
-            "tiene",
+            "quiero",
             "queremos",
-            "tienes"
+            "tienes",
+            "tiene"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -640,10 +640,10 @@ const questionBank = [
         "engFull": "You have to sleep ahora.",
         "missing": "tienes",
         "options": [
-            "tengo",
-            "quiero",
+            "tenemos",
+            "tienen",
             "tienes",
-            "quiere"
+            "quiero"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -652,9 +652,9 @@ const questionBank = [
         "engFull": "You want to run mucho.",
         "missing": "quieres",
         "options": [
-            "quieren",
+            "tenemos",
             "quieres",
-            "tienen",
+            "quieren",
             "tiene"
         ],
         "exp": "Subject 'Tú'."
@@ -664,10 +664,10 @@ const questionBank = [
         "engFull": "You want to run hoy.",
         "missing": "quieres",
         "options": [
-            "quiero",
+            "quiere",
+            "quieres",
             "tiene",
-            "queremos",
-            "quieres"
+            "queremos"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -676,10 +676,10 @@ const questionBank = [
         "engFull": "You want to run ahora.",
         "missing": "quieres",
         "options": [
-            "queremos",
-            "quiero",
             "tengo",
-            "quieres"
+            "quieres",
+            "quiero",
+            "quieren"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -688,10 +688,10 @@ const questionBank = [
         "engFull": "You have to run mucho.",
         "missing": "tienes",
         "options": [
-            "queremos",
-            "tienes",
-            "tienen",
-            "quiero"
+            "tenemos",
+            "quieren",
+            "quiere",
+            "tienes"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -702,8 +702,8 @@ const questionBank = [
         "options": [
             "tienes",
             "tenemos",
-            "tiene",
-            "tienen"
+            "queremos",
+            "quiero"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -712,10 +712,10 @@ const questionBank = [
         "engFull": "You have to run ahora.",
         "missing": "tienes",
         "options": [
-            "quieren",
+            "tengo",
             "tiene",
-            "quiere",
-            "tienes"
+            "tienes",
+            "tenemos"
         ],
         "exp": "Subject 'Tú'."
     },
@@ -724,10 +724,10 @@ const questionBank = [
         "engFull": "He wants to eat mucho.",
         "missing": "quiere",
         "options": [
-            "quiero",
-            "quieren",
             "quiere",
-            "tienes"
+            "tienes",
+            "tenemos",
+            "tengo"
         ],
         "exp": "Subject 'Él'."
     },
@@ -736,10 +736,10 @@ const questionBank = [
         "engFull": "He wants to eat hoy.",
         "missing": "quiere",
         "options": [
+            "tengo",
+            "tienes",
             "quiere",
-            "quieres",
-            "quieren",
-            "tiene"
+            "tienen"
         ],
         "exp": "Subject 'Él'."
     },
@@ -748,10 +748,10 @@ const questionBank = [
         "engFull": "He wants to eat ahora.",
         "missing": "quiere",
         "options": [
-            "tienen",
-            "tienes",
+            "tiene",
             "quiere",
-            "quieres"
+            "tienen",
+            "tienes"
         ],
         "exp": "Subject 'Él'."
     },
@@ -760,10 +760,10 @@ const questionBank = [
         "engFull": "He has to eat mucho.",
         "missing": "tiene",
         "options": [
-            "quiere",
-            "tiene",
-            "quieren",
-            "tenemos"
+            "quiero",
+            "tienes",
+            "queremos",
+            "tiene"
         ],
         "exp": "Subject 'Él'."
     },
@@ -772,9 +772,9 @@ const questionBank = [
         "engFull": "He has to eat hoy.",
         "missing": "tiene",
         "options": [
-            "quieres",
-            "queremos",
+            "quieren",
             "tengo",
+            "quiero",
             "tiene"
         ],
         "exp": "Subject 'Él'."
@@ -784,10 +784,10 @@ const questionBank = [
         "engFull": "He has to eat ahora.",
         "missing": "tiene",
         "options": [
-            "quiere",
+            "tiene",
             "queremos",
-            "tienen",
-            "tiene"
+            "tienes",
+            "quiero"
         ],
         "exp": "Subject 'Él'."
     },
@@ -796,10 +796,10 @@ const questionBank = [
         "engFull": "He wants to study mucho.",
         "missing": "quiere",
         "options": [
-            "queremos",
+            "tengo",
+            "quiere",
             "tienes",
-            "quieren",
-            "quiere"
+            "tienen"
         ],
         "exp": "Subject 'Él'."
     },
@@ -808,10 +808,10 @@ const questionBank = [
         "engFull": "He wants to study hoy.",
         "missing": "quiere",
         "options": [
-            "tiene",
-            "quieres",
-            "tengo",
-            "quiere"
+            "tienen",
+            "quiero",
+            "quiere",
+            "tenemos"
         ],
         "exp": "Subject 'Él'."
     },
@@ -820,10 +820,10 @@ const questionBank = [
         "engFull": "He wants to study ahora.",
         "missing": "quiere",
         "options": [
-            "tienen",
-            "quieres",
-            "quiere",
-            "tiene"
+            "quieren",
+            "tengo",
+            "tiene",
+            "quiere"
         ],
         "exp": "Subject 'Él'."
     },
@@ -833,9 +833,9 @@ const questionBank = [
         "missing": "tiene",
         "options": [
             "tiene",
-            "quieres",
+            "quiero",
             "tienes",
-            "queremos"
+            "tenemos"
         ],
         "exp": "Subject 'Él'."
     },
@@ -847,7 +847,7 @@ const questionBank = [
             "tiene",
             "quieren",
             "tienen",
-            "quieres"
+            "tengo"
         ],
         "exp": "Subject 'Él'."
     },
@@ -856,10 +856,10 @@ const questionBank = [
         "engFull": "He has to study ahora.",
         "missing": "tiene",
         "options": [
-            "tengo",
-            "tenemos",
-            "quiero",
-            "tiene"
+            "tiene",
+            "quieres",
+            "tienes",
+            "quiero"
         ],
         "exp": "Subject 'Él'."
     },
@@ -868,10 +868,10 @@ const questionBank = [
         "engFull": "He wants to play mucho.",
         "missing": "quiere",
         "options": [
-            "tienes",
-            "quiero",
-            "quiere",
-            "tenemos"
+            "queremos",
+            "tenemos",
+            "tengo",
+            "quiere"
         ],
         "exp": "Subject 'Él'."
     },
@@ -880,10 +880,10 @@ const questionBank = [
         "engFull": "He wants to play hoy.",
         "missing": "quiere",
         "options": [
-            "tienes",
-            "tiene",
+            "tenemos",
             "quiere",
-            "tengo"
+            "tienen",
+            "quieren"
         ],
         "exp": "Subject 'Él'."
     },
@@ -893,9 +893,9 @@ const questionBank = [
         "missing": "quiere",
         "options": [
             "quiere",
-            "quieren",
             "tiene",
-            "tenemos"
+            "tienen",
+            "tienes"
         ],
         "exp": "Subject 'Él'."
     },
@@ -905,9 +905,9 @@ const questionBank = [
         "missing": "tiene",
         "options": [
             "tiene",
-            "tengo",
-            "tienen",
-            "tienes"
+            "quieren",
+            "quiere",
+            "quiero"
         ],
         "exp": "Subject 'Él'."
     },
@@ -916,10 +916,10 @@ const questionBank = [
         "engFull": "He has to play hoy.",
         "missing": "tiene",
         "options": [
-            "quieren",
-            "tienen",
-            "quiero",
-            "tiene"
+            "quiere",
+            "tiene",
+            "tengo",
+            "quieres"
         ],
         "exp": "Subject 'Él'."
     },
@@ -928,10 +928,10 @@ const questionBank = [
         "engFull": "He has to play ahora.",
         "missing": "tiene",
         "options": [
+            "quiero",
+            "tienen",
             "quieres",
-            "tengo",
-            "tiene",
-            "tenemos"
+            "tiene"
         ],
         "exp": "Subject 'Él'."
     },
@@ -940,10 +940,10 @@ const questionBank = [
         "engFull": "He wants to sleep mucho.",
         "missing": "quiere",
         "options": [
-            "quiere",
-            "tiene",
-            "queremos",
-            "tienes"
+            "tengo",
+            "tienes",
+            "quieren",
+            "quiere"
         ],
         "exp": "Subject 'Él'."
     },
@@ -952,10 +952,10 @@ const questionBank = [
         "engFull": "He wants to sleep hoy.",
         "missing": "quiere",
         "options": [
-            "quieren",
-            "tenemos",
-            "quiero",
-            "quiere"
+            "tiene",
+            "quieres",
+            "quiere",
+            "tienes"
         ],
         "exp": "Subject 'Él'."
     },
@@ -964,10 +964,10 @@ const questionBank = [
         "engFull": "He wants to sleep ahora.",
         "missing": "quiere",
         "options": [
-            "quieres",
+            "quiere",
+            "tienen",
             "tenemos",
-            "tiene",
-            "quiere"
+            "tienes"
         ],
         "exp": "Subject 'Él'."
     },
@@ -976,10 +976,10 @@ const questionBank = [
         "engFull": "He has to sleep mucho.",
         "missing": "tiene",
         "options": [
-            "tienes",
+            "tiene",
+            "quieres",
             "quieren",
-            "tenemos",
-            "tiene"
+            "quiero"
         ],
         "exp": "Subject 'Él'."
     },
@@ -988,10 +988,10 @@ const questionBank = [
         "engFull": "He has to sleep hoy.",
         "missing": "tiene",
         "options": [
-            "tengo",
-            "tenemos",
+            "quieres",
+            "quiere",
             "tiene",
-            "quieres"
+            "tienen"
         ],
         "exp": "Subject 'Él'."
     },
@@ -1000,10 +1000,10 @@ const questionBank = [
         "engFull": "He has to sleep ahora.",
         "missing": "tiene",
         "options": [
-            "quiere",
-            "quieren",
             "tiene",
-            "tenemos"
+            "tienes",
+            "quieres",
+            "tienen"
         ],
         "exp": "Subject 'Él'."
     },
@@ -1012,10 +1012,10 @@ const questionBank = [
         "engFull": "He wants to run mucho.",
         "missing": "quiere",
         "options": [
-            "tienes",
             "quiere",
+            "quiero",
             "queremos",
-            "quieres"
+            "tenemos"
         ],
         "exp": "Subject 'Él'."
     },
@@ -1024,10 +1024,10 @@ const questionBank = [
         "engFull": "He wants to run hoy.",
         "missing": "quiere",
         "options": [
-            "tienes",
             "quiere",
-            "tiene",
-            "tengo"
+            "tienes",
+            "quieres",
+            "quiero"
         ],
         "exp": "Subject 'Él'."
     },
@@ -1036,9 +1036,9 @@ const questionBank = [
         "engFull": "He wants to run ahora.",
         "missing": "quiere",
         "options": [
+            "tenemos",
+            "tiene",
             "quieres",
-            "quiero",
-            "queremos",
             "quiere"
         ],
         "exp": "Subject 'Él'."
@@ -1048,10 +1048,10 @@ const questionBank = [
         "engFull": "He has to run mucho.",
         "missing": "tiene",
         "options": [
-            "queremos",
-            "quieres",
             "tiene",
-            "tienen"
+            "quiero",
+            "tienes",
+            "tengo"
         ],
         "exp": "Subject 'Él'."
     },
@@ -1060,10 +1060,10 @@ const questionBank = [
         "engFull": "He has to run hoy.",
         "missing": "tiene",
         "options": [
-            "tiene",
-            "tengo",
             "quieren",
-            "tenemos"
+            "quiero",
+            "queremos",
+            "tiene"
         ],
         "exp": "Subject 'Él'."
     },
@@ -1072,10 +1072,10 @@ const questionBank = [
         "engFull": "He has to run ahora.",
         "missing": "tiene",
         "options": [
-            "tengo",
             "tiene",
-            "tienes",
-            "quiere"
+            "tengo",
+            "quieren",
+            "quieres"
         ],
         "exp": "Subject 'Él'."
     },
@@ -1084,10 +1084,10 @@ const questionBank = [
         "engFull": "We want to eat mucho.",
         "missing": "queremos",
         "options": [
-            "tienen",
-            "quieres",
+            "tengo",
+            "tienes",
             "queremos",
-            "tengo"
+            "tenemos"
         ],
         "exp": "Subject 'Nosotros'."
     },
@@ -1096,9 +1096,9 @@ const questionBank = [
         "engFull": "We want to eat hoy.",
         "missing": "queremos",
         "options": [
-            "quieren",
+            "quieres",
+            "tienes",
             "queremos",
-            "quiero",
             "tengo"
         ],
         "exp": "Subject 'Nosotros'."
@@ -1108,10 +1108,10 @@ const questionBank = [
         "engFull": "We want to eat ahora.",
         "missing": "queremos",
         "options": [
-            "queremos",
-            "tienen",
-            "quieren",
-            "tiene"
+            "tiene",
+            "quiero",
+            "quiere",
+            "queremos"
         ],
         "exp": "Subject 'Nosotros'."
     },
@@ -1120,9 +1120,9 @@ const questionBank = [
         "engFull": "We have to eat mucho.",
         "missing": "tenemos",
         "options": [
-            "tenemos",
-            "quieren",
             "queremos",
+            "tenemos",
+            "tiene",
             "tienen"
         ],
         "exp": "Subject 'Nosotros'."
@@ -1132,9 +1132,9 @@ const questionBank = [
         "engFull": "We have to eat hoy.",
         "missing": "tenemos",
         "options": [
-            "tenemos",
-            "tienen",
             "quiere",
+            "tienes",
+            "tenemos",
             "quieren"
         ],
         "exp": "Subject 'Nosotros'."
@@ -1144,10 +1144,10 @@ const questionBank = [
         "engFull": "We have to eat ahora.",
         "missing": "tenemos",
         "options": [
-            "tienes",
+            "tenemos",
+            "queremos",
             "quieres",
-            "tengo",
-            "tenemos"
+            "quiero"
         ],
         "exp": "Subject 'Nosotros'."
     },
@@ -1156,10 +1156,10 @@ const questionBank = [
         "engFull": "We want to study mucho.",
         "missing": "queremos",
         "options": [
-            "tenemos",
-            "quiere",
+            "quieren",
             "queremos",
-            "tengo"
+            "tengo",
+            "quiero"
         ],
         "exp": "Subject 'Nosotros'."
     },
@@ -1168,10 +1168,10 @@ const questionBank = [
         "engFull": "We want to study hoy.",
         "missing": "queremos",
         "options": [
-            "quieres",
-            "tienes",
             "quiero",
-            "queremos"
+            "queremos",
+            "quiere",
+            "tenemos"
         ],
         "exp": "Subject 'Nosotros'."
     },
@@ -1180,10 +1180,10 @@ const questionBank = [
         "engFull": "We want to study ahora.",
         "missing": "queremos",
         "options": [
-            "quiere",
+            "tenemos",
+            "quiero",
             "queremos",
-            "tiene",
-            "tienen"
+            "quiere"
         ],
         "exp": "Subject 'Nosotros'."
     },
@@ -1192,10 +1192,10 @@ const questionBank = [
         "engFull": "We have to study mucho.",
         "missing": "tenemos",
         "options": [
-            "tienes",
-            "tenemos",
-            "quiero",
-            "tengo"
+            "quieren",
+            "tienen",
+            "quiere",
+            "tenemos"
         ],
         "exp": "Subject 'Nosotros'."
     }

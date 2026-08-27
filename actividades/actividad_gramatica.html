@@ -11,10 +11,8 @@
     .quiz-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 40px; width: 650px; max-width: 90%; position: relative; }
     .progress { font-size: 16px; color: #777; margin-bottom: 20px; font-weight: bold; }
     .question { font-size: 22px; font-weight: bold; color: #333; margin-bottom: 20px; }
-    
     .english-translation { font-size: 18px; color: #007bff; margin-bottom: 30px; font-style: italic; font-weight: bold; }
     .blank { display: inline-block; width: 150px; border-bottom: 3px solid #333; margin: 0 10px; text-align: center; font-style: italic; color: #007bff; }
-    
     .options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
     .options.grid-style { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
     .option-btn { background-color: #f0f0f0; border: 2px solid #ddd; padding: 15px; font-size: 18px; border-radius: 10px; cursor: pointer; transition: all 0.2s; font-weight: bold; color: #333; }
@@ -23,7 +21,6 @@
     .option-btn.correct { background-color: #d4edda; border-color: #28a745; color: #155724; }
     .option-btn.wrong { background-color: #f8d7da; border-color: #dc3545; color: #721c24; }
     
-    /* Relojes */
     .clock-display { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 160px; margin-bottom: 20px; }
     .digital-clock { font-size: 54px; font-family: 'Courier New', Courier, monospace; font-weight: bold; background: #222; color: #0f0; padding: 15px 30px; border-radius: 15px; border: 4px solid #555; box-shadow: inset 0 0 10px black; }
     .analog-wrapper { display: flex; flex-direction: column; align-items: center; }
@@ -36,7 +33,6 @@
     .center-dot { position: absolute; top: 50%; left: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; background: #333; border-radius: 50%; z-index: 3; }
     .ampm-label { font-size: 18px; font-weight: bold; color: #555; margin-top: 10px; background: #eee; padding: 5px 15px; border-radius: 20px; }
 
-    /* Oraciones */
     .word-area { min-height: 80px; background-color: #f8f9fa; border: 2px dashed #ccc; border-radius: 15px; padding: 15px; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; }
     .word-area.active-box { border-color: #007bff; background-color: #eaf4ff; }
     .word-pill { background-color: #fff; border: 2px solid #6c757d; padding: 10px 20px; font-size: 18px; font-weight: bold; border-radius: 25px; cursor: pointer; color: #333; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.1s; }
@@ -60,7 +56,7 @@
 </style>
 </head>
 <body>
-<a href="../menu_actividades.html" class="back-btn">⬅️ Volver a Actividades</a>
+<a href="index_actividades.html" class="back-btn">⬅️ Volver a Actividades</a>
 
 <div class="quiz-container" id="quiz-box">
     <div class="progress" id="progress">Pregunta 1 de 10</div>
@@ -84,7 +80,6 @@
     <button id="restart-btn" class="restart-btn" onclick="startQuiz()">Intentar de nuevo 🔄</button>
 </div>
 
-<!-- AQUI CARGAMOS EL ARCHIVO DE PREGUNTAS EXTERNO -->
 <script src="preguntas/preguntas_gramatica.js"></script>
 
 <script>

@@ -5,9 +5,9 @@ const questionBank = [
         "missing": "perro",
         "options": [
             "conejo",
-            "león",
-            "perro",
-            "mono"
+            "ratón",
+            "oso",
+            "perro"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -16,10 +16,10 @@ const questionBank = [
         "engFull": "Let's walk with the dog in the park.",
         "missing": "perro",
         "options": [
+            "vaca",
             "conejo",
-            "oso",
-            "gato",
-            "perro"
+            "perro",
+            "gato"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -28,10 +28,10 @@ const questionBank = [
         "engFull": "The dog sleeps on the bed.",
         "missing": "perro",
         "options": [
+            "ratón",
+            "mono",
             "perro",
-            "vaca",
-            "cerdo",
-            "mono"
+            "oso"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -40,10 +40,10 @@ const questionBank = [
         "engFull": "The big dog runs fast.",
         "missing": "perro",
         "options": [
-            "perro",
-            "león",
             "mono",
-            "rana"
+            "ratón",
+            "perro",
+            "conejo"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -52,10 +52,10 @@ const questionBank = [
         "engFull": "The dog plays with the ball.",
         "missing": "perro",
         "options": [
-            "mono",
+            "ratón",
             "perro",
-            "rana",
-            "cerdo"
+            "león",
+            "gato"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -65,9 +65,9 @@ const questionBank = [
         "missing": "perro",
         "options": [
             "perro",
-            "oso",
-            "mono",
-            "gato"
+            "ratón",
+            "león",
+            "vaca"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -77,9 +77,9 @@ const questionBank = [
         "missing": "perro",
         "options": [
             "perro",
-            "vaca",
+            "cerdo",
             "conejo",
-            "cerdo"
+            "rana"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -89,9 +89,9 @@ const questionBank = [
         "missing": "perro",
         "options": [
             "vaca",
-            "gato",
-            "conejo",
-            "perro"
+            "perro",
+            "mono",
+            "cerdo"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -101,9 +101,9 @@ const questionBank = [
         "missing": "perro",
         "options": [
             "perro",
-            "conejo",
-            "vaca",
-            "oso"
+            "gato",
+            "rana",
+            "vaca"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -112,10 +112,10 @@ const questionBank = [
         "engFull": "The dog is my favorite animal.",
         "missing": "perro",
         "options": [
+            "perro",
+            "rana",
             "ratón",
-            "león",
-            "conejo",
-            "perro"
+            "oso"
         ],
         "exp": "'El perro' es 'the dog'."
     },
@@ -124,10 +124,10 @@ const questionBank = [
         "engFull": "The cat chases the mouse.",
         "missing": "gato",
         "options": [
-            "rana",
+            "gato",
             "cerdo",
             "león",
-            "gato"
+            "ratón"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -137,9 +137,9 @@ const questionBank = [
         "missing": "gato",
         "options": [
             "rana",
-            "vaca",
             "gato",
-            "conejo"
+            "perro",
+            "mono"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -148,10 +148,10 @@ const questionBank = [
         "engFull": "The cat wants to eat fish.",
         "missing": "gato",
         "options": [
-            "cerdo",
             "león",
-            "gato",
-            "vaca"
+            "vaca",
+            "rana",
+            "gato"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -160,10 +160,10 @@ const questionBank = [
         "engFull": "The cat meows at night.",
         "missing": "gato",
         "options": [
-            "rana",
             "gato",
-            "vaca",
-            "ratón"
+            "rana",
+            "mono",
+            "cerdo"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -172,10 +172,10 @@ const questionBank = [
         "engFull": "The cat walks without making noise.",
         "missing": "gato",
         "options": [
-            "perro",
-            "león",
-            "oso",
-            "gato"
+            "gato",
+            "vaca",
+            "ratón",
+            "cerdo"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -184,10 +184,10 @@ const questionBank = [
         "engFull": "The cat has pretty whiskers.",
         "missing": "gato",
         "options": [
+            "vaca",
             "gato",
-            "conejo",
-            "rana",
-            "oso"
+            "mono",
+            "cerdo"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -196,10 +196,10 @@ const questionBank = [
         "engFull": "The cat jumps on the table.",
         "missing": "gato",
         "options": [
+            "perro",
+            "rana",
             "gato",
-            "oso",
-            "ratón",
-            "león"
+            "cerdo"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -208,10 +208,10 @@ const questionBank = [
         "engFull": "The black cat is smart.",
         "missing": "gato",
         "options": [
+            "conejo",
             "mono",
-            "león",
-            "cerdo",
-            "gato"
+            "gato",
+            "rana"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -220,10 +220,10 @@ const questionBank = [
         "engFull": "Let's play with the cat.",
         "missing": "gato",
         "options": [
-            "vaca",
-            "león",
-            "conejo",
-            "gato"
+            "perro",
+            "rana",
+            "gato",
+            "mono"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -232,10 +232,10 @@ const questionBank = [
         "engFull": "The cat drinks milk.",
         "missing": "gato",
         "options": [
-            "rana",
+            "león",
+            "gato",
             "mono",
-            "conejo",
-            "gato"
+            "rana"
         ],
         "exp": "'El gato' es 'the cat'."
     },
@@ -244,10 +244,10 @@ const questionBank = [
         "engFull": "The mouse is small and eats cheese.",
         "missing": "ratón",
         "options": [
-            "cerdo",
-            "oso",
-            "ratón",
-            "conejo"
+            "gato",
+            "conejo",
+            "mono",
+            "ratón"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -256,10 +256,10 @@ const questionBank = [
         "engFull": "I don't want to see a mouse in the kitchen.",
         "missing": "ratón",
         "options": [
-            "oso",
+            "mono",
             "ratón",
-            "conejo",
-            "perro"
+            "gato",
+            "cerdo"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -268,10 +268,10 @@ const questionBank = [
         "engFull": "The mouse is afraid of the cat.",
         "missing": "ratón",
         "options": [
-            "conejo",
-            "gato",
-            "vaca",
-            "ratón"
+            "león",
+            "ratón",
+            "cerdo",
+            "mono"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -281,7 +281,7 @@ const questionBank = [
         "missing": "ratón",
         "options": [
             "ratón",
-            "vaca",
+            "perro",
             "oso",
             "cerdo"
         ],
@@ -292,10 +292,10 @@ const questionBank = [
         "engFull": "We have to catch the mouse.",
         "missing": "ratón",
         "options": [
-            "rana",
-            "vaca",
+            "perro",
             "león",
-            "ratón"
+            "ratón",
+            "oso"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -304,10 +304,10 @@ const questionBank = [
         "engFull": "The mouse runs fast.",
         "missing": "ratón",
         "options": [
+            "perro",
             "ratón",
-            "cerdo",
-            "mono",
-            "rana"
+            "rana",
+            "león"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -317,9 +317,9 @@ const questionBank = [
         "missing": "ratón",
         "options": [
             "mono",
-            "vaca",
-            "león",
-            "ratón"
+            "ratón",
+            "cerdo",
+            "vaca"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -328,9 +328,9 @@ const questionBank = [
         "engFull": "The mouse plays in the dark.",
         "missing": "ratón",
         "options": [
-            "león",
+            "gato",
+            "conejo",
             "cerdo",
-            "perro",
             "ratón"
         ],
         "exp": "'El ratón' es 'the mouse'."
@@ -340,10 +340,10 @@ const questionBank = [
         "engFull": "The mouse looks for food at night.",
         "missing": "ratón",
         "options": [
-            "ratón",
             "gato",
-            "oso",
-            "cerdo"
+            "vaca",
+            "mono",
+            "ratón"
         ],
         "exp": "'El ratón' es 'the mouse'."
     },
@@ -352,9 +352,9 @@ const questionBank = [
         "engFull": "The mouse is very fast.",
         "missing": "ratón",
         "options": [
-            "león",
+            "gato",
             "ratón",
-            "cerdo",
+            "oso",
             "vaca"
         ],
         "exp": "'El ratón' es 'the mouse'."
@@ -364,10 +364,10 @@ const questionBank = [
         "engFull": "The rabbit has long ears.",
         "missing": "conejo",
         "options": [
-            "vaca",
             "rana",
+            "conejo",
             "oso",
-            "conejo"
+            "cerdo"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -376,10 +376,10 @@ const questionBank = [
         "engFull": "The rabbit jumps very high in the garden.",
         "missing": "conejo",
         "options": [
+            "león",
             "conejo",
-            "cerdo",
-            "ratón",
-            "vaca"
+            "perro",
+            "gato"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -388,10 +388,10 @@ const questionBank = [
         "engFull": "The rabbit eats carrots.",
         "missing": "conejo",
         "options": [
-            "gato",
+            "conejo",
             "león",
-            "ratón",
-            "conejo"
+            "mono",
+            "oso"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -400,10 +400,10 @@ const questionBank = [
         "engFull": "The rabbit is very fast and soft.",
         "missing": "conejo",
         "options": [
-            "ratón",
-            "león",
             "conejo",
-            "gato"
+            "perro",
+            "gato",
+            "león"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -412,9 +412,9 @@ const questionBank = [
         "engFull": "The white rabbit is my pet.",
         "missing": "conejo",
         "options": [
-            "perro",
             "rana",
-            "mono",
+            "vaca",
+            "gato",
             "conejo"
         ],
         "exp": "'El conejo' es 'the rabbit'."
@@ -424,10 +424,10 @@ const questionBank = [
         "engFull": "The rabbit sleeps in the field.",
         "missing": "conejo",
         "options": [
+            "rana",
             "gato",
-            "perro",
-            "mono",
-            "conejo"
+            "conejo",
+            "cerdo"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -437,9 +437,9 @@ const questionBank = [
         "missing": "conejo",
         "options": [
             "conejo",
-            "perro",
-            "león",
-            "oso"
+            "vaca",
+            "rana",
+            "mono"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -448,10 +448,10 @@ const questionBank = [
         "engFull": "The rabbit is a silent animal.",
         "missing": "conejo",
         "options": [
-            "cerdo",
-            "conejo",
-            "perro",
-            "vaca"
+            "gato",
+            "mono",
+            "león",
+            "conejo"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -460,10 +460,10 @@ const questionBank = [
         "engFull": "The rabbit plays in the grass.",
         "missing": "conejo",
         "options": [
+            "vaca",
+            "mono",
             "rana",
-            "cerdo",
-            "conejo",
-            "gato"
+            "conejo"
         ],
         "exp": "'El conejo' es 'the rabbit'."
     },
@@ -472,9 +472,9 @@ const questionBank = [
         "engFull": "The rabbit is happy today.",
         "missing": "conejo",
         "options": [
-            "rana",
-            "mono",
-            "vaca",
+            "oso",
+            "cerdo",
+            "ratón",
             "conejo"
         ],
         "exp": "'El conejo' es 'the rabbit'."
@@ -484,9 +484,9 @@ const questionBank = [
         "engFull": "The bear is big and strong in the forest.",
         "missing": "oso",
         "options": [
-            "mono",
-            "vaca",
-            "rana",
+            "conejo",
+            "cerdo",
+            "león",
             "oso"
         ],
         "exp": "'El oso' es 'the bear'."
@@ -496,10 +496,10 @@ const questionBank = [
         "engFull": "At the zoo, I want to see the polar bear.",
         "missing": "oso",
         "options": [
-            "oso",
-            "rana",
-            "ratón",
-            "vaca"
+            "perro",
+            "gato",
+            "león",
+            "oso"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -510,8 +510,8 @@ const questionBank = [
         "options": [
             "vaca",
             "oso",
-            "mono",
-            "cerdo"
+            "león",
+            "conejo"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -520,10 +520,10 @@ const questionBank = [
         "engFull": "The bear eats honey.",
         "missing": "oso",
         "options": [
-            "gato",
-            "perro",
+            "conejo",
+            "mono",
             "oso",
-            "vaca"
+            "perro"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -532,10 +532,10 @@ const questionBank = [
         "engFull": "The brown bear is in the river.",
         "missing": "oso",
         "options": [
+            "rana",
             "león",
-            "cerdo",
-            "oso",
-            "vaca"
+            "gato",
+            "oso"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -544,10 +544,10 @@ const questionBank = [
         "engFull": "The bear sleeps a lot in winter.",
         "missing": "oso",
         "options": [
-            "oso",
             "gato",
-            "vaca",
-            "león"
+            "ratón",
+            "rana",
+            "oso"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -556,10 +556,10 @@ const questionBank = [
         "engFull": "The bear walks slowly.",
         "missing": "oso",
         "options": [
-            "oso",
-            "conejo",
-            "perro",
-            "vaca"
+            "rana",
+            "cerdo",
+            "león",
+            "oso"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -568,10 +568,10 @@ const questionBank = [
         "engFull": "The bear catches fish in the water.",
         "missing": "oso",
         "options": [
-            "cerdo",
-            "perro",
-            "león",
-            "oso"
+            "ratón",
+            "oso",
+            "rana",
+            "gato"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -580,9 +580,9 @@ const questionBank = [
         "engFull": "The bear is a wild animal.",
         "missing": "oso",
         "options": [
-            "gato",
-            "oso",
             "mono",
+            "cerdo",
+            "oso",
             "vaca"
         ],
         "exp": "'El oso' es 'the bear'."
@@ -592,10 +592,10 @@ const questionBank = [
         "engFull": "The bear rests on the mountain.",
         "missing": "oso",
         "options": [
-            "rana",
+            "perro",
+            "gato",
             "oso",
-            "mono",
-            "gato"
+            "ratón"
         ],
         "exp": "'El oso' es 'the bear'."
     },
@@ -604,10 +604,10 @@ const questionBank = [
         "engFull": "The lion is the king of the jungle.",
         "missing": "león",
         "options": [
-            "rana",
+            "gato",
             "mono",
             "león",
-            "ratón"
+            "rana"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -616,10 +616,10 @@ const questionBank = [
         "engFull": "The lion has a big mane.",
         "missing": "león",
         "options": [
-            "cerdo",
-            "gato",
+            "mono",
+            "perro",
             "león",
-            "mono"
+            "rana"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -628,10 +628,10 @@ const questionBank = [
         "engFull": "The lion sleeps in the savanna.",
         "missing": "león",
         "options": [
-            "gato",
-            "conejo",
             "león",
-            "rana"
+            "ratón",
+            "cerdo",
+            "conejo"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -640,10 +640,10 @@ const questionBank = [
         "engFull": "The lion hunts in the afternoon.",
         "missing": "león",
         "options": [
+            "gato",
+            "león",
             "vaca",
-            "perro",
-            "cerdo",
-            "león"
+            "mono"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -652,10 +652,10 @@ const questionBank = [
         "engFull": "The lion roars very loudly.",
         "missing": "león",
         "options": [
-            "cerdo",
-            "ratón",
+            "vaca",
             "león",
-            "oso"
+            "oso",
+            "gato"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -665,8 +665,8 @@ const questionBank = [
         "missing": "león",
         "options": [
             "oso",
-            "mono",
-            "ratón",
+            "gato",
+            "perro",
             "león"
         ],
         "exp": "'El león' es 'the lion'."
@@ -677,9 +677,9 @@ const questionBank = [
         "missing": "león",
         "options": [
             "oso",
-            "león",
-            "cerdo",
-            "perro"
+            "mono",
+            "conejo",
+            "león"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -688,10 +688,10 @@ const questionBank = [
         "engFull": "Let's draw a lion.",
         "missing": "león",
         "options": [
-            "león",
             "vaca",
-            "rana",
-            "gato"
+            "oso",
+            "león",
+            "ratón"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -700,9 +700,9 @@ const questionBank = [
         "engFull": "The lion rests in the sun.",
         "missing": "león",
         "options": [
-            "ratón",
-            "gato",
+            "conejo",
             "león",
+            "perro",
             "rana"
         ],
         "exp": "'El león' es 'the lion'."
@@ -712,10 +712,10 @@ const questionBank = [
         "engFull": "The lion is dangerous.",
         "missing": "león",
         "options": [
-            "ratón",
-            "oso",
+            "conejo",
+            "perro",
             "león",
-            "cerdo"
+            "mono"
         ],
         "exp": "'El león' es 'the lion'."
     },
@@ -724,10 +724,10 @@ const questionBank = [
         "engFull": "The cow gives us milk.",
         "missing": "vaca",
         "options": [
-            "perro",
-            "conejo",
+            "cerdo",
             "rana",
-            "vaca"
+            "vaca",
+            "ratón"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -738,8 +738,8 @@ const questionBank = [
         "options": [
             "cerdo",
             "vaca",
-            "oso",
-            "mono"
+            "ratón",
+            "león"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -748,10 +748,10 @@ const questionBank = [
         "engFull": "We have to milk the cow.",
         "missing": "vaca",
         "options": [
-            "vaca",
-            "conejo",
-            "ratón",
-            "cerdo"
+            "cerdo",
+            "gato",
+            "rana",
+            "vaca"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -760,10 +760,10 @@ const questionBank = [
         "engFull": "The cow eats a lot of grass.",
         "missing": "vaca",
         "options": [
-            "rana",
             "oso",
-            "perro",
-            "vaca"
+            "vaca",
+            "cerdo",
+            "león"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -772,10 +772,10 @@ const questionBank = [
         "engFull": "The cow is white and black.",
         "missing": "vaca",
         "options": [
-            "conejo",
-            "rana",
-            "gato",
-            "vaca"
+            "perro",
+            "vaca",
+            "león",
+            "rana"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -784,8 +784,8 @@ const questionBank = [
         "engFull": "The cow lives on the farm.",
         "missing": "vaca",
         "options": [
-            "conejo",
-            "mono",
+            "perro",
+            "cerdo",
             "ratón",
             "vaca"
         ],
@@ -796,10 +796,10 @@ const questionBank = [
         "engFull": "The cow walks slowly.",
         "missing": "vaca",
         "options": [
-            "ratón",
-            "mono",
-            "vaca",
-            "rana"
+            "perro",
+            "cerdo",
+            "rana",
+            "vaca"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -808,10 +808,10 @@ const questionBank = [
         "engFull": "The cow sleeps in the stable.",
         "missing": "vaca",
         "options": [
-            "perro",
-            "ratón",
-            "cerdo",
-            "vaca"
+            "rana",
+            "león",
+            "vaca",
+            "perro"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -820,10 +820,10 @@ const questionBank = [
         "engFull": "The cow drinks a lot of water.",
         "missing": "vaca",
         "options": [
-            "cerdo",
-            "ratón",
-            "león",
-            "vaca"
+            "gato",
+            "perro",
+            "vaca",
+            "rana"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -833,9 +833,9 @@ const questionBank = [
         "missing": "vaca",
         "options": [
             "león",
-            "oso",
             "vaca",
-            "gato"
+            "mono",
+            "perro"
         ],
         "exp": "'La vaca' es 'the cow'."
     },
@@ -846,8 +846,8 @@ const questionBank = [
         "options": [
             "oso",
             "ratón",
-            "cerdo",
-            "conejo"
+            "rana",
+            "cerdo"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -856,10 +856,10 @@ const questionBank = [
         "engFull": "The pig goes 'oink oink'.",
         "missing": "cerdo",
         "options": [
-            "oso",
-            "mono",
             "cerdo",
-            "vaca"
+            "rana",
+            "león",
+            "gato"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -868,10 +868,10 @@ const questionBank = [
         "engFull": "The pig lives on the farm.",
         "missing": "cerdo",
         "options": [
-            "ratón",
+            "rana",
             "cerdo",
-            "gato",
-            "león"
+            "vaca",
+            "gato"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -880,10 +880,10 @@ const questionBank = [
         "engFull": "The pig is dirty in the mud.",
         "missing": "cerdo",
         "options": [
-            "conejo",
-            "rana",
-            "cerdo",
-            "mono"
+            "gato",
+            "mono",
+            "ratón",
+            "cerdo"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -892,10 +892,10 @@ const questionBank = [
         "engFull": "The pig doesn't want to walk today.",
         "missing": "cerdo",
         "options": [
-            "gato",
-            "mono",
-            "cerdo",
-            "ratón"
+            "perro",
+            "rana",
+            "ratón",
+            "cerdo"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -904,10 +904,10 @@ const questionBank = [
         "engFull": "The pig eats apples.",
         "missing": "cerdo",
         "options": [
+            "león",
             "cerdo",
-            "ratón",
-            "oso",
-            "león"
+            "rana",
+            "mono"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -916,9 +916,9 @@ const questionBank = [
         "engFull": "The pig sleeps a lot.",
         "missing": "cerdo",
         "options": [
+            "ratón",
             "cerdo",
-            "gato",
-            "león",
+            "vaca",
             "oso"
         ],
         "exp": "'El cerdo' es 'the pig'."
@@ -928,10 +928,10 @@ const questionBank = [
         "engFull": "The pig plays with other animals.",
         "missing": "cerdo",
         "options": [
-            "león",
-            "vaca",
+            "oso",
+            "gato",
             "cerdo",
-            "ratón"
+            "rana"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -940,10 +940,10 @@ const questionBank = [
         "engFull": "The pig runs in the field.",
         "missing": "cerdo",
         "options": [
-            "oso",
+            "vaca",
             "cerdo",
-            "gato",
-            "mono"
+            "oso",
+            "perro"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -953,9 +953,9 @@ const questionBank = [
         "missing": "cerdo",
         "options": [
             "cerdo",
-            "gato",
-            "conejo",
-            "vaca"
+            "perro",
+            "mono",
+            "ratón"
         ],
         "exp": "'El cerdo' es 'the pig'."
     },
@@ -964,10 +964,10 @@ const questionBank = [
         "engFull": "The frog jumps in the water.",
         "missing": "rana",
         "options": [
-            "mono",
+            "conejo",
             "rana",
-            "oso",
-            "vaca"
+            "león",
+            "ratón"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -976,10 +976,10 @@ const questionBank = [
         "engFull": "The frog is green and very small.",
         "missing": "rana",
         "options": [
-            "rana",
+            "perro",
+            "gato",
             "conejo",
-            "mono",
-            "gato"
+            "rana"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -988,9 +988,9 @@ const questionBank = [
         "engFull": "The frog has wet skin.",
         "missing": "rana",
         "options": [
-            "cerdo",
-            "vaca",
             "rana",
+            "cerdo",
+            "mono",
             "perro"
         ],
         "exp": "'La rana' es 'the frog'."
@@ -1000,9 +1000,9 @@ const questionBank = [
         "engFull": "The frog catches flies with its tongue.",
         "missing": "rana",
         "options": [
-            "conejo",
-            "mono",
             "rana",
+            "conejo",
+            "gato",
             "ratón"
         ],
         "exp": "'La rana' es 'the frog'."
@@ -1012,10 +1012,10 @@ const questionBank = [
         "engFull": "The frog sings in the pond.",
         "missing": "rana",
         "options": [
-            "león",
-            "vaca",
+            "mono",
             "rana",
-            "cerdo"
+            "perro",
+            "ratón"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -1025,9 +1025,9 @@ const questionBank = [
         "missing": "rana",
         "options": [
             "mono",
-            "vaca",
             "rana",
-            "gato"
+            "vaca",
+            "oso"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -1037,9 +1037,9 @@ const questionBank = [
         "missing": "rana",
         "options": [
             "rana",
-            "león",
-            "gato",
-            "conejo"
+            "oso",
+            "vaca",
+            "león"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -1048,10 +1048,10 @@ const questionBank = [
         "engFull": "The frog goes 'ribbit ribbit'.",
         "missing": "rana",
         "options": [
-            "ratón",
-            "león",
-            "gato",
-            "rana"
+            "vaca",
+            "rana",
+            "perro",
+            "oso"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -1060,10 +1060,10 @@ const questionBank = [
         "engFull": "The frog rests on a leaf.",
         "missing": "rana",
         "options": [
-            "león",
+            "perro",
+            "conejo",
             "rana",
-            "mono",
-            "oso"
+            "gato"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -1072,10 +1072,10 @@ const questionBank = [
         "engFull": "Let's catch a frog.",
         "missing": "rana",
         "options": [
+            "cerdo",
+            "león",
             "rana",
-            "vaca",
-            "oso",
-            "león"
+            "perro"
         ],
         "exp": "'La rana' es 'the frog'."
     },
@@ -1084,10 +1084,10 @@ const questionBank = [
         "engFull": "The monkey eats bananas in the trees.",
         "missing": "mono",
         "options": [
-            "rana",
-            "perro",
-            "gato",
-            "mono"
+            "vaca",
+            "mono",
+            "oso",
+            "conejo"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1096,10 +1096,10 @@ const questionBank = [
         "engFull": "The monkey plays in the long branches.",
         "missing": "mono",
         "options": [
-            "oso",
             "conejo",
-            "ratón",
-            "mono"
+            "mono",
+            "gato",
+            "oso"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1109,9 +1109,9 @@ const questionBank = [
         "missing": "mono",
         "options": [
             "perro",
-            "conejo",
             "mono",
-            "vaca"
+            "ratón",
+            "rana"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1120,10 +1120,10 @@ const questionBank = [
         "engFull": "The monkey has a long tail.",
         "missing": "mono",
         "options": [
-            "vaca",
             "mono",
-            "ratón",
-            "conejo"
+            "rana",
+            "oso",
+            "gato"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1132,8 +1132,8 @@ const questionBank = [
         "engFull": "The monkey makes mischief.",
         "missing": "mono",
         "options": [
+            "león",
             "cerdo",
-            "gato",
             "mono",
             "oso"
         ],
@@ -1144,10 +1144,10 @@ const questionBank = [
         "engFull": "The monkey jumps from branch to branch.",
         "missing": "mono",
         "options": [
-            "rana",
+            "perro",
             "mono",
-            "vaca",
-            "ratón"
+            "rana",
+            "león"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1156,10 +1156,10 @@ const questionBank = [
         "engFull": "The monkey runs through the jungle.",
         "missing": "mono",
         "options": [
-            "mono",
             "ratón",
+            "mono",
             "vaca",
-            "gato"
+            "oso"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1169,9 +1169,9 @@ const questionBank = [
         "missing": "mono",
         "options": [
             "gato",
-            "conejo",
-            "rana",
-            "mono"
+            "cerdo",
+            "mono",
+            "conejo"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1180,10 +1180,10 @@ const questionBank = [
         "engFull": "The monkey sleeps in the tree.",
         "missing": "mono",
         "options": [
-            "rana",
-            "vaca",
+            "mono",
             "conejo",
-            "mono"
+            "gato",
+            "ratón"
         ],
         "exp": "'El mono' es 'the monkey'."
     },
@@ -1192,10 +1192,10 @@ const questionBank = [
         "engFull": "Let's see the monkey at the zoo.",
         "missing": "mono",
         "options": [
-            "gato",
-            "mono",
-            "león",
-            "cerdo"
+            "perro",
+            "vaca",
+            "ratón",
+            "mono"
         ],
         "exp": "'El mono' es 'the monkey'."
     }
