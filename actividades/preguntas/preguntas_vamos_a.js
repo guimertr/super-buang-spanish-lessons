@@ -1,1202 +1,1202 @@
 const questionBank = [
     {
-        "sentence": "Yo _____ a comer por la mañana.",
-        "engFull": "I am going to eat in the morning.",
-        "missing": "voy",
+        "sentence": "_____ a comer por la mañana.",
+        "engFull": "Let's eat in the morning.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "vas",
-            "vamos",
-            "voy"
+            "Vas",
+            "Queremos",
+            "Voy",
+            "Vamos"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a comer por la tarde.",
-        "engFull": "I am going to eat in the afternoon.",
-        "missing": "voy",
+        "sentence": "_____ a comer por la tarde.",
+        "engFull": "Let's eat in the afternoon.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "voy",
-            "vas",
-            "va"
+            "Tienen",
+            "Tiene",
+            "Vamos",
+            "Va"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a comer por la noche.",
-        "engFull": "I am going to eat at night.",
-        "missing": "voy",
+        "sentence": "_____ a comer por la noche.",
+        "engFull": "Let's eat at night.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "va",
-            "voy",
-            "van"
+            "Tiene",
+            "Quiero",
+            "Queremos",
+            "Vamos"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a dormir por la mañana.",
-        "engFull": "I am going to sleep in the morning.",
-        "missing": "voy",
+        "sentence": "_____ a comer hoy.",
+        "engFull": "Let's eat today.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "van",
-            "vamos",
-            "voy"
+            "Vamos",
+            "Quiero",
+            "Voy",
+            "Tiene"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a dormir por la tarde.",
-        "engFull": "I am going to sleep in the afternoon.",
-        "missing": "voy",
+        "sentence": "_____ a comer ahora.",
+        "engFull": "Let's eat now.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "vas",
-            "vamos",
-            "voy"
+            "Quiero",
+            "Tienen",
+            "Vamos",
+            "Voy"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a dormir por la noche.",
-        "engFull": "I am going to sleep at night.",
-        "missing": "voy",
+        "sentence": "_____ a comer mucho.",
+        "engFull": "Let's eat a lot.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "vas",
-            "voy",
-            "van"
+            "Vamos",
+            "Quiero",
+            "Voy",
+            "Tiene"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a jugar por la mañana.",
-        "engFull": "I am going to play in the morning.",
-        "missing": "voy",
+        "sentence": "_____ a comer juntos.",
+        "engFull": "Let's eat together.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "va",
-            "van",
-            "voy"
+            "Quiero",
+            "Va",
+            "Vamos",
+            "Vas"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a jugar por la tarde.",
-        "engFull": "I am going to play in the afternoon.",
-        "missing": "voy",
+        "sentence": "_____ a comer en la casa.",
+        "engFull": "Let's eat in the house.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "voy",
-            "vas",
-            "va"
+            "Tiene",
+            "Van",
+            "Queremos",
+            "Vamos"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a jugar por la noche.",
-        "engFull": "I am going to play at night.",
-        "missing": "voy",
+        "sentence": "_____ a comer en el parque.",
+        "engFull": "Let's eat in the park.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "voy",
-            "va",
-            "vas"
+            "Queremos",
+            "Tiene",
+            "Vamos",
+            "Quiero"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a caminar por la mañana.",
-        "engFull": "I am going to walk in the morning.",
-        "missing": "voy",
+        "sentence": "_____ a comer mañana.",
+        "engFull": "Let's eat tomorrow.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "van",
-            "vamos",
-            "vas"
+            "Voy",
+            "Vas",
+            "Vamos",
+            "Tienen"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a caminar por la tarde.",
-        "engFull": "I am going to walk in the afternoon.",
-        "missing": "voy",
+        "sentence": "_____ a dormir por la mañana.",
+        "engFull": "Let's sleep in the morning.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "va",
-            "voy",
-            "vamos"
+            "Vamos",
+            "Van",
+            "Voy",
+            "Queremos"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a caminar por la noche.",
-        "engFull": "I am going to walk at night.",
-        "missing": "voy",
+        "sentence": "_____ a dormir por la tarde.",
+        "engFull": "Let's sleep in the afternoon.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "vamos",
-            "voy",
-            "van"
+            "Va",
+            "Quiero",
+            "Voy",
+            "Vamos"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a hablar por la mañana.",
-        "engFull": "I am going to talk in the morning.",
-        "missing": "voy",
+        "sentence": "_____ a dormir por la noche.",
+        "engFull": "Let's sleep at night.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "vamos",
-            "vas",
-            "voy"
+            "Quiero",
+            "Tienen",
+            "Vamos",
+            "Vas"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a hablar por la tarde.",
-        "engFull": "I am going to talk in the afternoon.",
-        "missing": "voy",
+        "sentence": "_____ a dormir hoy.",
+        "engFull": "Let's sleep today.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "vas",
-            "voy",
-            "va"
+            "Quiero",
+            "Vamos",
+            "Tiene",
+            "Van"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a hablar por la noche.",
-        "engFull": "I am going to talk at night.",
-        "missing": "voy",
+        "sentence": "_____ a dormir ahora.",
+        "engFull": "Let's sleep now.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "va",
-            "vamos",
-            "voy"
+            "Quiero",
+            "Vas",
+            "Queremos",
+            "Vamos"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a correr por la mañana.",
-        "engFull": "I am going to run in the morning.",
-        "missing": "voy",
+        "sentence": "_____ a dormir mucho.",
+        "engFull": "Let's sleep a lot.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "voy",
-            "van",
-            "vas"
+            "Voy",
+            "Tienen",
+            "Tiene",
+            "Vamos"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a correr por la tarde.",
-        "engFull": "I am going to run in the afternoon.",
-        "missing": "voy",
+        "sentence": "_____ a dormir juntos.",
+        "engFull": "Let's sleep together.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "voy",
-            "vamos",
-            "van"
+            "Queremos",
+            "Vamos",
+            "Va",
+            "Voy"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a correr por la noche.",
-        "engFull": "I am going to run at night.",
-        "missing": "voy",
+        "sentence": "_____ a dormir en la casa.",
+        "engFull": "Let's sleep in the house.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "voy",
-            "vas",
-            "va"
+            "Queremos",
+            "Vamos",
+            "Va",
+            "Van"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a cantar por la mañana.",
-        "engFull": "I am going to sing in the morning.",
-        "missing": "voy",
+        "sentence": "_____ a dormir en el parque.",
+        "engFull": "Let's sleep in the park.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "voy",
-            "va",
-            "vamos"
+            "Queremos",
+            "Va",
+            "Vamos",
+            "Tiene"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a cantar por la tarde.",
-        "engFull": "I am going to sing in the afternoon.",
-        "missing": "voy",
+        "sentence": "_____ a dormir mañana.",
+        "engFull": "Let's sleep tomorrow.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "vamos",
-            "voy",
-            "vas"
+            "Vamos",
+            "Van",
+            "Queremos",
+            "Vas"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a cantar por la noche.",
-        "engFull": "I am going to sing at night.",
-        "missing": "voy",
+        "sentence": "_____ a jugar por la mañana.",
+        "engFull": "Let's play in the morning.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "van",
-            "vamos",
-            "va"
+            "Vas",
+            "Va",
+            "Van",
+            "Vamos"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a aprender por la mañana.",
-        "engFull": "I am going to learn in the morning.",
-        "missing": "voy",
+        "sentence": "_____ a jugar por la tarde.",
+        "engFull": "Let's play in the afternoon.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "van",
-            "voy",
-            "vamos"
+            "Queremos",
+            "Van",
+            "Vamos",
+            "Quiero"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a aprender por la tarde.",
-        "engFull": "I am going to learn in the afternoon.",
-        "missing": "voy",
+        "sentence": "_____ a jugar por la noche.",
+        "engFull": "Let's play at night.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "va",
-            "vas",
-            "voy"
+            "Va",
+            "Tienen",
+            "Vamos",
+            "Vas"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Yo _____ a aprender por la noche.",
-        "engFull": "I am going to learn at night.",
-        "missing": "voy",
+        "sentence": "_____ a jugar hoy.",
+        "engFull": "Let's play today.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "voy",
-            "va",
-            "vamos"
+            "Tiene",
+            "Queremos",
+            "Vamos",
+            "Tienen"
         ],
-        "exp": "'Yo' uses 'voy'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a comer por la mañana.",
-        "engFull": "You are going to eat in the morning.",
-        "missing": "vas",
+        "sentence": "_____ a jugar ahora.",
+        "engFull": "Let's play now.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "va",
-            "vas",
-            "van"
+            "Queremos",
+            "Tiene",
+            "Vamos",
+            "Va"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a comer por la tarde.",
-        "engFull": "You are going to eat in the afternoon.",
-        "missing": "vas",
+        "sentence": "_____ a jugar mucho.",
+        "engFull": "Let's play a lot.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "voy",
-            "vamos",
-            "vas"
+            "Voy",
+            "Va",
+            "Tiene",
+            "Vamos"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a comer por la noche.",
-        "engFull": "You are going to eat at night.",
-        "missing": "vas",
+        "sentence": "_____ a jugar juntos.",
+        "engFull": "Let's play together.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "va",
-            "vas",
-            "voy"
+            "Va",
+            "Vamos",
+            "Tienen",
+            "Voy"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a dormir por la mañana.",
-        "engFull": "You are going to sleep in the morning.",
-        "missing": "vas",
+        "sentence": "_____ a jugar en la casa.",
+        "engFull": "Let's play in the house.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "van",
-            "voy",
-            "va"
+            "Vamos",
+            "Quiero",
+            "Va",
+            "Queremos"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a dormir por la tarde.",
-        "engFull": "You are going to sleep in the afternoon.",
-        "missing": "vas",
+        "sentence": "_____ a jugar en el parque.",
+        "engFull": "Let's play in the park.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "van",
-            "vamos",
-            "voy"
+            "Voy",
+            "Vamos",
+            "Van",
+            "Tiene"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a dormir por la noche.",
-        "engFull": "You are going to sleep at night.",
-        "missing": "vas",
+        "sentence": "_____ a jugar mañana.",
+        "engFull": "Let's play tomorrow.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "va",
-            "voy",
-            "vas"
+            "Vamos",
+            "Vas",
+            "Queremos",
+            "Tienen"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a jugar por la mañana.",
-        "engFull": "You are going to play in the morning.",
-        "missing": "vas",
+        "sentence": "_____ a caminar por la mañana.",
+        "engFull": "Let's walk in the morning.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "va",
-            "van",
-            "voy"
+            "Vamos",
+            "Van",
+            "Queremos",
+            "Tienen"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a jugar por la tarde.",
-        "engFull": "You are going to play in the afternoon.",
-        "missing": "vas",
+        "sentence": "_____ a caminar por la tarde.",
+        "engFull": "Let's walk in the afternoon.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "va",
-            "vas",
-            "van"
+            "Vamos",
+            "Va",
+            "Voy",
+            "Quiero"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a jugar por la noche.",
-        "engFull": "You are going to play at night.",
-        "missing": "vas",
+        "sentence": "_____ a caminar por la noche.",
+        "engFull": "Let's walk at night.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "va",
-            "vas",
-            "vamos"
+            "Vas",
+            "Vamos",
+            "Quiero",
+            "Tienen"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a caminar por la mañana.",
-        "engFull": "You are going to walk in the morning.",
-        "missing": "vas",
+        "sentence": "_____ a caminar hoy.",
+        "engFull": "Let's walk today.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "vas",
-            "van",
-            "va"
+            "Tiene",
+            "Quiero",
+            "Van",
+            "Vamos"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a caminar por la tarde.",
-        "engFull": "You are going to walk in the afternoon.",
-        "missing": "vas",
+        "sentence": "_____ a caminar ahora.",
+        "engFull": "Let's walk now.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "van",
-            "voy",
-            "vas"
+            "Vamos",
+            "Tienen",
+            "Quiero",
+            "Va"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a caminar por la noche.",
-        "engFull": "You are going to walk at night.",
-        "missing": "vas",
+        "sentence": "_____ a caminar mucho.",
+        "engFull": "Let's walk a lot.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "va",
-            "voy",
-            "vas"
+            "Vas",
+            "Tienen",
+            "Tiene",
+            "Vamos"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a hablar por la mañana.",
-        "engFull": "You are going to talk in the morning.",
-        "missing": "vas",
+        "sentence": "_____ a caminar juntos.",
+        "engFull": "Let's walk together.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "va",
-            "vas",
-            "van"
+            "Vamos",
+            "Van",
+            "Tienen",
+            "Va"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a hablar por la tarde.",
-        "engFull": "You are going to talk in the afternoon.",
-        "missing": "vas",
+        "sentence": "_____ a caminar en la casa.",
+        "engFull": "Let's walk in the house.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "va",
-            "vas",
-            "van"
+            "Quiero",
+            "Vas",
+            "Va",
+            "Vamos"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a hablar por la noche.",
-        "engFull": "You are going to talk at night.",
-        "missing": "vas",
+        "sentence": "_____ a caminar en el parque.",
+        "engFull": "Let's walk in the park.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "voy",
-            "van",
-            "va"
+            "Voy",
+            "Van",
+            "Tiene",
+            "Vamos"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a correr por la mañana.",
-        "engFull": "You are going to run in the morning.",
-        "missing": "vas",
+        "sentence": "_____ a caminar mañana.",
+        "engFull": "Let's walk tomorrow.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "va",
-            "vamos",
-            "voy"
+            "Voy",
+            "Van",
+            "Tiene",
+            "Vamos"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a correr por la tarde.",
-        "engFull": "You are going to run in the afternoon.",
-        "missing": "vas",
+        "sentence": "_____ a hablar por la mañana.",
+        "engFull": "Let's talk in the morning.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "vamos",
-            "va",
-            "voy"
+            "Tiene",
+            "Van",
+            "Vamos",
+            "Voy"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a correr por la noche.",
-        "engFull": "You are going to run at night.",
-        "missing": "vas",
+        "sentence": "_____ a hablar por la tarde.",
+        "engFull": "Let's talk in the afternoon.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "vamos",
-            "va",
-            "vas"
+            "Vas",
+            "Tiene",
+            "Voy",
+            "Vamos"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a cantar por la mañana.",
-        "engFull": "You are going to sing in the morning.",
-        "missing": "vas",
+        "sentence": "_____ a hablar por la noche.",
+        "engFull": "Let's talk at night.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "vamos",
-            "vas",
-            "voy"
+            "Quiero",
+            "Vamos",
+            "Van",
+            "Va"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a cantar por la tarde.",
-        "engFull": "You are going to sing in the afternoon.",
-        "missing": "vas",
+        "sentence": "_____ a hablar hoy.",
+        "engFull": "Let's talk today.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "van",
-            "va",
-            "vas"
+            "Quiero",
+            "Vamos",
+            "Van",
+            "Voy"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a cantar por la noche.",
-        "engFull": "You are going to sing at night.",
-        "missing": "vas",
+        "sentence": "_____ a hablar ahora.",
+        "engFull": "Let's talk now.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "va",
-            "van",
-            "vas"
+            "Vas",
+            "Queremos",
+            "Vamos",
+            "Va"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a aprender por la mañana.",
-        "engFull": "You are going to learn in the morning.",
-        "missing": "vas",
+        "sentence": "_____ a hablar mucho.",
+        "engFull": "Let's talk a lot.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "va",
-            "voy",
-            "vas"
+            "Vamos",
+            "Voy",
+            "Tienen",
+            "Tiene"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a aprender por la tarde.",
-        "engFull": "You are going to learn in the afternoon.",
-        "missing": "vas",
+        "sentence": "_____ a hablar juntos.",
+        "engFull": "Let's talk together.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "vamos",
-            "va",
-            "van"
+            "Voy",
+            "Queremos",
+            "Vamos",
+            "Vas"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Tú _____ a aprender por la noche.",
-        "engFull": "You are going to learn at night.",
-        "missing": "vas",
+        "sentence": "_____ a hablar en la casa.",
+        "engFull": "Let's talk in the house.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "voy",
-            "va",
-            "vas"
+            "Quiero",
+            "Vamos",
+            "Vas",
+            "Van"
         ],
-        "exp": "'Tú' uses 'vas'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a comer por la mañana.",
-        "engFull": "He is going to eat in the morning.",
-        "missing": "va",
+        "sentence": "_____ a hablar en el parque.",
+        "engFull": "Let's talk in the park.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "van",
-            "vamos",
-            "va"
+            "Tiene",
+            "Vas",
+            "Vamos",
+            "Van"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a comer por la tarde.",
-        "engFull": "He is going to eat in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a hablar mañana.",
+        "engFull": "Let's talk tomorrow.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "van",
-            "vas",
-            "va"
+            "Tiene",
+            "Va",
+            "Vamos",
+            "Tienen"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a comer por la noche.",
-        "engFull": "He is going to eat at night.",
-        "missing": "va",
+        "sentence": "_____ a pensar por la mañana.",
+        "engFull": "Let's think in the morning.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "van",
-            "voy",
-            "va"
+            "Voy",
+            "Va",
+            "Tienen",
+            "Vamos"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a dormir por la mañana.",
-        "engFull": "He is going to sleep in the morning.",
-        "missing": "va",
+        "sentence": "_____ a pensar por la tarde.",
+        "engFull": "Let's think in the afternoon.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "voy",
-            "van",
-            "vamos"
+            "Vamos",
+            "Queremos",
+            "Quiero",
+            "Tienen"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a dormir por la tarde.",
-        "engFull": "He is going to sleep in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a pensar por la noche.",
+        "engFull": "Let's think at night.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "van",
-            "va",
-            "vas"
+            "Voy",
+            "Queremos",
+            "Vamos",
+            "Quiero"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a dormir por la noche.",
-        "engFull": "He is going to sleep at night.",
-        "missing": "va",
+        "sentence": "_____ a pensar hoy.",
+        "engFull": "Let's think today.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "van",
-            "vas",
-            "voy"
+            "Voy",
+            "Vamos",
+            "Queremos",
+            "Quiero"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a jugar por la mañana.",
-        "engFull": "He is going to play in the morning.",
-        "missing": "va",
+        "sentence": "_____ a pensar ahora.",
+        "engFull": "Let's think now.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "vas",
-            "vamos",
-            "va"
+            "Quiero",
+            "Vamos",
+            "Vas",
+            "Tiene"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a jugar por la tarde.",
-        "engFull": "He is going to play in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a pensar mucho.",
+        "engFull": "Let's think a lot.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "va",
-            "voy",
-            "van"
+            "Tienen",
+            "Vamos",
+            "Quiero",
+            "Tiene"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a jugar por la noche.",
-        "engFull": "He is going to play at night.",
-        "missing": "va",
+        "sentence": "_____ a pensar juntos.",
+        "engFull": "Let's think together.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "voy",
-            "va",
-            "van"
+            "Voy",
+            "Vas",
+            "Vamos",
+            "Quiero"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a caminar por la mañana.",
-        "engFull": "He is going to walk in the morning.",
-        "missing": "va",
+        "sentence": "_____ a pensar en la casa.",
+        "engFull": "Let's think in the house.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "van",
-            "va",
-            "voy"
+            "Vamos",
+            "Va",
+            "Tiene",
+            "Voy"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a caminar por la tarde.",
-        "engFull": "He is going to walk in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a pensar en el parque.",
+        "engFull": "Let's think in the park.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "va",
-            "van",
-            "voy"
+            "Quiero",
+            "Vas",
+            "Va",
+            "Vamos"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a caminar por la noche.",
-        "engFull": "He is going to walk at night.",
-        "missing": "va",
+        "sentence": "_____ a pensar mañana.",
+        "engFull": "Let's think tomorrow.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "vas",
-            "vamos",
-            "van"
+            "Queremos",
+            "Vamos",
+            "Tiene",
+            "Van"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a hablar por la mañana.",
-        "engFull": "He is going to talk in the morning.",
-        "missing": "va",
+        "sentence": "_____ a correr por la mañana.",
+        "engFull": "Let's run in the morning.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "va",
-            "vas",
-            "voy"
+            "Tiene",
+            "Van",
+            "Vas",
+            "Vamos"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a hablar por la tarde.",
-        "engFull": "He is going to talk in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a correr por la tarde.",
+        "engFull": "Let's run in the afternoon.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "voy",
-            "va",
-            "vas"
+            "Quiero",
+            "Vamos",
+            "Voy",
+            "Va"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a hablar por la noche.",
-        "engFull": "He is going to talk at night.",
-        "missing": "va",
+        "sentence": "_____ a correr por la noche.",
+        "engFull": "Let's run at night.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "van",
-            "va",
-            "voy"
+            "Voy",
+            "Va",
+            "Vas",
+            "Vamos"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a correr por la mañana.",
-        "engFull": "He is going to run in the morning.",
-        "missing": "va",
+        "sentence": "_____ a correr hoy.",
+        "engFull": "Let's run today.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "vamos",
-            "va",
-            "vas"
+            "Queremos",
+            "Van",
+            "Quiero",
+            "Vamos"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a correr por la tarde.",
-        "engFull": "He is going to run in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a correr ahora.",
+        "engFull": "Let's run now.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "van",
-            "voy",
-            "vamos"
+            "Vamos",
+            "Voy",
+            "Queremos",
+            "Va"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a correr por la noche.",
-        "engFull": "He is going to run at night.",
-        "missing": "va",
+        "sentence": "_____ a correr mucho.",
+        "engFull": "Let's run a lot.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "va",
-            "van",
-            "vamos"
+            "Vas",
+            "Tiene",
+            "Voy",
+            "Vamos"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a cantar por la mañana.",
-        "engFull": "He is going to sing in the morning.",
-        "missing": "va",
+        "sentence": "_____ a correr juntos.",
+        "engFull": "Let's run together.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "va",
-            "van",
-            "vamos"
+            "Vamos",
+            "Tienen",
+            "Van",
+            "Vas"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a cantar por la tarde.",
-        "engFull": "He is going to sing in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a correr en la casa.",
+        "engFull": "Let's run in the house.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "voy",
-            "vamos",
-            "van"
+            "Quiero",
+            "Vamos",
+            "Tiene",
+            "Vas"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a cantar por la noche.",
-        "engFull": "He is going to sing at night.",
-        "missing": "va",
+        "sentence": "_____ a correr en el parque.",
+        "engFull": "Let's run in the park.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "voy",
-            "vamos",
-            "van"
+            "Va",
+            "Vas",
+            "Van",
+            "Vamos"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a aprender por la mañana.",
-        "engFull": "He is going to learn in the morning.",
-        "missing": "va",
+        "sentence": "_____ a correr mañana.",
+        "engFull": "Let's run tomorrow.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "vamos",
-            "van",
-            "vas"
+            "Voy",
+            "Vamos",
+            "Vas",
+            "Tienen"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a aprender por la tarde.",
-        "engFull": "He is going to learn in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a cantar por la mañana.",
+        "engFull": "Let's sing in the morning.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "vamos",
-            "va",
-            "van"
+            "Quiero",
+            "Tiene",
+            "Vamos",
+            "Tienen"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Él _____ a aprender por la noche.",
-        "engFull": "He is going to learn at night.",
-        "missing": "va",
+        "sentence": "_____ a cantar por la tarde.",
+        "engFull": "Let's sing in the afternoon.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "vamos",
-            "voy",
-            "va"
+            "Voy",
+            "Tienen",
+            "Van",
+            "Vamos"
         ],
-        "exp": "'Él' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a comer por la mañana.",
-        "engFull": "She is going to eat in the morning.",
-        "missing": "va",
+        "sentence": "_____ a cantar por la noche.",
+        "engFull": "Let's sing at night.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "van",
-            "vas",
-            "voy"
+            "Quiero",
+            "Vamos",
+            "Queremos",
+            "Tiene"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a comer por la tarde.",
-        "engFull": "She is going to eat in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a cantar hoy.",
+        "engFull": "Let's sing today.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "va",
-            "voy",
-            "vamos"
+            "Tienen",
+            "Vamos",
+            "Voy",
+            "Tiene"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a comer por la noche.",
-        "engFull": "She is going to eat at night.",
-        "missing": "va",
+        "sentence": "_____ a cantar ahora.",
+        "engFull": "Let's sing now.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "voy",
-            "va",
-            "van"
+            "Va",
+            "Vamos",
+            "Queremos",
+            "Vas"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a dormir por la mañana.",
-        "engFull": "She is going to sleep in the morning.",
-        "missing": "va",
+        "sentence": "_____ a cantar mucho.",
+        "engFull": "Let's sing a lot.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "vamos",
-            "vas",
-            "voy"
+            "Va",
+            "Queremos",
+            "Van",
+            "Vamos"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a dormir por la tarde.",
-        "engFull": "She is going to sleep in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a cantar juntos.",
+        "engFull": "Let's sing together.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "va",
-            "vamos",
-            "vas"
+            "Vamos",
+            "Vas",
+            "Va",
+            "Tiene"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a dormir por la noche.",
-        "engFull": "She is going to sleep at night.",
-        "missing": "va",
+        "sentence": "_____ a cantar en la casa.",
+        "engFull": "Let's sing in the house.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "van",
-            "vas",
-            "vamos"
+            "Voy",
+            "Quiero",
+            "Tienen",
+            "Vamos"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a jugar por la mañana.",
-        "engFull": "She is going to play in the morning.",
-        "missing": "va",
+        "sentence": "_____ a cantar en el parque.",
+        "engFull": "Let's sing in the park.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "vamos",
-            "vas",
-            "van"
+            "Tienen",
+            "Voy",
+            "Vas",
+            "Vamos"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a jugar por la tarde.",
-        "engFull": "She is going to play in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a cantar mañana.",
+        "engFull": "Let's sing tomorrow.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "voy",
-            "vamos",
-            "va"
+            "Queremos",
+            "Voy",
+            "Tiene",
+            "Vamos"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a jugar por la noche.",
-        "engFull": "She is going to play at night.",
-        "missing": "va",
+        "sentence": "_____ a esperar por la mañana.",
+        "engFull": "Let's wait in the morning.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "vas",
-            "va",
-            "voy"
+            "Tienen",
+            "Vas",
+            "Queremos",
+            "Vamos"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a caminar por la mañana.",
-        "engFull": "She is going to walk in the morning.",
-        "missing": "va",
+        "sentence": "_____ a esperar por la tarde.",
+        "engFull": "Let's wait in the afternoon.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "vas",
-            "vamos",
-            "va"
+            "Tiene",
+            "Queremos",
+            "Vamos",
+            "Tienen"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a caminar por la tarde.",
-        "engFull": "She is going to walk in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a esperar por la noche.",
+        "engFull": "Let's wait at night.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "van",
-            "va",
-            "vamos"
+            "Vas",
+            "Tienen",
+            "Queremos",
+            "Vamos"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a caminar por la noche.",
-        "engFull": "She is going to walk at night.",
-        "missing": "va",
+        "sentence": "_____ a esperar hoy.",
+        "engFull": "Let's wait today.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "vas",
-            "va",
-            "vamos"
+            "Vas",
+            "Vamos",
+            "Van",
+            "Tiene"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a hablar por la mañana.",
-        "engFull": "She is going to talk in the morning.",
-        "missing": "va",
+        "sentence": "_____ a esperar ahora.",
+        "engFull": "Let's wait now.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "voy",
-            "van",
-            "vamos"
+            "Vamos",
+            "Quiero",
+            "Tiene",
+            "Va"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a hablar por la tarde.",
-        "engFull": "She is going to talk in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a esperar mucho.",
+        "engFull": "Let's wait a lot.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "voy",
-            "va",
-            "vas"
+            "Voy",
+            "Queremos",
+            "Vamos",
+            "Van"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a hablar por la noche.",
-        "engFull": "She is going to talk at night.",
-        "missing": "va",
+        "sentence": "_____ a esperar juntos.",
+        "engFull": "Let's wait together.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "voy",
-            "vamos",
-            "va"
+            "Vamos",
+            "Queremos",
+            "Tiene",
+            "Tienen"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a correr por la mañana.",
-        "engFull": "She is going to run in the morning.",
-        "missing": "va",
+        "sentence": "_____ a esperar en la casa.",
+        "engFull": "Let's wait in the house.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "vamos",
-            "van",
-            "va"
+            "Tienen",
+            "Vas",
+            "Vamos",
+            "Tiene"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a correr por la tarde.",
-        "engFull": "She is going to run in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a esperar en el parque.",
+        "engFull": "Let's wait in the park.",
+        "missing": "Vamos",
         "options": [
-            "vamos",
-            "va",
-            "vas",
-            "voy"
+            "Voy",
+            "Vamos",
+            "Quiero",
+            "Va"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a correr por la noche.",
-        "engFull": "She is going to run at night.",
-        "missing": "va",
+        "sentence": "_____ a esperar mañana.",
+        "engFull": "Let's wait tomorrow.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "va",
-            "vas",
-            "vamos"
+            "Vamos",
+            "Voy",
+            "Van",
+            "Tiene"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a cantar por la mañana.",
-        "engFull": "She is going to sing in the morning.",
-        "missing": "va",
+        "sentence": "_____ a dibujar por la mañana.",
+        "engFull": "Let's draw in the morning.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "vas",
-            "va",
-            "vamos"
+            "Queremos",
+            "Vas",
+            "Quiero",
+            "Vamos"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a cantar por la tarde.",
-        "engFull": "She is going to sing in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a dibujar por la tarde.",
+        "engFull": "Let's draw in the afternoon.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "vas",
-            "va",
-            "vamos"
+            "Queremos",
+            "Vamos",
+            "Vas",
+            "Va"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a cantar por la noche.",
-        "engFull": "She is going to sing at night.",
-        "missing": "va",
+        "sentence": "_____ a dibujar por la noche.",
+        "engFull": "Let's draw at night.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "va",
-            "vamos",
-            "vas"
+            "Va",
+            "Vamos",
+            "Voy",
+            "Vas"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a aprender por la mañana.",
-        "engFull": "She is going to learn in the morning.",
-        "missing": "va",
+        "sentence": "_____ a dibujar hoy.",
+        "engFull": "Let's draw today.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "vamos",
-            "va",
-            "vas"
+            "Voy",
+            "Queremos",
+            "Van",
+            "Vamos"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a aprender por la tarde.",
-        "engFull": "She is going to learn in the afternoon.",
-        "missing": "va",
+        "sentence": "_____ a dibujar ahora.",
+        "engFull": "Let's draw now.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "voy",
-            "vamos",
-            "van"
+            "Vamos",
+            "Queremos",
+            "Tienen",
+            "Va"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Ella _____ a aprender por la noche.",
-        "engFull": "She is going to learn at night.",
-        "missing": "va",
+        "sentence": "_____ a dibujar mucho.",
+        "engFull": "Let's draw a lot.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "vamos",
-            "voy",
-            "van"
+            "Tienen",
+            "Voy",
+            "Vamos",
+            "Van"
         ],
-        "exp": "'Ella' uses 'va'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Nosotros _____ a comer por la mañana.",
-        "engFull": "We are going to eat in the morning.",
-        "missing": "vamos",
+        "sentence": "_____ a dibujar juntos.",
+        "engFull": "Let's draw together.",
+        "missing": "Vamos",
         "options": [
-            "va",
-            "vamos",
-            "voy",
-            "vas"
+            "Van",
+            "Va",
+            "Vamos",
+            "Vas"
         ],
-        "exp": "'Nosotros' uses 'vamos'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Nosotros _____ a comer por la tarde.",
-        "engFull": "We are going to eat in the afternoon.",
-        "missing": "vamos",
+        "sentence": "_____ a dibujar en la casa.",
+        "engFull": "Let's draw in the house.",
+        "missing": "Vamos",
         "options": [
-            "voy",
-            "van",
-            "vamos",
-            "vas"
+            "Voy",
+            "Vamos",
+            "Queremos",
+            "Tiene"
         ],
-        "exp": "'Nosotros' uses 'vamos'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Nosotros _____ a comer por la noche.",
-        "engFull": "We are going to eat at night.",
-        "missing": "vamos",
+        "sentence": "_____ a dibujar en el parque.",
+        "engFull": "Let's draw in the park.",
+        "missing": "Vamos",
         "options": [
-            "vas",
-            "voy",
-            "vamos",
-            "va"
+            "Tiene",
+            "Va",
+            "Quiero",
+            "Vamos"
         ],
-        "exp": "'Nosotros' uses 'vamos'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     },
     {
-        "sentence": "Nosotros _____ a dormir por la mañana.",
-        "engFull": "We are going to sleep in the morning.",
-        "missing": "vamos",
+        "sentence": "_____ a dibujar mañana.",
+        "engFull": "Let's draw tomorrow.",
+        "missing": "Vamos",
         "options": [
-            "van",
-            "va",
-            "vas",
-            "vamos"
+            "Vamos",
+            "Tienen",
+            "Va",
+            "Voy"
         ],
-        "exp": "'Nosotros' uses 'vamos'."
+        "exp": "'Let's' se traduce como 'Vamos a'."
     }
 ];
