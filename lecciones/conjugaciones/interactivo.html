@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verb Explorer - Interactive</title>
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+    :root {
+        --bg-pina: #FDFBF7;
+        --text-dark: #1E293B;
+        --text-muted: #475569;
+        --primary-blue: #1D3557; 
+        --accent-wood: #8B4513; 
+        --accent-gold: #D4AF37; 
+        --card-bg: #FFFFFF;
+        --border: #E2E8F0;
+    }
+    body { margin:0; font-family:'Nunito', sans-serif; background-color:var(--bg-pina); color:var(--text-dark); display:flex; flex-direction:column; align-items:center; min-height:100vh; padding-bottom:40px;}
+    .breadcrumbs { font-size:15px; color:var(--text-muted); margin-bottom:10px; text-align:left; width:100%; max-width:800px; padding-top:30px; }
+    .breadcrumbs a { color:var(--primary-blue); text-decoration:none; font-weight:bold; transition: 0.2s;}
+    .breadcrumbs a:hover { color:var(--accent-wood); }
+    .card { background:var(--card-bg); border-radius:12px; box-shadow:0 4px 10px rgba(29, 53, 87, 0.08); padding:40px; max-width:800px; width:90%; border-top:5px solid var(--primary-blue); margin-top:10px;}
+    h1 { color:var(--primary-blue); font-size:32px; border-bottom:2px solid var(--border); padding-bottom:10px; margin-top:0; }
+    h2 { color:var(--accent-wood); font-size:24px; margin-top:30px; }
+    p, li { font-size:18px; line-height:1.6; color:var(--text-muted); }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .grammar-box { background-color: #F8FAFC; border-left: 4px solid var(--accent-gold); padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; font-style: italic; }
+    .btn { display:inline-block; background-color:var(--primary-blue); color:white; padding:12px 28px; text-decoration:none; border-radius:8px; font-weight:bold; font-size: 18px; transition:0.2s; border:none; cursor:pointer; margin-top: 20px;}
+    .btn:hover { background-color:var(--accent-wood); transform: translateY(-2px); }
+    .btn-outline { background-color:transparent; border:2px solid var(--border); color:var(--text-muted); margin-right: 10px; }
+    .btn-outline:hover { border-color:var(--primary-blue); color:var(--primary-blue); background-color: transparent; }
+
+
+    .verb-selector { margin-bottom: 20px; }
+    select { padding: 12px 20px; font-size: 18px; border-radius: 8px; border: 2px solid var(--border); outline: none; font-family: inherit; font-weight: bold; color: var(--primary-blue); cursor: pointer; width: 250px; background-color: #f8f9fa; }
+    select:focus { border-color: var(--accent-gold); }
+    .table-container { overflow-x: auto; margin-top: 20px;}
+    table { width: 100%; border-collapse: collapse; text-align: center; border-radius: 8px; overflow: hidden; box-shadow: 0 0 0 1px var(--border); }
+    th, td { padding: 12px; border-bottom: 1px solid var(--border); font-size: 16px; }
+    th { background-color: var(--primary-blue); color: white; font-weight: bold; }
+    td.subj { font-weight: bold; color: var(--primary-blue); background-color: #F8FAFC; border-right: 1px solid var(--border); }
+    .verb-en { font-size: 18px; color: var(--accent-wood); font-weight: bold; margin-bottom: 10px; font-style:italic;}
+
+</style>
+</head>
+<body>
+<div class="breadcrumbs" style="text-align:center; padding-top:20px; margin-bottom:0;">
+    <a href="teoria.html">⬅️ Back to Theory</a>
+</div>
+<div class="card" style="text-align:center;">
+    <h2>Verb Explorer 🔍</h2>
+    <div class="verb-selector">
+        <select id="verbSelect" onchange="updateTable()">
+            <option value="comer">Comer</option><option value="dormir">Dormir</option><option value="jugar">Jugar</option><option value="caminar">Caminar</option><option value="hablar">Hablar</option><option value="pensar">Pensar</option><option value="correr">Correr</option><option value="cantar">Cantar</option><option value="esperar">Esperar</option><option value="dibujar">Dibujar</option><option value="aprender">Aprender</option>
+        </select>
+    </div>
+    <div class="verb-en" id="enTranslation">to eat</div>
+    <div class="table-container">
+        <table>
+            <thead><tr><th>Subject</th><th>Present (Today)</th><th>Past (Yesterday)</th><th>Future (Tomorrow)</th></tr></thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+</div>
+<script>
+    const verbsData = {"comer": {"presente": ["como", "comes", "come", "comemos", "comen"], "pasado": ["comí", "comiste", "comió", "comimos", "comieron"], "futuro": ["comeré", "comerás", "comerá", "comeremos", "comerán"]}, "dormir": {"presente": ["duermo", "duermes", "duerme", "dormimos", "duermen"], "pasado": ["dormí", "dormiste", "durmió", "dormimos", "durmieron"], "futuro": ["dormiré", "dormirás", "dormirá", "dormiremos", "dormirán"]}, "jugar": {"presente": ["juego", "juegas", "juega", "jugamos", "juegan"], "pasado": ["jugué", "jugaste", "jugó", "jugamos", "jugaron"], "futuro": ["jugaré", "jugarás", "jugará", "jugaremos", "jugarán"]}, "caminar": {"presente": ["camino", "caminas", "camina", "caminamos", "caminan"], "pasado": ["caminé", "caminaste", "caminó", "caminamos", "caminaron"], "futuro": ["caminaré", "caminarás", "caminará", "caminaremos", "caminarán"]}, "hablar": {"presente": ["hablo", "hablas", "habla", "hablamos", "hablan"], "pasado": ["hablé", "hablaste", "habló", "hablamos", "hablaron"], "futuro": ["hablaré", "hablarás", "hablará", "hablaremos", "hablarán"]}, "pensar": {"presente": ["pienso", "piensas", "piensa", "pensamos", "piensan"], "pasado": ["pensé", "pensaste", "pensó", "pensamos", "pensaron"], "futuro": ["pensaré", "pensarás", "pensará", "pensaremos", "pensarán"]}, "correr": {"presente": ["corro", "corres", "corre", "corremos", "corren"], "pasado": ["corrí", "corriste", "corrió", "corrimos", "corrieron"], "futuro": ["correré", "correrás", "correrá", "correremos", "correrán"]}, "cantar": {"presente": ["canto", "cantas", "canta", "cantamos", "cantan"], "pasado": ["canté", "cantaste", "cantó", "cantamos", "cantaron"], "futuro": ["cantaré", "cantarás", "cantará", "cantaremos", "cantarán"]}, "esperar": {"presente": ["espero", "esperas", "espera", "esperamos", "esperan"], "pasado": ["esperé", "esperaste", "esperó", "esperamos", "esperaron"], "futuro": ["esperaré", "esperarás", "esperará", "esperaremos", "esperarán"]}, "dibujar": {"presente": ["dibujo", "dibujas", "dibuja", "dibujamos", "dibujan"], "pasado": ["dibujé", "dibujaste", "dibujó", "dibujamos", "dibujaron"], "futuro": ["dibujaré", "dibujarás", "dibujará", "dibujaremos", "dibujarán"]}, "aprender": {"presente": ["aprendo", "aprendes", "aprende", "aprendemos", "aprenden"], "pasado": ["aprendí", "aprendiste", "aprendió", "aprendimos", "aprendieron"], "futuro": ["aprenderé", "aprenderás", "aprenderá", "aprenderemos", "aprenderán"]}};
+    const verbsEngMap = {"comer": {"base": "eat", "3sg": "eats", "past": "ate"}, "dormir": {"base": "sleep", "3sg": "sleeps", "past": "slept"}, "jugar": {"base": "play", "3sg": "plays", "past": "played"}, "caminar": {"base": "walk", "3sg": "walks", "past": "walked"}, "hablar": {"base": "talk", "3sg": "talks", "past": "talked"}, "pensar": {"base": "think", "3sg": "thinks", "past": "thought"}, "correr": {"base": "run", "3sg": "runs", "past": "ran"}, "cantar": {"base": "sing", "3sg": "sings", "past": "sang"}, "esperar": {"base": "wait", "3sg": "waits", "past": "waited"}, "dibujar": {"base": "draw", "3sg": "draws", "past": "drew"}, "aprender": {"base": "learn", "3sg": "learns", "past": "learned"}};
+    const subjects = ["Yo", "Tú", "Él/Ella/Usted", "Nosotros", "Ellos/Ellas"];
+    function updateTable() {
+        const verb = document.getElementById('verbSelect').value;
+        const data = verbsData[verb];
+        document.getElementById('enTranslation').innerText = 'Meaning: to ' + verbsEngMap[verb].base;
+        let html = '';
+        for(let i=0; i<5; i++) {
+            html += '<tr><td class="subj">' + subjects[i] + '</td><td>' + data.presente[i] + '</td><td>' + data.pasado[i] + '</td><td>' + data.futuro[i] + '</td></tr>';
+        }
+        document.getElementById('tableBody').innerHTML = html;
+    }
+    window.onload = updateTable;
+</script>
+</body>
+</html>

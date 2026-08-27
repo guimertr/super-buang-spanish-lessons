@@ -1,193 +1,157 @@
 const questionBank = [
     {
-        "sentence": "Ahora, nosotros _____ (correr).",
-        "engFull": "Now, we run.",
-        "missing": "corremos",
+        "sentence": "Todos los días, él/ella _____ (pensar).",
+        "engFull": "Every day, he/she thinks.",
+        "missing": "piensa",
         "options": [
-            "corriste",
-            "correré",
-            "corremos",
-            "corren"
-        ],
-        "exp": "Tense: Presente. Subject: Nosotros."
-    },
-    {
-        "sentence": "Anoche, nosotros _____ (aprender).",
-        "engFull": "Last night, we learned.",
-        "missing": "aprendimos",
-        "options": [
-            "aprenderán",
-            "aprenderé",
-            "aprenderemos",
-            "aprendimos"
-        ],
-        "exp": "Tense: Pasado. Subject: Nosotros."
-    },
-    {
-        "sentence": "El año pasado, nosotros _____ (hablar).",
-        "engFull": "Last year, we talked.",
-        "missing": "hablamos",
-        "options": [
-            "habla",
-            "hablaron",
-            "hablarán",
-            "hablamos"
-        ],
-        "exp": "Tense: Pasado. Subject: Nosotros."
-    },
-    {
-        "sentence": "El próximo año, nosotros _____ (pensar).",
-        "engFull": "Next year, we will think.",
-        "missing": "pensaremos",
-        "options": [
-            "piensa",
             "pensamos",
-            "pensé",
-            "pensaremos"
-        ],
-        "exp": "Tense: Futuro. Subject: Nosotros."
-    },
-    {
-        "sentence": "El próximo año, nosotros _____ (dibujar).",
-        "engFull": "Next year, we will draw.",
-        "missing": "dibujaremos",
-        "options": [
-            "dibujas",
-            "dibuja",
-            "dibujó",
-            "dibujaremos"
-        ],
-        "exp": "Tense: Futuro. Subject: Nosotros."
-    },
-    {
-        "sentence": "Ayer, nosotros _____ (caminar).",
-        "engFull": "Yesterday, we walked.",
-        "missing": "caminamos",
-        "options": [
-            "caminamos",
-            "caminan",
-            "caminaré",
-            "caminaron"
-        ],
-        "exp": "Tense: Pasado. Subject: Nosotros."
-    },
-    {
-        "sentence": "Ahora, él/ella _____ (correr).",
-        "engFull": "Now, he/she runs.",
-        "missing": "corre",
-        "options": [
-            "correré",
-            "corrí",
-            "corriste",
-            "corre"
+            "pensaron",
+            "piensa",
+            "pensaste"
         ],
         "exp": "Tense: Presente. Subject: Él/Ella."
     },
     {
-        "sentence": "Ayer, ellos _____ (esperar).",
-        "engFull": "Yesterday, they waited.",
-        "missing": "esperaron",
+        "sentence": "Pronto, nosotros _____ (pensar).",
+        "engFull": "Soon, we will think.",
+        "missing": "pensaremos",
         "options": [
-            "esperarás",
-            "esperará",
-            "esperaron",
-            "espero"
+            "pienso",
+            "pensamos",
+            "pensaremos",
+            "piensa"
+        ],
+        "exp": "Tense: Futuro. Subject: Nosotros."
+    },
+    {
+        "sentence": "Pronto, yo _____ (correr).",
+        "engFull": "Soon, I will run.",
+        "missing": "correré",
+        "options": [
+            "correré",
+            "correremos",
+            "corro",
+            "corriste"
+        ],
+        "exp": "Tense: Futuro. Subject: Yo."
+    },
+    {
+        "sentence": "Hoy, tú _____ (esperar).",
+        "engFull": "Today, you wait.",
+        "missing": "esperas",
+        "options": [
+            "esperaré",
+            "esperan",
+            "espera",
+            "esperas"
+        ],
+        "exp": "Tense: Presente. Subject: Tú."
+    },
+    {
+        "sentence": "Anoche, él/ella _____ (dibujar).",
+        "engFull": "Last night, he/she drew.",
+        "missing": "dibujó",
+        "options": [
+            "dibujarán",
+            "dibujamos",
+            "dibujó",
+            "dibujaré"
+        ],
+        "exp": "Tense: Pasado. Subject: Él/Ella."
+    },
+    {
+        "sentence": "Hoy, ellos _____ (aprender).",
+        "engFull": "Today, they learn.",
+        "missing": "aprenden",
+        "options": [
+            "aprenderás",
+            "aprendemos",
+            "aprenderá",
+            "aprenden"
+        ],
+        "exp": "Tense: Presente. Subject: Ellos."
+    },
+    {
+        "sentence": "Ahora, nosotros _____ (dibujar).",
+        "engFull": "Now, we draw.",
+        "missing": "dibujamos",
+        "options": [
+            "dibujaron",
+            "dibujó",
+            "dibujamos",
+            "dibujé"
+        ],
+        "exp": "Tense: Presente. Subject: Nosotros."
+    },
+    {
+        "sentence": "Hoy, nosotros _____ (dibujar).",
+        "engFull": "Today, we draw.",
+        "missing": "dibujamos",
+        "options": [
+            "dibujaré",
+            "dibujamos",
+            "dibujó",
+            "dibujé"
+        ],
+        "exp": "Tense: Presente. Subject: Nosotros."
+    },
+    {
+        "sentence": "Todos los días, tú _____ (jugar).",
+        "engFull": "Every day, you play.",
+        "missing": "juegas",
+        "options": [
+            "jugó",
+            "juegas",
+            "jugué",
+            "juegan"
+        ],
+        "exp": "Tense: Presente. Subject: Tú."
+    },
+    {
+        "sentence": "Ayer, ellos _____ (dibujar).",
+        "engFull": "Yesterday, they drew.",
+        "missing": "dibujaron",
+        "options": [
+            "dibujaron",
+            "dibujo",
+            "dibujará",
+            "dibujó"
         ],
         "exp": "Tense: Pasado. Subject: Ellos."
     },
     {
-        "sentence": "Mañana, él/ella _____ (dibujar).",
-        "engFull": "Tomorrow, he/she will draw.",
-        "missing": "dibujará",
+        "sentence": "Todos los días, yo _____ (dibujar).",
+        "engFull": "Every day, I draw.",
+        "missing": "dibujo",
         "options": [
-            "dibujará",
-            "dibujaron",
-            "dibujaré",
-            "dibujan"
+            "dibuja",
+            "dibujo",
+            "dibujó",
+            "dibujarán"
         ],
-        "exp": "Tense: Futuro. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Pronto, tú _____ (correr).",
-        "engFull": "Soon, you will run.",
-        "missing": "correrás",
-        "options": [
-            "corrieron",
-            "corres",
-            "correremos",
-            "correrás"
-        ],
-        "exp": "Tense: Futuro. Subject: Tú."
-    },
-    {
-        "sentence": "Anoche, yo _____ (cantar).",
-        "engFull": "Last night, I sang.",
-        "missing": "canté",
-        "options": [
-            "canto",
-            "cantaré",
-            "cantas",
-            "canté"
-        ],
-        "exp": "Tense: Pasado. Subject: Yo."
-    },
-    {
-        "sentence": "Pronto, tú _____ (comer).",
-        "engFull": "Soon, you will eat.",
-        "missing": "comerás",
-        "options": [
-            "comeremos",
-            "comió",
-            "come",
-            "comerás"
-        ],
-        "exp": "Tense: Futuro. Subject: Tú."
-    },
-    {
-        "sentence": "Anoche, él/ella _____ (pensar).",
-        "engFull": "Last night, he/she thought.",
-        "missing": "pensó",
-        "options": [
-            "pensaré",
-            "pensó",
-            "piensan",
-            "pensamos"
-        ],
-        "exp": "Tense: Pasado. Subject: Él/Ella."
+        "exp": "Tense: Presente. Subject: Yo."
     },
     {
         "sentence": "Ahora, él/ella _____ (cantar).",
         "engFull": "Now, he/she sings.",
         "missing": "canta",
         "options": [
-            "cantó",
-            "cantaré",
-            "canta",
-            "canté"
+            "cantaron",
+            "cantan",
+            "canté",
+            "canta"
         ],
         "exp": "Tense: Presente. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Ayer, nosotros _____ (cantar).",
-        "engFull": "Yesterday, we sang.",
-        "missing": "cantamos",
-        "options": [
-            "canta",
-            "cantamos",
-            "cantas",
-            "cantaremos"
-        ],
-        "exp": "Tense: Pasado. Subject: Nosotros."
     },
     {
         "sentence": "Pronto, nosotros _____ (cantar).",
         "engFull": "Soon, we will sing.",
         "missing": "cantaremos",
         "options": [
-            "canto",
-            "cantaste",
             "cantaremos",
-            "cantarás"
+            "cantamos",
+            "cantaron",
+            "canté"
         ],
         "exp": "Tense: Futuro. Subject: Nosotros."
     },
@@ -196,970 +160,250 @@ const questionBank = [
         "engFull": "Yesterday, you waited.",
         "missing": "esperaste",
         "options": [
-            "esperará",
-            "esperarán",
-            "esperaste",
-            "esperamos"
-        ],
-        "exp": "Tense: Pasado. Subject: Tú."
-    },
-    {
-        "sentence": "Todos los días, yo _____ (dormir).",
-        "engFull": "Every day, I sleep.",
-        "missing": "duermo",
-        "options": [
-            "duerme",
-            "dormimos",
-            "dormiremos",
-            "duermo"
-        ],
-        "exp": "Tense: Presente. Subject: Yo."
-    },
-    {
-        "sentence": "El año pasado, tú _____ (aprender).",
-        "engFull": "Last year, you learned.",
-        "missing": "aprendiste",
-        "options": [
-            "aprenderé",
-            "aprendieron",
-            "aprendemos",
-            "aprendiste"
-        ],
-        "exp": "Tense: Pasado. Subject: Tú."
-    },
-    {
-        "sentence": "El año pasado, él/ella _____ (dormir).",
-        "engFull": "Last year, he/she slept.",
-        "missing": "durmió",
-        "options": [
-            "durmió",
-            "duermen",
-            "dormiremos",
-            "durmieron"
-        ],
-        "exp": "Tense: Pasado. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Hoy, yo _____ (dibujar).",
-        "engFull": "Today, I draw.",
-        "missing": "dibujo",
-        "options": [
-            "dibujaste",
-            "dibujaremos",
-            "dibujamos",
-            "dibujo"
-        ],
-        "exp": "Tense: Presente. Subject: Yo."
-    },
-    {
-        "sentence": "Mañana, nosotros _____ (aprender).",
-        "engFull": "Tomorrow, we will learn.",
-        "missing": "aprenderemos",
-        "options": [
-            "aprenderás",
-            "aprenderemos",
-            "aprenden",
-            "aprendimos"
-        ],
-        "exp": "Tense: Futuro. Subject: Nosotros."
-    },
-    {
-        "sentence": "Mañana, ellos _____ (dibujar).",
-        "engFull": "Tomorrow, they will draw.",
-        "missing": "dibujarán",
-        "options": [
-            "dibujará",
-            "dibujaron",
-            "dibujamos",
-            "dibujarán"
-        ],
-        "exp": "Tense: Futuro. Subject: Ellos."
-    },
-    {
-        "sentence": "El próximo año, tú _____ (pensar).",
-        "engFull": "Next year, you will think.",
-        "missing": "pensarás",
-        "options": [
-            "pensaré",
-            "pensó",
-            "pensarás",
-            "pensamos"
-        ],
-        "exp": "Tense: Futuro. Subject: Tú."
-    },
-    {
-        "sentence": "El próximo año, nosotros _____ (comer).",
-        "engFull": "Next year, we will eat.",
-        "missing": "comeremos",
-        "options": [
-            "comerás",
-            "comeremos",
-            "comió",
-            "comes"
-        ],
-        "exp": "Tense: Futuro. Subject: Nosotros."
-    },
-    {
-        "sentence": "Todos los días, ellos _____ (caminar).",
-        "engFull": "Every day, they walk.",
-        "missing": "caminan",
-        "options": [
-            "caminamos",
-            "camina",
-            "caminan",
-            "caminas"
-        ],
-        "exp": "Tense: Presente. Subject: Ellos."
-    },
-    {
-        "sentence": "El año pasado, ellos _____ (correr).",
-        "engFull": "Last year, they ran.",
-        "missing": "corrieron",
-        "options": [
-            "correrás",
-            "corrieron",
-            "corre",
-            "correremos"
-        ],
-        "exp": "Tense: Pasado. Subject: Ellos."
-    },
-    {
-        "sentence": "El año pasado, yo _____ (jugar).",
-        "engFull": "Last year, I played.",
-        "missing": "jugué",
-        "options": [
-            "jugué",
-            "jugaremos",
-            "jugaste",
-            "juegas"
-        ],
-        "exp": "Tense: Pasado. Subject: Yo."
-    },
-    {
-        "sentence": "El próximo año, él/ella _____ (cantar).",
-        "engFull": "Next year, he/she will sing.",
-        "missing": "cantará",
-        "options": [
-            "cantaste",
-            "cantará",
-            "cantamos",
-            "cantó"
-        ],
-        "exp": "Tense: Futuro. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Mañana, tú _____ (comer).",
-        "engFull": "Tomorrow, you will eat.",
-        "missing": "comerás",
-        "options": [
-            "como",
-            "comiste",
-            "comerás",
-            "comieron"
-        ],
-        "exp": "Tense: Futuro. Subject: Tú."
-    },
-    {
-        "sentence": "Ayer, nosotros _____ (hablar).",
-        "engFull": "Yesterday, we talked.",
-        "missing": "hablamos",
-        "options": [
-            "hablaré",
-            "hablé",
-            "hablamos",
-            "hablaste"
-        ],
-        "exp": "Tense: Pasado. Subject: Nosotros."
-    },
-    {
-        "sentence": "Hoy, nosotros _____ (jugar).",
-        "engFull": "Today, we play.",
-        "missing": "jugamos",
-        "options": [
-            "jugamos",
-            "jugarás",
-            "jugué",
-            "jugaron"
-        ],
-        "exp": "Tense: Presente. Subject: Nosotros."
-    },
-    {
-        "sentence": "Mañana, ellos _____ (hablar).",
-        "engFull": "Tomorrow, they will talk.",
-        "missing": "hablarán",
-        "options": [
-            "hablan",
-            "hablarán",
-            "habló",
-            "hablaron"
-        ],
-        "exp": "Tense: Futuro. Subject: Ellos."
-    },
-    {
-        "sentence": "Pronto, nosotros _____ (caminar).",
-        "engFull": "Soon, we will walk.",
-        "missing": "caminaremos",
-        "options": [
-            "caminaré",
-            "caminaremos",
-            "caminaste",
-            "caminarán"
-        ],
-        "exp": "Tense: Futuro. Subject: Nosotros."
-    },
-    {
-        "sentence": "Ahora, yo _____ (jugar).",
-        "engFull": "Now, I play.",
-        "missing": "juego",
-        "options": [
-            "jugaste",
-            "juego",
-            "jugaré",
-            "jugarás"
-        ],
-        "exp": "Tense: Presente. Subject: Yo."
-    },
-    {
-        "sentence": "Ayer, yo _____ (dibujar).",
-        "engFull": "Yesterday, I drew.",
-        "missing": "dibujé",
-        "options": [
-            "dibujé",
-            "dibujarán",
-            "dibujaré",
-            "dibujaste"
-        ],
-        "exp": "Tense: Pasado. Subject: Yo."
-    },
-    {
-        "sentence": "Ahora, tú _____ (esperar).",
-        "engFull": "Now, you wait.",
-        "missing": "esperas",
-        "options": [
             "esperamos",
-            "esperas",
-            "esperó",
-            "esperaron"
-        ],
-        "exp": "Tense: Presente. Subject: Tú."
-    },
-    {
-        "sentence": "Hoy, nosotros _____ (dormir).",
-        "engFull": "Today, we sleep.",
-        "missing": "dormimos",
-        "options": [
-            "dormiré",
-            "durmió",
-            "dormí",
-            "dormimos"
-        ],
-        "exp": "Tense: Presente. Subject: Nosotros."
-    },
-    {
-        "sentence": "El año pasado, yo _____ (correr).",
-        "engFull": "Last year, I ran.",
-        "missing": "corrí",
-        "options": [
-            "corrí",
-            "corren",
-            "correrán",
-            "correré"
-        ],
-        "exp": "Tense: Pasado. Subject: Yo."
-    },
-    {
-        "sentence": "Mañana, nosotros _____ (caminar).",
-        "engFull": "Tomorrow, we will walk.",
-        "missing": "caminaremos",
-        "options": [
-            "caminaste",
-            "caminaré",
-            "caminaremos",
-            "caminas"
-        ],
-        "exp": "Tense: Futuro. Subject: Nosotros."
-    },
-    {
-        "sentence": "Mañana, tú _____ (correr).",
-        "engFull": "Tomorrow, you will run.",
-        "missing": "correrás",
-        "options": [
-            "corren",
-            "correrás",
-            "correré",
-            "corremos"
-        ],
-        "exp": "Tense: Futuro. Subject: Tú."
-    },
-    {
-        "sentence": "Anoche, yo _____ (hablar).",
-        "engFull": "Last night, I talked.",
-        "missing": "hablé",
-        "options": [
-            "hablará",
-            "hablarás",
-            "hablé",
-            "hablo"
-        ],
-        "exp": "Tense: Pasado. Subject: Yo."
-    },
-    {
-        "sentence": "Mañana, nosotros _____ (esperar).",
-        "engFull": "Tomorrow, we will wait.",
-        "missing": "esperaremos",
-        "options": [
-            "espera",
-            "esperan",
-            "esperas",
-            "esperaremos"
-        ],
-        "exp": "Tense: Futuro. Subject: Nosotros."
-    },
-    {
-        "sentence": "El próximo año, tú _____ (comer).",
-        "engFull": "Next year, you will eat.",
-        "missing": "comerás",
-        "options": [
-            "comen",
-            "comerás",
-            "comió",
-            "comeremos"
-        ],
-        "exp": "Tense: Futuro. Subject: Tú."
-    },
-    {
-        "sentence": "Anoche, él/ella _____ (correr).",
-        "engFull": "Last night, he/she ran.",
-        "missing": "corrió",
-        "options": [
-            "corrieron",
-            "corre",
-            "corren",
-            "corrió"
-        ],
-        "exp": "Tense: Pasado. Subject: Él/Ella."
-    },
-    {
-        "sentence": "El año pasado, él/ella _____ (pensar).",
-        "engFull": "Last year, he/she thought.",
-        "missing": "pensó",
-        "options": [
-            "pensaremos",
-            "pienso",
-            "pensarás",
-            "pensó"
-        ],
-        "exp": "Tense: Pasado. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Ahora, ellos _____ (esperar).",
-        "engFull": "Now, they wait.",
-        "missing": "esperan",
-        "options": [
-            "esperó",
-            "esperan",
-            "esperaré",
+            "espero",
+            "esperé",
             "esperaste"
         ],
-        "exp": "Tense: Presente. Subject: Ellos."
+        "exp": "Tense: Pasado. Subject: Tú."
     },
     {
-        "sentence": "Mañana, yo _____ (dibujar).",
-        "engFull": "Tomorrow, I will draw.",
-        "missing": "dibujaré",
+        "sentence": "El próximo año, yo _____ (correr).",
+        "engFull": "Next year, I will run.",
+        "missing": "correré",
         "options": [
-            "dibujan",
-            "dibujo",
-            "dibujaré",
-            "dibujamos"
+            "correrá",
+            "correré",
+            "corrimos",
+            "correrás"
         ],
         "exp": "Tense: Futuro. Subject: Yo."
     },
     {
-        "sentence": "Todos los días, yo _____ (comer).",
-        "engFull": "Every day, I eat.",
-        "missing": "como",
+        "sentence": "Pronto, ellos _____ (dibujar).",
+        "engFull": "Soon, they will draw.",
+        "missing": "dibujarán",
         "options": [
-            "comemos",
-            "come",
-            "como",
-            "comió"
+            "dibujarán",
+            "dibujamos",
+            "dibujaron",
+            "dibujaremos"
         ],
-        "exp": "Tense: Presente. Subject: Yo."
+        "exp": "Tense: Futuro. Subject: Ellos."
     },
     {
-        "sentence": "Ayer, él/ella _____ (esperar).",
-        "engFull": "Yesterday, he/she waited.",
-        "missing": "esperó",
+        "sentence": "Todos los días, ellos _____ (cantar).",
+        "engFull": "Every day, they sing.",
+        "missing": "cantan",
         "options": [
-            "esperé",
-            "espero",
-            "esperaron",
-            "esperó"
-        ],
-        "exp": "Tense: Pasado. Subject: Él/Ella."
-    },
-    {
-        "sentence": "El próximo año, él/ella _____ (esperar).",
-        "engFull": "Next year, he/she will wait.",
-        "missing": "esperará",
-        "options": [
-            "esperó",
-            "esperas",
-            "esperará",
-            "esperaron"
-        ],
-        "exp": "Tense: Futuro. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Ayer, él/ella _____ (correr).",
-        "engFull": "Yesterday, he/she ran.",
-        "missing": "corrió",
-        "options": [
-            "corriste",
-            "correré",
-            "corre",
-            "corrió"
-        ],
-        "exp": "Tense: Pasado. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Anoche, yo _____ (aprender).",
-        "engFull": "Last night, I learned.",
-        "missing": "aprendí",
-        "options": [
-            "aprendí",
-            "aprenderá",
-            "aprendió",
-            "aprendo"
-        ],
-        "exp": "Tense: Pasado. Subject: Yo."
-    },
-    {
-        "sentence": "El próximo año, él/ella _____ (dormir).",
-        "engFull": "Next year, he/she will sleep.",
-        "missing": "dormirá",
-        "options": [
-            "duermo",
-            "dormirás",
-            "dormiste",
-            "dormirá"
-        ],
-        "exp": "Tense: Futuro. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Hoy, ellos _____ (dibujar).",
-        "engFull": "Today, they draw.",
-        "missing": "dibujan",
-        "options": [
-            "dibujó",
-            "dibujará",
-            "dibujan",
-            "dibujarás"
+            "cantará",
+            "cantaremos",
+            "cantan",
+            "cantaron"
         ],
         "exp": "Tense: Presente. Subject: Ellos."
-    },
-    {
-        "sentence": "Anoche, él/ella _____ (hablar).",
-        "engFull": "Last night, he/she talked.",
-        "missing": "habló",
-        "options": [
-            "hablarás",
-            "habló",
-            "hablará",
-            "hablamos"
-        ],
-        "exp": "Tense: Pasado. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Todos los días, él/ella _____ (pensar).",
-        "engFull": "Every day, he/she thinks.",
-        "missing": "piensa",
-        "options": [
-            "pensaré",
-            "piensa",
-            "piensas",
-            "pensará"
-        ],
-        "exp": "Tense: Presente. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Todos los días, nosotros _____ (correr).",
-        "engFull": "Every day, we run.",
-        "missing": "corremos",
-        "options": [
-            "corrió",
-            "corro",
-            "corremos",
-            "corres"
-        ],
-        "exp": "Tense: Presente. Subject: Nosotros."
-    },
-    {
-        "sentence": "El año pasado, ellos _____ (esperar).",
-        "engFull": "Last year, they waited.",
-        "missing": "esperaron",
-        "options": [
-            "esperan",
-            "esperaron",
-            "esperó",
-            "esperaste"
-        ],
-        "exp": "Tense: Pasado. Subject: Ellos."
-    },
-    {
-        "sentence": "Ahora, ellos _____ (hablar).",
-        "engFull": "Now, they talk.",
-        "missing": "hablan",
-        "options": [
-            "hablan",
-            "hablarás",
-            "habló",
-            "hablamos"
-        ],
-        "exp": "Tense: Presente. Subject: Ellos."
-    },
-    {
-        "sentence": "Todos los días, ellos _____ (pensar).",
-        "engFull": "Every day, they think.",
-        "missing": "piensan",
-        "options": [
-            "pensamos",
-            "piensa",
-            "piensan",
-            "pensará"
-        ],
-        "exp": "Tense: Presente. Subject: Ellos."
-    },
-    {
-        "sentence": "El año pasado, tú _____ (cantar).",
-        "engFull": "Last year, you sang.",
-        "missing": "cantaste",
-        "options": [
-            "cantaste",
-            "cantaré",
-            "cantamos",
-            "cantó"
-        ],
-        "exp": "Tense: Pasado. Subject: Tú."
-    },
-    {
-        "sentence": "Mañana, él/ella _____ (correr).",
-        "engFull": "Tomorrow, he/she will run.",
-        "missing": "correrá",
-        "options": [
-            "correrá",
-            "corren",
-            "corres",
-            "corrieron"
-        ],
-        "exp": "Tense: Futuro. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Mañana, él/ella _____ (esperar).",
-        "engFull": "Tomorrow, he/she will wait.",
-        "missing": "esperará",
-        "options": [
-            "esperaron",
-            "esperé",
-            "esperaré",
-            "esperará"
-        ],
-        "exp": "Tense: Futuro. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Hoy, tú _____ (correr).",
-        "engFull": "Today, you run.",
-        "missing": "corres",
-        "options": [
-            "correré",
-            "corrí",
-            "corres",
-            "corrieron"
-        ],
-        "exp": "Tense: Presente. Subject: Tú."
-    },
-    {
-        "sentence": "Mañana, él/ella _____ (dormir).",
-        "engFull": "Tomorrow, he/she will sleep.",
-        "missing": "dormirá",
-        "options": [
-            "durmió",
-            "dormirá",
-            "dormirás",
-            "duermen"
-        ],
-        "exp": "Tense: Futuro. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Ayer, yo _____ (aprender).",
-        "engFull": "Yesterday, I learned.",
-        "missing": "aprendí",
-        "options": [
-            "aprenderán",
-            "aprendiste",
-            "aprendí",
-            "aprendemos"
-        ],
-        "exp": "Tense: Pasado. Subject: Yo."
     },
     {
         "sentence": "Ahora, nosotros _____ (comer).",
         "engFull": "Now, we eat.",
         "missing": "comemos",
         "options": [
+            "como",
             "comemos",
-            "comió",
-            "comerá",
+            "comí",
+            "comeré"
+        ],
+        "exp": "Tense: Presente. Subject: Nosotros."
+    },
+    {
+        "sentence": "El próximo año, tú _____ (dibujar).",
+        "engFull": "Next year, you will draw.",
+        "missing": "dibujarás",
+        "options": [
+            "dibuja",
+            "dibujarás",
+            "dibujarán",
+            "dibujo"
+        ],
+        "exp": "Tense: Futuro. Subject: Tú."
+    },
+    {
+        "sentence": "Mañana, tú _____ (comer).",
+        "engFull": "Tomorrow, you will eat.",
+        "missing": "comerás",
+        "options": [
+            "comerás",
+            "comeré",
+            "como",
             "comieron"
         ],
-        "exp": "Tense: Presente. Subject: Nosotros."
-    },
-    {
-        "sentence": "Todos los días, yo _____ (hablar).",
-        "engFull": "Every day, I talk.",
-        "missing": "hablo",
-        "options": [
-            "hablamos",
-            "hablo",
-            "hablarán",
-            "hablan"
-        ],
-        "exp": "Tense: Presente. Subject: Yo."
-    },
-    {
-        "sentence": "Pronto, tú _____ (cantar).",
-        "engFull": "Soon, you will sing.",
-        "missing": "cantarás",
-        "options": [
-            "canté",
-            "cantaré",
-            "cantarás",
-            "cantan"
-        ],
         "exp": "Tense: Futuro. Subject: Tú."
     },
     {
-        "sentence": "Ayer, tú _____ (aprender).",
-        "engFull": "Yesterday, you learned.",
-        "missing": "aprendiste",
+        "sentence": "Hoy, él/ella _____ (aprender).",
+        "engFull": "Today, he/she learns.",
+        "missing": "aprende",
         "options": [
-            "aprendimos",
-            "aprendo",
-            "aprendes",
-            "aprendiste"
-        ],
-        "exp": "Tense: Pasado. Subject: Tú."
-    },
-    {
-        "sentence": "Hoy, él/ella _____ (comer).",
-        "engFull": "Today, he/she eats.",
-        "missing": "come",
-        "options": [
-            "comen",
-            "come",
-            "comeremos",
-            "comerá"
-        ],
-        "exp": "Tense: Presente. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Ayer, yo _____ (comer).",
-        "engFull": "Yesterday, I ate.",
-        "missing": "comí",
-        "options": [
-            "comemos",
-            "come",
-            "comí",
-            "comió"
-        ],
-        "exp": "Tense: Pasado. Subject: Yo."
-    },
-    {
-        "sentence": "Pronto, yo _____ (hablar).",
-        "engFull": "Soon, I will talk.",
-        "missing": "hablaré",
-        "options": [
-            "hablamos",
-            "hablaré",
-            "hablo",
-            "hablan"
-        ],
-        "exp": "Tense: Futuro. Subject: Yo."
-    },
-    {
-        "sentence": "Hoy, él/ella _____ (dormir).",
-        "engFull": "Today, he/she sleeps.",
-        "missing": "duerme",
-        "options": [
-            "dormiré",
-            "dormí",
-            "duerme",
-            "duermo"
-        ],
-        "exp": "Tense: Presente. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Hoy, yo _____ (aprender).",
-        "engFull": "Today, I learn.",
-        "missing": "aprendo",
-        "options": [
-            "aprendió",
-            "aprendí",
-            "aprende",
-            "aprendo"
-        ],
-        "exp": "Tense: Presente. Subject: Yo."
-    },
-    {
-        "sentence": "Pronto, yo _____ (esperar).",
-        "engFull": "Soon, I will wait.",
-        "missing": "esperaré",
-        "options": [
-            "espero",
-            "esperamos",
-            "esperaré",
-            "esperé"
-        ],
-        "exp": "Tense: Futuro. Subject: Yo."
-    },
-    {
-        "sentence": "El año pasado, tú _____ (hablar).",
-        "engFull": "Last year, you talked.",
-        "missing": "hablaste",
-        "options": [
-            "hablan",
-            "hablaste",
-            "hablé",
-            "hablo"
-        ],
-        "exp": "Tense: Pasado. Subject: Tú."
-    },
-    {
-        "sentence": "Ahora, él/ella _____ (jugar).",
-        "engFull": "Now, he/she plays.",
-        "missing": "juega",
-        "options": [
-            "jugamos",
-            "juega",
-            "jugaremos",
-            "jugarán"
-        ],
-        "exp": "Tense: Presente. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Ahora, nosotros _____ (hablar).",
-        "engFull": "Now, we talk.",
-        "missing": "hablamos",
-        "options": [
-            "hablaron",
-            "habló",
-            "hablamos",
-            "hablo"
-        ],
-        "exp": "Tense: Presente. Subject: Nosotros."
-    },
-    {
-        "sentence": "Ahora, tú _____ (comer).",
-        "engFull": "Now, you eat.",
-        "missing": "comes",
-        "options": [
-            "comes",
-            "comieron",
-            "comerán",
-            "comimos"
-        ],
-        "exp": "Tense: Presente. Subject: Tú."
-    },
-    {
-        "sentence": "Hoy, ellos _____ (cantar).",
-        "engFull": "Today, they sing.",
-        "missing": "cantan",
-        "options": [
-            "cantarás",
-            "cantaste",
-            "cantan",
-            "cantó"
-        ],
-        "exp": "Tense: Presente. Subject: Ellos."
-    },
-    {
-        "sentence": "Hoy, ellos _____ (aprender).",
-        "engFull": "Today, they learn.",
-        "missing": "aprenden",
-        "options": [
-            "aprendimos",
-            "aprenderemos",
+            "aprendiste",
             "aprenden",
-            "aprendiste"
-        ],
-        "exp": "Tense: Presente. Subject: Ellos."
-    },
-    {
-        "sentence": "Ahora, tú _____ (dormir).",
-        "engFull": "Now, you sleep.",
-        "missing": "duermes",
-        "options": [
-            "dormiré",
-            "duermes",
-            "duermo",
-            "dormirás"
-        ],
-        "exp": "Tense: Presente. Subject: Tú."
-    },
-    {
-        "sentence": "Hoy, él/ella _____ (pensar).",
-        "engFull": "Today, he/she thinks.",
-        "missing": "piensa",
-        "options": [
-            "pensaremos",
-            "piensa",
-            "pensaste",
-            "pensará"
-        ],
-        "exp": "Tense: Presente. Subject: Él/Ella."
-    },
-    {
-        "sentence": "El año pasado, él/ella _____ (aprender).",
-        "engFull": "Last year, he/she learned.",
-        "missing": "aprendió",
-        "options": [
-            "aprenderé",
-            "aprendes",
             "aprendió",
-            "aprenden"
-        ],
-        "exp": "Tense: Pasado. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Pronto, nosotros _____ (jugar).",
-        "engFull": "Soon, we will play.",
-        "missing": "jugaremos",
-        "options": [
-            "juego",
-            "juega",
-            "jugaremos",
-            "jugó"
-        ],
-        "exp": "Tense: Futuro. Subject: Nosotros."
-    },
-    {
-        "sentence": "El próximo año, tú _____ (aprender).",
-        "engFull": "Next year, you will learn.",
-        "missing": "aprenderás",
-        "options": [
-            "aprenderá",
-            "aprenderás",
-            "aprenderé",
             "aprende"
         ],
-        "exp": "Tense: Futuro. Subject: Tú."
+        "exp": "Tense: Presente. Subject: Él/Ella."
     },
     {
-        "sentence": "Pronto, ellos _____ (esperar).",
-        "engFull": "Soon, they will wait.",
-        "missing": "esperarán",
+        "sentence": "El año pasado, tú _____ (esperar).",
+        "engFull": "Last year, you waited.",
+        "missing": "esperaste",
         "options": [
-            "esperé",
-            "esperamos",
-            "esperan",
-            "esperarán"
+            "esperó",
+            "esperaste",
+            "esperaré",
+            "esperamos"
         ],
-        "exp": "Tense: Futuro. Subject: Ellos."
+        "exp": "Tense: Pasado. Subject: Tú."
     },
     {
-        "sentence": "Anoche, él/ella _____ (cantar).",
-        "engFull": "Last night, he/she sang.",
-        "missing": "cantó",
+        "sentence": "Ayer, tú _____ (hablar).",
+        "engFull": "Yesterday, you talked.",
+        "missing": "hablaste",
         "options": [
-            "cantas",
-            "cantan",
-            "cantamos",
-            "cantó"
+            "hablará",
+            "hablaron",
+            "hablaste",
+            "habló"
+        ],
+        "exp": "Tense: Pasado. Subject: Tú."
+    },
+    {
+        "sentence": "El año pasado, ellos _____ (esperar).",
+        "engFull": "Last year, they waited.",
+        "missing": "esperaron",
+        "options": [
+            "esperamos",
+            "esperas",
+            "espero",
+            "esperaron"
+        ],
+        "exp": "Tense: Pasado. Subject: Ellos."
+    },
+    {
+        "sentence": "Anoche, nosotros _____ (comer).",
+        "engFull": "Last night, we ate.",
+        "missing": "comimos",
+        "options": [
+            "comimos",
+            "comen",
+            "comeremos",
+            "comerán"
+        ],
+        "exp": "Tense: Pasado. Subject: Nosotros."
+    },
+    {
+        "sentence": "Anoche, él/ella _____ (hablar).",
+        "engFull": "Last night, he/she talked.",
+        "missing": "habló",
+        "options": [
+            "hablaré",
+            "hablamos",
+            "hablan",
+            "habló"
         ],
         "exp": "Tense: Pasado. Subject: Él/Ella."
     },
     {
-        "sentence": "Ayer, nosotros _____ (pensar).",
-        "engFull": "Yesterday, we thought.",
+        "sentence": "El año pasado, ellos _____ (correr).",
+        "engFull": "Last year, they ran.",
+        "missing": "corrieron",
+        "options": [
+            "correremos",
+            "corrió",
+            "correrá",
+            "corrieron"
+        ],
+        "exp": "Tense: Pasado. Subject: Ellos."
+    },
+    {
+        "sentence": "Ayer, ellos _____ (pensar).",
+        "engFull": "Yesterday, they thought.",
+        "missing": "pensaron",
+        "options": [
+            "pensé",
+            "pensaron",
+            "pensamos",
+            "pensará"
+        ],
+        "exp": "Tense: Pasado. Subject: Ellos."
+    },
+    {
+        "sentence": "El año pasado, nosotros _____ (pensar).",
+        "engFull": "Last year, we thought.",
         "missing": "pensamos",
         "options": [
             "pensarán",
-            "pensará",
             "pensó",
+            "pensaron",
             "pensamos"
         ],
         "exp": "Tense: Pasado. Subject: Nosotros."
     },
     {
-        "sentence": "Anoche, tú _____ (cantar).",
-        "engFull": "Last night, you sang.",
-        "missing": "cantaste",
+        "sentence": "Ayer, nosotros _____ (dormir).",
+        "engFull": "Yesterday, we slept.",
+        "missing": "dormimos",
         "options": [
-            "canta",
-            "cantaremos",
-            "canto",
-            "cantaste"
-        ],
-        "exp": "Tense: Pasado. Subject: Tú."
-    },
-    {
-        "sentence": "El próximo año, yo _____ (jugar).",
-        "engFull": "Next year, I will play.",
-        "missing": "jugaré",
-        "options": [
-            "jugarás",
-            "jugué",
-            "jugaré",
-            "jugamos"
-        ],
-        "exp": "Tense: Futuro. Subject: Yo."
-    },
-    {
-        "sentence": "Pronto, yo _____ (dibujar).",
-        "engFull": "Soon, I will draw.",
-        "missing": "dibujaré",
-        "options": [
-            "dibujaré",
-            "dibujaste",
-            "dibujarás",
-            "dibujaremos"
-        ],
-        "exp": "Tense: Futuro. Subject: Yo."
-    },
-    {
-        "sentence": "Hoy, él/ella _____ (esperar).",
-        "engFull": "Today, he/she waits.",
-        "missing": "espera",
-        "options": [
-            "esperó",
-            "espera",
-            "espero",
-            "esperarán"
-        ],
-        "exp": "Tense: Presente. Subject: Él/Ella."
-    },
-    {
-        "sentence": "Ayer, nosotros _____ (correr).",
-        "engFull": "Yesterday, we ran.",
-        "missing": "corrimos",
-        "options": [
-            "corrieron",
-            "correremos",
-            "correrás",
-            "corrimos"
+            "dormí",
+            "dormiste",
+            "dormimos",
+            "duerme"
         ],
         "exp": "Tense: Pasado. Subject: Nosotros."
     },
     {
-        "sentence": "El próximo año, ellos _____ (jugar).",
-        "engFull": "Next year, they will play.",
-        "missing": "jugarán",
+        "sentence": "Todos los días, yo _____ (comer).",
+        "engFull": "Every day, I eat.",
+        "missing": "como",
         "options": [
+            "comeremos",
+            "como",
+            "comemos",
+            "comerá"
+        ],
+        "exp": "Tense: Presente. Subject: Yo."
+    },
+    {
+        "sentence": "El año pasado, él/ella _____ (cantar).",
+        "engFull": "Last year, he/she sang.",
+        "missing": "cantó",
+        "options": [
+            "cantaron",
+            "cantan",
+            "cantará",
+            "cantó"
+        ],
+        "exp": "Tense: Pasado. Subject: Él/Ella."
+    },
+    {
+        "sentence": "Todos los días, yo _____ (jugar).",
+        "engFull": "Every day, I play.",
+        "missing": "juego",
+        "options": [
+            "juega",
+            "jugamos",
             "juego",
-            "jugarán",
-            "jugaré",
-            "jugarás"
+            "jugaron"
+        ],
+        "exp": "Tense: Presente. Subject: Yo."
+    },
+    {
+        "sentence": "Pronto, ellos _____ (hablar).",
+        "engFull": "Soon, they will talk.",
+        "missing": "hablarán",
+        "options": [
+            "hablo",
+            "hablarán",
+            "habló",
+            "hablamos"
         ],
         "exp": "Tense: Futuro. Subject: Ellos."
     },
@@ -1168,35 +412,791 @@ const questionBank = [
         "engFull": "Next year, he/she will eat.",
         "missing": "comerá",
         "options": [
-            "comió",
+            "comerán",
             "comí",
-            "como",
-            "comerá"
+            "comerá",
+            "comeré"
         ],
         "exp": "Tense: Futuro. Subject: Él/Ella."
     },
     {
-        "sentence": "Todos los días, él/ella _____ (aprender).",
-        "engFull": "Every day, he/she learns.",
-        "missing": "aprende",
+        "sentence": "Ahora, ellos _____ (correr).",
+        "engFull": "Now, they run.",
+        "missing": "corren",
         "options": [
-            "aprenderemos",
-            "aprendiste",
+            "corren",
+            "corro",
+            "corres",
+            "corrí"
+        ],
+        "exp": "Tense: Presente. Subject: Ellos."
+    },
+    {
+        "sentence": "El próximo año, tú _____ (dormir).",
+        "engFull": "Next year, you will sleep.",
+        "missing": "dormirás",
+        "options": [
+            "dormimos",
+            "dormí",
+            "dormiste",
+            "dormirás"
+        ],
+        "exp": "Tense: Futuro. Subject: Tú."
+    },
+    {
+        "sentence": "Todos los días, yo _____ (cantar).",
+        "engFull": "Every day, I sing.",
+        "missing": "canto",
+        "options": [
+            "cantó",
+            "cantaré",
+            "canto",
+            "cantarás"
+        ],
+        "exp": "Tense: Presente. Subject: Yo."
+    },
+    {
+        "sentence": "Ahora, yo _____ (dormir).",
+        "engFull": "Now, I sleep.",
+        "missing": "duermo",
+        "options": [
+            "duerme",
+            "dormiremos",
+            "duermo",
+            "dormiré"
+        ],
+        "exp": "Tense: Presente. Subject: Yo."
+    },
+    {
+        "sentence": "Todos los días, nosotros _____ (cantar).",
+        "engFull": "Every day, we sing.",
+        "missing": "cantamos",
+        "options": [
+            "cantamos",
+            "canto",
+            "cantaré",
+            "cantaron"
+        ],
+        "exp": "Tense: Presente. Subject: Nosotros."
+    },
+    {
+        "sentence": "Todos los días, ellos _____ (hablar).",
+        "engFull": "Every day, they talk.",
+        "missing": "hablan",
+        "options": [
+            "hablan",
+            "habla",
+            "hablaremos",
+            "hablará"
+        ],
+        "exp": "Tense: Presente. Subject: Ellos."
+    },
+    {
+        "sentence": "Ahora, ellos _____ (dormir).",
+        "engFull": "Now, they sleep.",
+        "missing": "duermen",
+        "options": [
+            "dormirás",
+            "duermen",
+            "dormiremos",
+            "dormirán"
+        ],
+        "exp": "Tense: Presente. Subject: Ellos."
+    },
+    {
+        "sentence": "Anoche, yo _____ (dormir).",
+        "engFull": "Last night, I slept.",
+        "missing": "dormí",
+        "options": [
+            "duermo",
+            "dormí",
+            "dormirás",
+            "duermen"
+        ],
+        "exp": "Tense: Pasado. Subject: Yo."
+    },
+    {
+        "sentence": "Hoy, yo _____ (caminar).",
+        "engFull": "Today, I walk.",
+        "missing": "camino",
+        "options": [
+            "caminará",
+            "caminamos",
+            "caminó",
+            "camino"
+        ],
+        "exp": "Tense: Presente. Subject: Yo."
+    },
+    {
+        "sentence": "Hoy, ellos _____ (caminar).",
+        "engFull": "Today, they walk.",
+        "missing": "caminan",
+        "options": [
+            "caminan",
+            "caminamos",
+            "caminaste",
+            "camina"
+        ],
+        "exp": "Tense: Presente. Subject: Ellos."
+    },
+    {
+        "sentence": "Anoche, ellos _____ (hablar).",
+        "engFull": "Last night, they talked.",
+        "missing": "hablaron",
+        "options": [
+            "hablas",
+            "hablan",
+            "hablaron",
+            "hablaste"
+        ],
+        "exp": "Tense: Pasado. Subject: Ellos."
+    },
+    {
+        "sentence": "El próximo año, ellos _____ (aprender).",
+        "engFull": "Next year, they will learn.",
+        "missing": "aprenderán",
+        "options": [
             "aprende",
-            "aprendí"
+            "aprenderemos",
+            "aprendí",
+            "aprenderán"
+        ],
+        "exp": "Tense: Futuro. Subject: Ellos."
+    },
+    {
+        "sentence": "Hoy, nosotros _____ (dormir).",
+        "engFull": "Today, we sleep.",
+        "missing": "dormimos",
+        "options": [
+            "duermen",
+            "dormirán",
+            "dormirá",
+            "dormimos"
+        ],
+        "exp": "Tense: Presente. Subject: Nosotros."
+    },
+    {
+        "sentence": "El próximo año, yo _____ (hablar).",
+        "engFull": "Next year, I will talk.",
+        "missing": "hablaré",
+        "options": [
+            "hablarán",
+            "hablaré",
+            "hablé",
+            "hablaste"
+        ],
+        "exp": "Tense: Futuro. Subject: Yo."
+    },
+    {
+        "sentence": "Hoy, yo _____ (comer).",
+        "engFull": "Today, I eat.",
+        "missing": "como",
+        "options": [
+            "comiste",
+            "comieron",
+            "comeremos",
+            "como"
+        ],
+        "exp": "Tense: Presente. Subject: Yo."
+    },
+    {
+        "sentence": "Hoy, nosotros _____ (correr).",
+        "engFull": "Today, we run.",
+        "missing": "corremos",
+        "options": [
+            "corremos",
+            "correremos",
+            "correrás",
+            "corre"
+        ],
+        "exp": "Tense: Presente. Subject: Nosotros."
+    },
+    {
+        "sentence": "El año pasado, él/ella _____ (pensar).",
+        "engFull": "Last year, he/she thought.",
+        "missing": "pensó",
+        "options": [
+            "piensas",
+            "pensaste",
+            "pensamos",
+            "pensó"
+        ],
+        "exp": "Tense: Pasado. Subject: Él/Ella."
+    },
+    {
+        "sentence": "El año pasado, yo _____ (dibujar).",
+        "engFull": "Last year, I drew.",
+        "missing": "dibujé",
+        "options": [
+            "dibujé",
+            "dibujo",
+            "dibujan",
+            "dibujamos"
+        ],
+        "exp": "Tense: Pasado. Subject: Yo."
+    },
+    {
+        "sentence": "Todos los días, él/ella _____ (comer).",
+        "engFull": "Every day, he/she eats.",
+        "missing": "come",
+        "options": [
+            "como",
+            "come",
+            "comió",
+            "comiste"
         ],
         "exp": "Tense: Presente. Subject: Él/Ella."
     },
     {
-        "sentence": "El año pasado, nosotros _____ (cantar).",
-        "engFull": "Last year, we sang.",
-        "missing": "cantamos",
+        "sentence": "Mañana, tú _____ (jugar).",
+        "engFull": "Tomorrow, you will play.",
+        "missing": "jugarás",
         "options": [
-            "cantaron",
-            "canté",
-            "cantamos",
-            "cantaremos"
+            "juego",
+            "jugarás",
+            "juegas",
+            "jugó"
+        ],
+        "exp": "Tense: Futuro. Subject: Tú."
+    },
+    {
+        "sentence": "Ayer, tú _____ (correr).",
+        "engFull": "Yesterday, you ran.",
+        "missing": "corriste",
+        "options": [
+            "corremos",
+            "correrá",
+            "corren",
+            "corriste"
+        ],
+        "exp": "Tense: Pasado. Subject: Tú."
+    },
+    {
+        "sentence": "Pronto, él/ella _____ (correr).",
+        "engFull": "Soon, he/she will run.",
+        "missing": "correrá",
+        "options": [
+            "correrá",
+            "corro",
+            "corrí",
+            "correremos"
+        ],
+        "exp": "Tense: Futuro. Subject: Él/Ella."
+    },
+    {
+        "sentence": "El año pasado, yo _____ (jugar).",
+        "engFull": "Last year, I played.",
+        "missing": "jugué",
+        "options": [
+            "jugaron",
+            "jugué",
+            "juegas",
+            "jugó"
+        ],
+        "exp": "Tense: Pasado. Subject: Yo."
+    },
+    {
+        "sentence": "Anoche, nosotros _____ (pensar).",
+        "engFull": "Last night, we thought.",
+        "missing": "pensamos",
+        "options": [
+            "pensamos",
+            "pensaremos",
+            "pensó",
+            "pensé"
         ],
         "exp": "Tense: Pasado. Subject: Nosotros."
+    },
+    {
+        "sentence": "Todos los días, tú _____ (esperar).",
+        "engFull": "Every day, you wait.",
+        "missing": "esperas",
+        "options": [
+            "esperan",
+            "esperas",
+            "esperamos",
+            "esperaste"
+        ],
+        "exp": "Tense: Presente. Subject: Tú."
+    },
+    {
+        "sentence": "Mañana, tú _____ (hablar).",
+        "engFull": "Tomorrow, you will talk.",
+        "missing": "hablarás",
+        "options": [
+            "hablaré",
+            "habló",
+            "hablaste",
+            "hablarás"
+        ],
+        "exp": "Tense: Futuro. Subject: Tú."
+    },
+    {
+        "sentence": "Mañana, ellos _____ (esperar).",
+        "engFull": "Tomorrow, they will wait.",
+        "missing": "esperarán",
+        "options": [
+            "esperamos",
+            "esperarán",
+            "esperaré",
+            "esperarás"
+        ],
+        "exp": "Tense: Futuro. Subject: Ellos."
+    },
+    {
+        "sentence": "Ahora, tú _____ (esperar).",
+        "engFull": "Now, you wait.",
+        "missing": "esperas",
+        "options": [
+            "esperé",
+            "esperaré",
+            "esperó",
+            "esperas"
+        ],
+        "exp": "Tense: Presente. Subject: Tú."
+    },
+    {
+        "sentence": "El año pasado, él/ella _____ (dormir).",
+        "engFull": "Last year, he/she slept.",
+        "missing": "durmió",
+        "options": [
+            "dormirás",
+            "dormirán",
+            "durmió",
+            "duermen"
+        ],
+        "exp": "Tense: Pasado. Subject: Él/Ella."
+    },
+    {
+        "sentence": "Ayer, ellos _____ (comer).",
+        "engFull": "Yesterday, they ate.",
+        "missing": "comieron",
+        "options": [
+            "comerán",
+            "comimos",
+            "comieron",
+            "como"
+        ],
+        "exp": "Tense: Pasado. Subject: Ellos."
+    },
+    {
+        "sentence": "Pronto, él/ella _____ (hablar).",
+        "engFull": "Soon, he/she will talk.",
+        "missing": "hablará",
+        "options": [
+            "hablará",
+            "hablo",
+            "hablan",
+            "hablarán"
+        ],
+        "exp": "Tense: Futuro. Subject: Él/Ella."
+    },
+    {
+        "sentence": "Anoche, él/ella _____ (correr).",
+        "engFull": "Last night, he/she ran.",
+        "missing": "corrió",
+        "options": [
+            "corrió",
+            "corren",
+            "corremos",
+            "correrá"
+        ],
+        "exp": "Tense: Pasado. Subject: Él/Ella."
+    },
+    {
+        "sentence": "Anoche, nosotros _____ (caminar).",
+        "engFull": "Last night, we walked.",
+        "missing": "caminamos",
+        "options": [
+            "caminará",
+            "caminamos",
+            "caminaré",
+            "caminaron"
+        ],
+        "exp": "Tense: Pasado. Subject: Nosotros."
+    },
+    {
+        "sentence": "El año pasado, yo _____ (esperar).",
+        "engFull": "Last year, I waited.",
+        "missing": "esperé",
+        "options": [
+            "esperaré",
+            "espera",
+            "esperará",
+            "esperé"
+        ],
+        "exp": "Tense: Pasado. Subject: Yo."
+    },
+    {
+        "sentence": "Anoche, nosotros _____ (dormir).",
+        "engFull": "Last night, we slept.",
+        "missing": "dormimos",
+        "options": [
+            "durmieron",
+            "duermes",
+            "dormimos",
+            "duermen"
+        ],
+        "exp": "Tense: Pasado. Subject: Nosotros."
+    },
+    {
+        "sentence": "Hoy, él/ella _____ (jugar).",
+        "engFull": "Today, he/she plays.",
+        "missing": "juega",
+        "options": [
+            "jugaremos",
+            "jugarás",
+            "juega",
+            "jugaste"
+        ],
+        "exp": "Tense: Presente. Subject: Él/Ella."
+    },
+    {
+        "sentence": "Ahora, él/ella _____ (pensar).",
+        "engFull": "Now, he/she thinks.",
+        "missing": "piensa",
+        "options": [
+            "pensaré",
+            "piensa",
+            "pensaremos",
+            "pensamos"
+        ],
+        "exp": "Tense: Presente. Subject: Él/Ella."
+    },
+    {
+        "sentence": "Anoche, yo _____ (cantar).",
+        "engFull": "Last night, I sang.",
+        "missing": "canté",
+        "options": [
+            "canto",
+            "cantaste",
+            "canté",
+            "cantarán"
+        ],
+        "exp": "Tense: Pasado. Subject: Yo."
+    },
+    {
+        "sentence": "Mañana, él/ella _____ (aprender).",
+        "engFull": "Tomorrow, he/she will learn.",
+        "missing": "aprenderá",
+        "options": [
+            "aprenderá",
+            "aprendimos",
+            "aprenden",
+            "aprendieron"
+        ],
+        "exp": "Tense: Futuro. Subject: Él/Ella."
+    },
+    {
+        "sentence": "Hoy, nosotros _____ (caminar).",
+        "engFull": "Today, we walk.",
+        "missing": "caminamos",
+        "options": [
+            "caminamos",
+            "caminaré",
+            "camina",
+            "caminarás"
+        ],
+        "exp": "Tense: Presente. Subject: Nosotros."
+    },
+    {
+        "sentence": "El año pasado, tú _____ (cantar).",
+        "engFull": "Last year, you sang.",
+        "missing": "cantaste",
+        "options": [
+            "cantarás",
+            "cantarán",
+            "cantamos",
+            "cantaste"
+        ],
+        "exp": "Tense: Pasado. Subject: Tú."
+    },
+    {
+        "sentence": "Pronto, ellos _____ (jugar).",
+        "engFull": "Soon, they will play.",
+        "missing": "jugarán",
+        "options": [
+            "jugaron",
+            "juegas",
+            "jugarán",
+            "jugarás"
+        ],
+        "exp": "Tense: Futuro. Subject: Ellos."
+    },
+    {
+        "sentence": "Pronto, él/ella _____ (esperar).",
+        "engFull": "Soon, he/she will wait.",
+        "missing": "esperará",
+        "options": [
+            "esperarán",
+            "esperó",
+            "esperan",
+            "esperará"
+        ],
+        "exp": "Tense: Futuro. Subject: Él/Ella."
+    },
+    {
+        "sentence": "Ahora, tú _____ (pensar).",
+        "engFull": "Now, you think.",
+        "missing": "piensas",
+        "options": [
+            "piensa",
+            "pensó",
+            "piensas",
+            "pensarás"
+        ],
+        "exp": "Tense: Presente. Subject: Tú."
+    },
+    {
+        "sentence": "Hoy, tú _____ (caminar).",
+        "engFull": "Today, you walk.",
+        "missing": "caminas",
+        "options": [
+            "caminas",
+            "caminaré",
+            "camina",
+            "caminarás"
+        ],
+        "exp": "Tense: Presente. Subject: Tú."
+    },
+    {
+        "sentence": "Ahora, nosotros _____ (pensar).",
+        "engFull": "Now, we think.",
+        "missing": "pensamos",
+        "options": [
+            "pensé",
+            "pensaste",
+            "pensamos",
+            "piensan"
+        ],
+        "exp": "Tense: Presente. Subject: Nosotros."
+    },
+    {
+        "sentence": "Anoche, él/ella _____ (comer).",
+        "engFull": "Last night, he/she ate.",
+        "missing": "comió",
+        "options": [
+            "comió",
+            "comes",
+            "comerás",
+            "comen"
+        ],
+        "exp": "Tense: Pasado. Subject: Él/Ella."
+    },
+    {
+        "sentence": "El año pasado, tú _____ (comer).",
+        "engFull": "Last year, you ate.",
+        "missing": "comiste",
+        "options": [
+            "comieron",
+            "como",
+            "comerán",
+            "comiste"
+        ],
+        "exp": "Tense: Pasado. Subject: Tú."
+    },
+    {
+        "sentence": "Pronto, él/ella _____ (pensar).",
+        "engFull": "Soon, he/she will think.",
+        "missing": "pensará",
+        "options": [
+            "pensamos",
+            "pensará",
+            "pensaré",
+            "pensó"
+        ],
+        "exp": "Tense: Futuro. Subject: Él/Ella."
+    },
+    {
+        "sentence": "Ayer, yo _____ (pensar).",
+        "engFull": "Yesterday, I thought.",
+        "missing": "pensé",
+        "options": [
+            "piensan",
+            "piensa",
+            "pensé",
+            "pensamos"
+        ],
+        "exp": "Tense: Pasado. Subject: Yo."
+    },
+    {
+        "sentence": "Anoche, él/ella _____ (dormir).",
+        "engFull": "Last night, he/she slept.",
+        "missing": "durmió",
+        "options": [
+            "durmieron",
+            "durmió",
+            "dormirá",
+            "dormí"
+        ],
+        "exp": "Tense: Pasado. Subject: Él/Ella."
+    },
+    {
+        "sentence": "Hoy, tú _____ (dormir).",
+        "engFull": "Today, you sleep.",
+        "missing": "duermes",
+        "options": [
+            "dormiste",
+            "duermes",
+            "dormirán",
+            "durmió"
+        ],
+        "exp": "Tense: Presente. Subject: Tú."
+    },
+    {
+        "sentence": "El próximo año, ellos _____ (comer).",
+        "engFull": "Next year, they will eat.",
+        "missing": "comerán",
+        "options": [
+            "comerás",
+            "comerán",
+            "comiste",
+            "come"
+        ],
+        "exp": "Tense: Futuro. Subject: Ellos."
+    },
+    {
+        "sentence": "El próximo año, nosotros _____ (dibujar).",
+        "engFull": "Next year, we will draw.",
+        "missing": "dibujaremos",
+        "options": [
+            "dibujamos",
+            "dibujaron",
+            "dibuja",
+            "dibujaremos"
+        ],
+        "exp": "Tense: Futuro. Subject: Nosotros."
+    },
+    {
+        "sentence": "Pronto, ellos _____ (aprender).",
+        "engFull": "Soon, they will learn.",
+        "missing": "aprenderán",
+        "options": [
+            "aprenderán",
+            "aprendí",
+            "aprende",
+            "aprenderás"
+        ],
+        "exp": "Tense: Futuro. Subject: Ellos."
+    },
+    {
+        "sentence": "Ayer, él/ella _____ (esperar).",
+        "engFull": "Yesterday, he/she waited.",
+        "missing": "esperó",
+        "options": [
+            "esperó",
+            "esperan",
+            "esperaste",
+            "espero"
+        ],
+        "exp": "Tense: Pasado. Subject: Él/Ella."
+    },
+    {
+        "sentence": "Mañana, yo _____ (jugar).",
+        "engFull": "Tomorrow, I will play.",
+        "missing": "jugaré",
+        "options": [
+            "jugaré",
+            "jugará",
+            "juego",
+            "jugó"
+        ],
+        "exp": "Tense: Futuro. Subject: Yo."
+    },
+    {
+        "sentence": "Hoy, yo _____ (correr).",
+        "engFull": "Today, I run.",
+        "missing": "corro",
+        "options": [
+            "correrá",
+            "corro",
+            "correrás",
+            "corrieron"
+        ],
+        "exp": "Tense: Presente. Subject: Yo."
+    },
+    {
+        "sentence": "Anoche, él/ella _____ (cantar).",
+        "engFull": "Last night, he/she sang.",
+        "missing": "cantó",
+        "options": [
+            "cantaremos",
+            "cantaré",
+            "cantan",
+            "cantó"
+        ],
+        "exp": "Tense: Pasado. Subject: Él/Ella."
+    },
+    {
+        "sentence": "El año pasado, nosotros _____ (comer).",
+        "engFull": "Last year, we ate.",
+        "missing": "comimos",
+        "options": [
+            "comió",
+            "como",
+            "comimos",
+            "comiste"
+        ],
+        "exp": "Tense: Pasado. Subject: Nosotros."
+    },
+    {
+        "sentence": "El año pasado, nosotros _____ (jugar).",
+        "engFull": "Last year, we played.",
+        "missing": "jugamos",
+        "options": [
+            "jugará",
+            "jugaron",
+            "juega",
+            "jugamos"
+        ],
+        "exp": "Tense: Pasado. Subject: Nosotros."
+    },
+    {
+        "sentence": "Hoy, ellos _____ (cantar).",
+        "engFull": "Today, they sing.",
+        "missing": "cantan",
+        "options": [
+            "cantas",
+            "cantó",
+            "cantarás",
+            "cantan"
+        ],
+        "exp": "Tense: Presente. Subject: Ellos."
+    },
+    {
+        "sentence": "El año pasado, él/ella _____ (comer).",
+        "engFull": "Last year, he/she ate.",
+        "missing": "comió",
+        "options": [
+            "comió",
+            "comerá",
+            "comemos",
+            "comerás"
+        ],
+        "exp": "Tense: Pasado. Subject: Él/Ella."
+    },
+    {
+        "sentence": "Ahora, tú _____ (hablar).",
+        "engFull": "Now, you talk.",
+        "missing": "hablas",
+        "options": [
+            "hablaron",
+            "hablas",
+            "hablaré",
+            "hablaste"
+        ],
+        "exp": "Tense: Presente. Subject: Tú."
+    },
+    {
+        "sentence": "El próximo año, ellos _____ (caminar).",
+        "engFull": "Next year, they will walk.",
+        "missing": "caminarán",
+        "options": [
+            "caminaremos",
+            "caminé",
+            "caminarán",
+            "caminas"
+        ],
+        "exp": "Tense: Futuro. Subject: Ellos."
     }
 ];
