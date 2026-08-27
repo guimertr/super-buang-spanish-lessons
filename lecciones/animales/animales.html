@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animales - Clase de Español</title>
+<style>
+    body { font-family: 'Arial', sans-serif; background-color: #e6f7ff; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
+    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #333; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .back-btn:hover { background-color: #eee; }
+    .slide-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 40px; width: 600px; max-width: 90%; position: relative; }
+    .emoji-display { font-size: 150px; margin: 20px 0; line-height: 1; }
+    .spanish-word { font-size: 48px; font-weight: bold; color: #333; margin: 10px 0; text-transform: uppercase; }
+    .english-word { font-size: 24px; color: #777; margin: 0; }
+    .controls { margin-top: 30px; }
+    button { background-color: #4ddbff; border: none; padding: 10px 20px; font-size: 18px; border-radius: 10px; cursor: pointer; margin: 0 10px; font-weight: bold; color: #333; }
+    button:hover { background-color: #1ac6ff; }
+</style>
+</head>
+<body>
+<!-- RUTA DEL BOTON ACTUALIZADA -->
+<a href="../../index.html" class="back-btn">⬅️ Volver al Menú</a>
+<div class="slide-container">
+    <div id="emoji-display" class="emoji-display">🐾</div>
+    <h1 id="spanish-display" class="spanish-word">LOS ANIMALES</h1>
+    <p id="english-display" class="english-word">Animals - Spanish Class</p>
+    <div class="controls">
+        <button onclick="prevSlide()">Anterior</button>
+        <button onclick="nextSlide()">Siguiente</button>
+    </div>
+</div>
+<script>
+    const slides = [
+        { emoji: '🐾', es: 'Los Animales', en: 'Animals' }, { emoji: '🐶', es: 'El Perro', en: 'the dog' },
+        { emoji: '🐱', es: 'El Gato', en: 'the cat' }, { emoji: '🐭', es: 'El Ratón', en: 'the mouse' },
+        { emoji: '🐰', es: 'El Conejo', en: 'the rabbit' }, { emoji: '🐻', es: 'El Oso', en: 'the bear' },
+        { emoji: '🦁', es: 'El León', en: 'the lion' }, { emoji: '🐮', es: 'La Vaca', en: 'the cow' },
+        { emoji: '🐷', es: 'El Cerdo', en: 'the pig' }, { emoji: '🐸', es: 'La Rana', en: 'the frog' },
+        { emoji: '🐵', es: 'El Mono', en: 'the monkey' }
+    ];
+    let currentSlide = 0;
+    function updateSlide() {
+        document.getElementById('emoji-display').innerText = slides[currentSlide].emoji;
+        document.getElementById('spanish-display').innerText = slides[currentSlide].es;
+        document.getElementById('english-display').innerText = slides[currentSlide].en;
+    }
+    function nextSlide() { if (currentSlide < slides.length - 1) { currentSlide++; updateSlide(); } }
+    function prevSlide() { if (currentSlide > 0) { currentSlide--; updateSlide(); } }
+</script>
+</body>
+</html>

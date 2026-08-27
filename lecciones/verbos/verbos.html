@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verbos - Clase de Español</title>
+<style>
+    :root {
+        --ajuste-y: -30px; 
+    }
+    
+    body { font-family: 'Arial', sans-serif; background-color: #fdf5e6; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
+    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #333; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .back-btn:hover { background-color: #eee; }
+    .slide-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 40px; width: 600px; max-width: 90%; position: relative; }
+    
+    /* RUTAS ACTUALIZADAS PARA ESTAR DENTRO DE LECCIONES/VERBOS/ */
+    .cat-image { width: 250px; height: 250px; margin: 0 auto 20px auto; border-radius: 50%; background-image: url('../../img/gatos_verbos.jpg'); background-size: 300% 400%; background-repeat: no-repeat; }
+    
+    .comer { background-position: 0% calc(0% + var(--ajuste-y)); } 
+    .dormir { background-position: 50% calc(0% + var(--ajuste-y)); } 
+    .jugar { background-position: 100% calc(0% + var(--ajuste-y)); }
+    
+    .caminar { background-position: 0% calc(33.33% + var(--ajuste-y)); } 
+    .hablar { background-position: 50% calc(33.33% + var(--ajuste-y)); } 
+    .pensar { background-position: 100% calc(33.33% + var(--ajuste-y)); }
+    
+    .correr { background-position: 0% calc(66.66% + var(--ajuste-y)); } 
+    .cantar { background-position: 50% calc(66.66% + var(--ajuste-y)); } 
+    .esperar { background-position: 100% calc(66.66% + var(--ajuste-y)); }
+    
+    .dibujar { background-position: 0% calc(100% + var(--ajuste-y)); } 
+    .aprender { background-position: 50% calc(100% + var(--ajuste-y)); } 
+    .original { background-position: 100% calc(100% + var(--ajuste-y)); }
+    
+    .spanish-word { font-size: 48px; font-weight: bold; color: #333; margin: 10px 0; text-transform: uppercase; }
+    .english-word { font-size: 24px; color: #777; margin: 0; }
+    .controls { margin-top: 30px; }
+    button { background-color: #ffd700; border: none; padding: 10px 20px; font-size: 18px; border-radius: 10px; cursor: pointer; margin: 0 10px; font-weight: bold; color: #333; }
+    button:hover { background-color: #ffc700; }
+</style>
+</head>
+<body>
+<!-- RUTA DEL BOTON ACTUALIZADA -->
+<a href="../../index.html" class="back-btn">⬅️ Volver al Menú</a>
+<div class="slide-container">
+    <div id="cat-display" class="cat-image original"></div>
+    <h1 id="spanish-display" class="spanish-word">BIENVENIDOS</h1>
+    <p id="english-display" class="english-word">Verbs - Spanish Class</p>
+    <div class="controls">
+        <button onclick="prevSlide()">Anterior</button>
+        <button onclick="nextSlide()">Siguiente</button>
+    </div>
+</div>
+<script>
+    const slides = [
+        { catClass: 'original', es: 'Los Verbos', en: 'Verbs' }, 
+        { catClass: 'comer', es: 'Comer', en: 'to eat' },
+        { catClass: 'dormir', es: 'Dormir', en: 'to sleep' }, 
+        { catClass: 'jugar', es: 'Jugar', en: 'to play' },
+        { catClass: 'caminar', es: 'Caminar', en: 'to walk' }, 
+        { catClass: 'hablar', es: 'Hablar', en: 'to talk' },
+        { catClass: 'pensar', es: 'Pensar', en: 'to think' }, 
+        { catClass: 'correr', es: 'Correr', en: 'to run' },
+        { catClass: 'cantar', es: 'Cantar', en: 'to sing' }, 
+        { catClass: 'esperar', es: 'Esperar', en: 'to wait' },
+        { catClass: 'dibujar', es: 'Dibujar', en: 'to draw' }, 
+        { catClass: 'aprender', es: 'Aprender', en: 'to learn' }
+    ];
+    let currentSlide = 0;
+    function updateSlide() {
+        const catDiv = document.getElementById('cat-display');
+        catDiv.className = 'cat-image ' + slides[currentSlide].catClass;
+        document.getElementById('spanish-display').innerText = slides[currentSlide].es;
+        document.getElementById('english-display').innerText = slides[currentSlide].en;
+    }
+    function nextSlide() { if (currentSlide < slides.length - 1) { currentSlide++; updateSlide(); } }
+    function prevSlide() { if (currentSlide > 0) { currentSlide--; updateSlide(); } }
+</script>
+</body>
+</html>
