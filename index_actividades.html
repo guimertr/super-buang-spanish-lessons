@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividades - Super Buang</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
+    
+    :root {
+        --bg-pina: #FDFBF7;
+        --text-dark: #1E293B;
+        --text-muted: #475569;
+        --primary-blue: #1D3557; 
+        --accent-wood: #8B4513; 
+        --accent-gold: #D4AF37; 
+        --card-bg: #FFFFFF;
+        --border: #E2E8F0;
+    }
+    
+    body { margin: 0; font-family: 'Nunito', sans-serif; background-color: var(--bg-pina); color: var(--text-dark); text-align: center; }
+    
+    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: var(--card-bg); color: var(--primary-blue); padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid var(--border); transition: 0.2s; }
+    .back-btn:hover { color: var(--accent-wood); border-color: var(--primary-blue); }
+    
+    .menu-container { background-color: var(--card-bg); border-radius: 20px; box-shadow: 0 10px 20px rgba(29, 53, 87, 0.08); padding: 40px 50px; width: 550px; max-width: 90%; margin: 80px auto; border-top: 5px solid var(--primary-blue); }
+    
+    h1 { margin-bottom: 5px; font-size: 32px; color: var(--primary-blue); }
+    p { color: var(--text-muted); margin-bottom: 30px; font-size: 16px; }
+    
+    .activity-row { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 15px auto; width: 100%; }
+    
+    /* Botones uniformes con paleta filipina */
+    .menu-button { display: flex; align-items: center; justify-content: flex-start; padding-left: 20px; background-color: var(--primary-blue); text-decoration: none; color: white; font-size: 20px; font-weight: bold; height: 60px; border-radius: 15px; flex-grow: 1; transition: transform 0.2s, background-color 0.2s, border-color 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 2px solid transparent; }
+    .menu-button:hover { transform: translateY(-2px); background-color: var(--accent-wood); border-color: var(--accent-gold); }
+    
+    .history-button { display: flex; justify-content: center; align-items: center; background-color: #F8FAFC; text-decoration: none; color: var(--primary-blue); font-size: 26px; width: 60px; height: 60px; border-radius: 15px; transition: all 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid var(--border); flex-shrink: 0; }
+    .history-button:hover { background-color: var(--border); color: var(--accent-wood); transform: scale(1.05); }
+</style>
+</head>
+<body>
+<a href="../index.html" class="back-btn">⬅️ Volver al Inicio</a>
+
+<div class="menu-container">
+    <h1>Zona de Práctica 🎮</h1>
+    <p>Selecciona una actividad para empezar</p>
+    
+    <div class="activity-row">
+        <a href="actividad_animales.html" class="menu-button">🐾 Práctica de Animales</a>
+        <a href="../registro_calificaciones.html?act=Animales" class="history-button" title="Ver puntajes">&#9776;</a>
+    </div>
+    <div class="activity-row">
+        <a href="actividad_vamos.html" class="menu-button">🚶 "Vamos a..." y Tiempo</a>
+        <a href="../registro_calificaciones.html?act=Vamos+a" class="history-button" title="Ver puntajes">&#9776;</a>
+    </div>
+    <div class="activity-row">
+        <a href="actividad_gramatica.html" class="menu-button">💡 Querer vs Tener que</a>
+        <a href="../registro_calificaciones.html?act=Gramática" class="history-button" title="Ver puntajes">&#9776;</a>
+    </div>
+    <div class="activity-row">
+        <a href="actividad_reloj.html" class="menu-button">⌚ ¿Qué hora es?</a>
+        <a href="../registro_calificaciones.html?act=Reloj" class="history-button" title="Ver puntajes">&#9776;</a>
+    </div>
+    <div class="activity-row">
+        <a href="actividad_oraciones.html" class="menu-button">🧩 Práctica de Oraciones</a>
+        <a href="../registro_calificaciones.html?act=Oraciones" class="history-button" title="Ver puntajes">&#9776;</a>
+    </div>
+    <div class="activity-row">
+        <a href="actividad_conjugaciones.html" class="menu-button">⏳ Tiempos Verbales</a>
+        <a href="../registro_calificaciones.html?act=Conjugaciones" class="history-button" title="Ver puntajes">&#9776;</a>
+    </div>
+</div>
+</body>
+</html>
