@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividades - Super Buang</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
+    body { margin: 0; font-family: 'Nunito', sans-serif; background-color: #FDFBF7; color: #1A365D; text-align: center; }
+    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #1A365D; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eee;}
+    
+    .menu-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); padding: 40px 50px; width: 550px; max-width: 90%; margin: 80px auto; }
+    h1 { margin-bottom: 5px; font-size: 32px; }
+    p { color: #4A5568; margin-bottom: 30px; font-size: 16px; }
+    
+    .activity-row { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 15px auto; width: 100%; }
+    .menu-button { display: flex; align-items: center; justify-content: flex-start; padding-left: 20px; background-color: #2A9D8F; text-decoration: none; color: white; font-size: 20px; font-weight: bold; height: 60px; border-radius: 15px; flex-grow: 1; transition: transform 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .menu-button:hover { transform: scale(1.02); filter: brightness(1.1); }
+    .menu-button.beta { background-color: #ED8936; }
+    
+    .history-button { display: flex; justify-content: center; align-items: center; background-color: #E2E8F0; text-decoration: none; color: #1A365D; font-size: 26px; width: 60px; height: 60px; border-radius: 15px; transition: transform 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.05); flex-shrink: 0; }
+    .history-button:hover { background-color: #CBD5E0; transform: scale(1.05); }
+</style>
+</head>
+<body>
+<a href="../index.html" class="back-btn">⬅️ Volver al Inicio</a>
+
+<div class="menu-container">
+    <h1>Zona de Práctica 🎮</h1>
+    <p>Selecciona una actividad para empezar</p>
+    
+    <div class="activity-row">
+        <a href="actividad_animales.html" class="menu-button">🐾 Práctica de Animales</a>
+        <a href="../registro_calificaciones.html?act=Animales" class="history-button" title="Ver puntajes">&#9776;</a>
+    </div>
+    <div class="activity-row">
+        <a href="actividad_vamos.html" class="menu-button beta">🚶 "Vamos a..." y Tiempo</a>
+        <a href="../registro_calificaciones.html?act=Vamos+a" class="history-button" title="Ver puntajes">&#9776;</a>
+    </div>
+    <div class="activity-row">
+        <a href="actividad_gramatica.html" class="menu-button beta">💡 Querer vs Tener que</a>
+        <a href="../registro_calificaciones.html?act=Gramática" class="history-button" title="Ver puntajes">&#9776;</a>
+    </div>
+    <div class="activity-row">
+        <a href="actividad_reloj.html" class="menu-button beta">⌚ ¿Qué hora es?</a>
+        <a href="../registro_calificaciones.html?act=Reloj" class="history-button" title="Ver puntajes">&#9776;</a>
+    </div>
+    <div class="activity-row">
+        <a href="actividad_oraciones.html" class="menu-button beta">🧩 Práctica de Oraciones</a>
+        <a href="../registro_calificaciones.html?act=Oraciones" class="history-button" title="Ver puntajes">&#9776;</a>
+    </div>
+</div>
+</body>
+</html>
