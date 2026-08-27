@@ -3,25 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menú Principal - Clases de Español</title>
+<title>Super Buang Spanish Lessons</title>
 <style>
-    body { font-family: 'Arial', sans-serif; background-color: #fdf5e6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
-    .menu-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 50px; width: 500px; max-width: 90%; }
-    h1 { color: #333; margin-bottom: 10px; font-size: 36px; }
-    p { color: #777; margin-bottom: 40px; font-size: 18px; }
-    .menu-button { display: block; background-color: #ffd700; text-decoration: none; color: #333; font-size: 22px; font-weight: bold; padding: 15px 30px; border-radius: 15px; margin: 15px auto; width: 80%; transition: transform 0.2s, background-color 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    .menu-button:hover { background-color: #ffc700; transform: scale(1.05); }
-    .activity-button { background-color: #28a745; color: white; }
-    .activity-button:hover { background-color: #218838; }
+    /* Importar fuente moderna y amigable */
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
+    
+    body { 
+        margin: 0; 
+        font-family: 'Nunito', sans-serif; 
+        background-color: #f8f9fa; 
+        color: #333; 
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    
+    /* Barra de Navegación */
+    .navbar { 
+        background-color: #ffffff; 
+        padding: 20px 40px; 
+        box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        position: relative;
+        z-index: 10;
+    }
+    .logo { 
+        font-size: 26px; 
+        font-weight: 900; 
+        color: #007bff; 
+        text-decoration: none; 
+        display: flex; 
+        align-items: center; 
+        gap: 10px; 
+    }
+    .teacher-link { 
+        color: #6c757d; 
+        text-decoration: none; 
+        font-weight: bold; 
+        border: 2px solid #e9ecef; 
+        padding: 8px 20px; 
+        border-radius: 25px; 
+        transition: all 0.3s; 
+    }
+    .teacher-link:hover { 
+        background-color: #6c757d; 
+        color: white; 
+        border-color: #6c757d;
+    }
+
+    /* Sección Hero (Encabezado Principal) */
+    .hero { 
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); 
+        color: white; 
+        text-align: center; 
+        padding: 90px 20px 120px 20px; 
+    }
+    .hero h1 { 
+        font-size: 52px; 
+        margin: 0 0 15px 0; 
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .hero p { 
+        font-size: 22px; 
+        margin: 0; 
+        opacity: 0.9; 
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Contenedor de Tarjetas (Grid) */
+    .container { 
+        max-width: 1100px; 
+        margin: -60px auto 50px auto; 
+        padding: 0 20px; 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        gap: 30px; 
+        position: relative;
+        z-index: 5;
+    }
+    
+    .card { 
+        background: white; 
+        border-radius: 20px; 
+        padding: 40px 30px; 
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+        text-align: center; 
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s; 
+        text-decoration: none; 
+        color: inherit; 
+        display: flex;
+        flex-direction: column;
+        border-top: 6px solid transparent; 
+    }
+    .card:hover { 
+        transform: translateY(-15px); 
+        box-shadow: 0 20px 40px rgba(0,0,0,0.12); 
+    }
+    
+    /* Colores personalizados para cada tarjeta */
+    .card-verbos { border-top-color: #ffc107; }
+    .card-animales { border-top-color: #28a745; }
+    .card-juegos { border-top-color: #fd7e14; }
+
+    .card-icon { 
+        font-size: 70px; 
+        margin-bottom: 20px; 
+        line-height: 1;
+    }
+    .card-title { 
+        font-size: 26px; 
+        font-weight: 800; 
+        margin-bottom: 15px; 
+        color: #2c3e50;
+    }
+    .card-desc { 
+        color: #666; 
+        font-size: 16px; 
+        margin-bottom: 30px; 
+        line-height: 1.6;
+        flex-grow: 1;
+    }
+    .card-btn { 
+        display: inline-block; 
+        padding: 12px 25px; 
+        border-radius: 25px; 
+        font-weight: bold; 
+        font-size: 16px;
+        color: white; 
+        transition: 0.2s; 
+    }
+    
+    .btn-verbos { background-color: #ffc107; color: #333; }
+    .card:hover .btn-verbos { background-color: #e0a800; }
+    
+    .btn-animales { background-color: #28a745; }
+    .card:hover .btn-animales { background-color: #218838; }
+    
+    .btn-juegos { background-color: #fd7e14; }
+    .card:hover .btn-juegos { background-color: #e86e04; }
+
+    /* Pie de página */
+    footer { 
+        text-align: center; 
+        padding: 30px; 
+        color: #999; 
+        font-size: 15px; 
+        background: white; 
+        margin-top: auto; 
+        border-top: 1px solid #eee;
+    }
+    
+    /* Diseño Responsivo para móviles */
+    @media (max-width: 768px) {
+        .hero { padding: 60px 20px 90px 20px; }
+        .hero h1 { font-size: 38px; }
+        .navbar { flex-direction: column; gap: 15px; text-align: center; padding: 15px; }
+    }
 </style>
 </head>
 <body>
-<div class="menu-container">
-    <h1>Clases de Español 🇪🇸</h1>
-    <p>Selecciona una lección para comenzar</p>
-    <a href="lecciones/verbos/verbos.html" class="menu-button">🏃‍♂️ Aprender Verbos</a>
-    <a href="lecciones/animales/animales.html" class="menu-button">🐶 Aprender Animales</a>
-    <a href="menu_actividades.html" class="menu-button activity-button">📝 Actividades</a>
+
+<!-- Barra de Navegación -->
+<nav class="navbar">
+    <a href="#" class="logo">🌍 Super Buang Spanish Lessons</a>
+    <a href="registro_calificaciones.html" class="teacher-link">👨‍🏫 Acceso Profesores</a>
+</nav>
+
+<!-- Banner Principal -->
+<header class="hero">
+    <h1>¡Aprende Español de Forma Divertida!</h1>
+    <p>Explora nuestras lecciones interactivas, mejora tu gramática y pon a prueba tus conocimientos.</p>
+</header>
+
+<!-- Contenido Central -->
+<div class="container">
+    
+    <!-- Tarjeta: Verbos -->
+    <a href="lecciones/verbos/verbos.html" class="card card-verbos">
+        <div class="card-icon">🏃‍♂️</div>
+        <div class="card-title">Lección: Verbos</div>
+        <div class="card-desc">Descubre las acciones más comunes del día a día. ¡Aprende visualmente con la ayuda de nuestros gatos!</div>
+        <div class="card-btn btn-verbos">Aprender Verbos</div>
+    </a>
+
+    <!-- Tarjeta: Animales -->
+    <a href="lecciones/animales/animales.html" class="card card-animales">
+        <div class="card-icon">🐶</div>
+        <div class="card-title">Lección: Animales</div>
+        <div class="card-desc">Conoce los nombres de tus animales favoritos, desde los salvajes de la selva hasta los de la granja.</div>
+        <div class="card-btn btn-animales">Aprender Animales</div>
+    </a>
+
+    <!-- Tarjeta: Actividades -->
+    <a href="menu_actividades.html" class="card card-juegos">
+        <div class="card-icon">🎮</div>
+        <div class="card-title">Zona de Práctica</div>
+        <div class="card-desc">Pon a prueba todo lo que has aprendido. Construye oraciones, lee el reloj, usa la gramática y mucho más.</div>
+        <div class="card-btn btn-juegos">Ir a las Actividades</div>
+    </a>
+
 </div>
+
+<!-- Pie de página -->
+<footer>
+    &copy; 2026 Super Buang Spanish Lessons. Todos los derechos reservados.
+</footer>
+
 </body>
 </html>
