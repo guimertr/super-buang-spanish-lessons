@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Querer vs Tener Que</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
+    body { font-family: 'Nunito', sans-serif; background-color: #FDFBF7; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
+    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #1A365D; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eee; }
+    .back-btn:hover { background-color: #f8f9fa; }
+    .slide-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding: 50px 40px; width: 650px; max-width: 90%; position: relative; }
+    
+    .emoji-display { font-size: 110px; margin: 0 0 15px 0; line-height: 1; }
+    .spanish-word { font-size: 38px; font-weight: 900; color: #1A365D; margin: 10px 0; }
+    .english-word { font-size: 22px; color: #2A9D8F; margin: 0; font-weight: bold; }
+    
+    .grammar-note { margin-top: 15px; font-size: 16px; color: #718096; background: #f8f9fa; padding: 10px; border-radius: 10px; border-left: 4px solid #FFC107; font-style: italic; }
+    
+    .controls { margin-top: 30px; }
+    button { background-color: #2A9D8F; border: none; padding: 12px 25px; font-size: 18px; border-radius: 25px; cursor: pointer; margin: 0 10px; font-weight: bold; color: white; transition: 0.2s; }
+    button:hover { background-color: #238b7e; transform: scale(1.05); }
+</style>
+</head>
+<body>
+<a href="../index_lecciones.html" class="back-btn">⬅️ Volver a Lecciones</a>
+<div class="slide-container">
+    <div id="emoji-display" class="emoji-display">💡</div>
+    <h1 id="spanish-display" class="spanish-word">Querer vs Tener que</h1>
+    <p id="english-display" class="english-word">Want to vs Have to</p>
+    <div id="grammar-note" class="grammar-note">Desire vs. Obligation</div>
+    
+    <div class="controls">
+        <button onclick="prevSlide()">Anterior</button>
+        <button onclick="nextSlide()">Siguiente</button>
+    </div>
+</div>
+<script>
+    const slides = [
+        { emoji: '💡', es: 'Querer vs Tener que', en: "Want to vs Have to", note: "Desire vs. Obligation" },
+        { emoji: '🙋‍♂️', es: 'Yo quiero aprender', en: "I want to learn", note: "Querer = To want" },
+        { emoji: '📚', es: 'Yo tengo que leer', en: "I have to read", note: "Tener que = To have to (Obligation)" },
+        { emoji: '🍔', es: 'Tú quieres comer', en: "You want to eat", note: "Informal 'You'" },
+        { emoji: '❗', es: 'Tú tienes que estudiar', en: "You have to study", note: "Informal 'You'" },
+        { emoji: '🎮', es: 'Él quiere jugar', en: "He wants to play", note: "He / She / Formal You" },
+        { emoji: '⏰', es: 'Él tiene que dormir', en: "He has to sleep", note: "He / She / Formal You" },
+        { emoji: '🏃‍♂️', es: 'Nosotros queremos correr', en: "We want to run", note: "We" },
+        { emoji: '🚶‍♂️', es: 'Nosotros tenemos que caminar', en: "We have to walk", note: "We" },
+        { emoji: '🎤', es: 'Ellos quieren cantar', en: "They want to sing", note: "They / You all" },
+        { emoji: '⏳', es: 'Ellos tienen que esperar', en: "They have to wait", note: "They / You all" }
+    ];
+    let currentSlide = 0;
+    function updateSlide() {
+        document.getElementById('emoji-display').innerText = slides[currentSlide].emoji;
+        document.getElementById('spanish-display').innerText = slides[currentSlide].es;
+        document.getElementById('english-display').innerText = slides[currentSlide].en;
+        document.getElementById('grammar-note').innerText = slides[currentSlide].note;
+    }
+    function nextSlide() { if (currentSlide < slides.length - 1) { currentSlide++; updateSlide(); } }
+    function prevSlide() { if (currentSlide > 0) { currentSlide--; updateSlide(); } }
+</script>
+</body>
+</html>

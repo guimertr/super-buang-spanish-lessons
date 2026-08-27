@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vamos a... - Clase de Español</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
+    body { font-family: 'Nunito', sans-serif; background-color: #FDFBF7; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
+    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #1A365D; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eee; }
+    .back-btn:hover { background-color: #f8f9fa; }
+    .slide-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding: 50px 40px; width: 600px; max-width: 90%; position: relative; }
+    .emoji-display { font-size: 130px; margin: 0 0 20px 0; line-height: 1; }
+    .spanish-word { font-size: 42px; font-weight: 900; color: #1A365D; margin: 10px 0; }
+    .english-word { font-size: 22px; color: #ED8936; margin: 0; font-weight: bold; }
+    .controls { margin-top: 40px; }
+    button { background-color: #FFC107; border: none; padding: 12px 25px; font-size: 18px; border-radius: 25px; cursor: pointer; margin: 0 10px; font-weight: bold; color: #1A365D; transition: 0.2s; }
+    button:hover { background-color: #e0a800; transform: scale(1.05); }
+</style>
+</head>
+<body>
+<a href="../index_lecciones.html" class="back-btn">⬅️ Volver a Lecciones</a>
+<div class="slide-container">
+    <div id="emoji-display" class="emoji-display">🚶</div>
+    <h1 id="spanish-display" class="spanish-word">¡Vamos a...!</h1>
+    <p id="english-display" class="english-word">Let's...!</p>
+    <div class="controls">
+        <button onclick="prevSlide()">Anterior</button>
+        <button onclick="nextSlide()">Siguiente</button>
+    </div>
+</div>
+<script>
+    const slides = [
+        { emoji: '🚶', es: '¡Vamos a...!', en: "Let's...!" },
+        { emoji: '🍽️', es: 'Vamos a comer', en: "Let's eat" },
+        { emoji: '🎮', es: 'Vamos a jugar', en: "Let's play" },
+        { emoji: '😴', es: 'Vamos a dormir', en: "Let's sleep" },
+        { emoji: '🏃‍♂️', es: 'Vamos a correr', en: "Let's run" },
+        { emoji: '🗣️', es: 'Vamos a hablar', en: "Let's talk" },
+        { emoji: '🌅', es: 'por la mañana', en: "in the morning" },
+        { emoji: '🌇', es: 'por la tarde', en: "in the afternoon" },
+        { emoji: '🌃', es: 'por la noche', en: "at night" },
+        { emoji: '📅', es: 'hoy', en: "today" },
+        { emoji: '⏱️', es: 'ahora', en: "now" },
+        { emoji: '🤝', es: 'juntos', en: "together" }
+    ];
+    let currentSlide = 0;
+    function updateSlide() {
+        document.getElementById('emoji-display').innerText = slides[currentSlide].emoji;
+        document.getElementById('spanish-display').innerText = slides[currentSlide].es;
+        document.getElementById('english-display').innerText = slides[currentSlide].en;
+    }
+    function nextSlide() { if (currentSlide < slides.length - 1) { currentSlide++; updateSlide(); } }
+    function prevSlide() { if (currentSlide > 0) { currentSlide--; updateSlide(); } }
+</script>
+</body>
+</html>

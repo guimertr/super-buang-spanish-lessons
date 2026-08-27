@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Going To - Clase de Español</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
+    body { margin: 0; font-family: 'Nunito', sans-serif; background-color: #FDFBF7; color: #1A365D; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 40px 20px; box-sizing: border-box; }
+    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #1A365D; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eee; }
+    
+    .container { background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding: 50px; width: 100%; max-width: 700px; text-align: center; margin-top: 40px; }
+    h1 { font-size: 36px; margin-bottom: 5px; color: #2c3e50; }
+    p { color: #718096; font-size: 18px; margin-bottom: 40px; }
+    
+    .controls { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; }
+    
+    .select-group { display: flex; flex-direction: column; align-items: flex-start; }
+    .select-group label { font-size: 14px; font-weight: bold; color: #A0AEC0; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    select { padding: 15px 20px; font-size: 20px; border-radius: 12px; border: 2px solid #CBD5E0; outline: none; font-family: inherit; font-weight: bold; color: #2c3e50; cursor: pointer; width: 220px; background-color: #f8f9fa; transition: border-color 0.2s; }
+    select:focus { border-color: #38B2AC; }
+    
+    .result-box { background-color: #E6FFFA; border: 2px solid #319795; border-radius: 15px; padding: 30px; margin-top: 20px; }
+    .spa-result { font-size: 38px; font-weight: 900; color: #234E52; margin: 0 0 10px 0; }
+    .eng-result { font-size: 22px; color: #319795; margin: 0; font-weight: bold; font-style: italic; }
+</style>
+</head>
+<body>
+
+<a href="../index_lecciones.html" class="back-btn">⬅️ Volver a Lecciones</a>
+
+<div class="container">
+    <h1>Constructor "Going to" 🎯</h1>
+    <p>Elige el sujeto y el verbo para ver cómo se forma en español.</p>
+    
+    <div class="controls">
+        <div class="select-group">
+            <label>1. Quién (Sujeto)</label>
+            <select id="subjSelect" onchange="buildSentence()">
+                <option value="0">Yo (I)</option>
+                <option value="1">Tú (You)</option>
+                <option value="2">Él/Ella (He/She)</option>
+                <option value="3">Nosotros (We)</option>
+                <option value="4">Ellos (They)</option>
+            </select>
+        </div>
+        
+        <div class="select-group">
+            <label>2. Qué (Verbo)</label>
+            <select id="verbSelect" onchange="buildSentence()">
+                <option value="comer,eat">Comer (to eat)</option>
+                <option value="dormir,sleep">Dormir (to sleep)</option>
+                <option value="jugar,play">Jugar (to play)</option>
+                <option value="caminar,walk">Caminar (to walk)</option>
+                <option value="hablar,talk">Hablar (to talk)</option>
+                <option value="pensar,think">Pensar (to think)</option>
+                <option value="correr,run">Correr (to run)</option>
+                <option value="cantar,sing">Cantar (to sing)</option>
+                <option value="esperar,wait">Esperar (to wait)</option>
+                <option value="dibujar,draw">Dibujar (to draw)</option>
+                <option value="aprender,learn">Aprender (to learn)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="result-box">
+        <h2 class="spa-result" id="spaText">Yo voy a comer</h2>
+        <p class="eng-result" id="engText">I am going to eat</p>
+    </div>
+</div>
+
+<script>
+    // Ir conjugations corresponding to subjects index: 0:Yo, 1:Tú, 2:Él, 3:Nosotros, 4:Ellos
+    const irConjugations = ["voy", "vas", "va", "vamos", "van"];
+    const subjectsSpa = ["Yo", "Tú", "Él/Ella", "Nosotros", "Ellos"];
+    
+    // English 'to be' conjugations for "going to"
+    const beConjugations = ["am", "are", "is", "are", "are"];
+    const subjectsEng = ["I", "You", "He/She", "We", "They"];
+
+    function buildSentence() {
+        const subjIdx = parseInt(document.getElementById('subjSelect').value);
+        
+        const verbVal = document.getElementById('verbSelect').value; // "comer,eat"
+        const verbParts = verbVal.split(',');
+        const verbSpa = verbParts[0];
+        const verbEng = verbParts[1];
+        
+        // Spanish construction: Sujeto + ir + a + verbo
+        const spaSentence = `${subjectsSpa[subjIdx]} ${irConjugations[subjIdx]} a ${verbSpa}`;
+        
+        // English construction: Subject + be + going to + verb
+        const engSentence = `${subjectsEng[subjIdx]} ${beConjugations[subjIdx]} going to ${verbEng}`;
+        
+        document.getElementById('spaText').innerText = spaSentence;
+        document.getElementById('engText').innerText = engSentence;
+    }
+    
+    // Initial build
+    window.onload = buildSentence;
+</script>
+</body>
+</html>
