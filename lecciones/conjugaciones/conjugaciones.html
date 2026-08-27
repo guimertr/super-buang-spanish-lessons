@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conjugaciones - Clase de Español</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
+    body { margin: 0; font-family: 'Nunito', sans-serif; background-color: #FDFBF7; color: #1A365D; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 40px 20px; box-sizing: border-box; }
+    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #1A365D; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eee; }
+    
+    .container { background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding: 40px; width: 100%; max-width: 800px; text-align: center; margin-top: 40px; }
+    h1 { font-size: 36px; margin-bottom: 10px; color: #2c3e50; }
+    p { color: #718096; font-size: 18px; margin-bottom: 30px; }
+    
+    .verb-selector { margin-bottom: 30px; }
+    select { padding: 15px 25px; font-size: 20px; border-radius: 10px; border: 2px solid #CBD5E0; outline: none; font-family: inherit; font-weight: bold; color: #2c3e50; cursor: pointer; width: 250px; background-color: #f8f9fa; transition: border-color 0.2s; }
+    select:focus { border-color: #2A9D8F; }
+    
+    .table-container { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; text-align: center; border-radius: 10px; overflow: hidden; box-shadow: 0 0 0 1px #eee; }
+    th, td { padding: 15px; border-bottom: 1px solid #eee; font-size: 18px; }
+    th { background-color: #2A9D8F; color: white; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+    td.subj { font-weight: bold; color: #4A5568; background-color: #f8f9fa; border-right: 1px solid #eee; }
+    
+    .verb-en { font-size: 20px; color: #ED8936; font-weight: bold; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+
+<a href="../index_lecciones.html" class="back-btn">⬅️ Volver a Lecciones</a>
+
+<div class="container">
+    <h1>El Explorador de Verbos 🔍</h1>
+    <p>Selecciona un verbo para ver sus conjugaciones principales</p>
+    
+    <div class="verb-selector">
+        <select id="verbSelect" onchange="updateTable()">
+            <option value="comer">Comer</option><option value="dormir">Dormir</option><option value="jugar">Jugar</option><option value="caminar">Caminar</option><option value="hablar">Hablar</option><option value="pensar">Pensar</option><option value="correr">Correr</option><option value="cantar">Cantar</option><option value="esperar">Esperar</option><option value="dibujar">Dibujar</option><option value="aprender">Aprender</option>
+        </select>
+    </div>
+    
+    <div class="verb-en" id="enTranslation">to eat</div>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sujeto</th>
+                    <th>Presente (Hoy)</th>
+                    <th>Pasado (Ayer)</th>
+                    <th>Futuro (Mañana)</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Se llena con JS -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    const verbsData = {"comer": {"en": "to eat", "presente": ["como", "comes", "come", "comemos", "comen"], "pasado": ["comí", "comiste", "comió", "comimos", "comieron"], "futuro": ["comeré", "comerás", "comerá", "comeremos", "comerán"]}, "dormir": {"en": "to sleep", "presente": ["duermo", "duermes", "duerme", "dormimos", "duermen"], "pasado": ["dormí", "dormiste", "durmió", "dormimos", "durmieron"], "futuro": ["dormiré", "dormirás", "dormirá", "dormiremos", "dormirán"]}, "jugar": {"en": "to play", "presente": ["juego", "juegas", "juega", "jugamos", "juegan"], "pasado": ["jugué", "jugaste", "jugó", "jugamos", "jugaron"], "futuro": ["jugaré", "jugarás", "jugará", "jugaremos", "jugarán"]}, "caminar": {"en": "to walk", "presente": ["camino", "caminas", "camina", "caminamos", "caminan"], "pasado": ["caminé", "caminaste", "caminó", "caminamos", "caminaron"], "futuro": ["caminaré", "caminarás", "caminará", "caminaremos", "caminarán"]}, "hablar": {"en": "to talk", "presente": ["hablo", "hablas", "habla", "hablamos", "hablan"], "pasado": ["hablé", "hablaste", "habló", "hablamos", "hablaron"], "futuro": ["hablaré", "hablarás", "hablará", "hablaremos", "hablarán"]}, "pensar": {"en": "to think", "presente": ["pienso", "piensas", "piensa", "pensamos", "piensan"], "pasado": ["pensé", "pensaste", "pensó", "pensamos", "pensaron"], "futuro": ["pensaré", "pensarás", "pensará", "pensaremos", "pensarán"]}, "correr": {"en": "to run", "presente": ["corro", "corres", "corre", "corremos", "corren"], "pasado": ["corrí", "corriste", "corrió", "corrimos", "corrieron"], "futuro": ["correré", "correrás", "correrá", "correremos", "correrán"]}, "cantar": {"en": "to sing", "presente": ["canto", "cantas", "canta", "cantamos", "cantan"], "pasado": ["canté", "cantaste", "cantó", "cantamos", "cantaron"], "futuro": ["cantaré", "cantarás", "cantará", "cantaremos", "cantarán"]}, "esperar": {"en": "to wait", "presente": ["espero", "esperas", "espera", "esperamos", "esperan"], "pasado": ["esperé", "esperaste", "esperó", "esperamos", "esperaron"], "futuro": ["esperaré", "esperarás", "esperará", "esperaremos", "esperarán"]}, "dibujar": {"en": "to draw", "presente": ["dibujo", "dibujas", "dibuja", "dibujamos", "dibujan"], "pasado": ["dibujé", "dibujaste", "dibujó", "dibujamos", "dibujaron"], "futuro": ["dibujaré", "dibujarás", "dibujará", "dibujaremos", "dibujarán"]}, "aprender": {"en": "to learn", "presente": ["aprendo", "aprendes", "aprende", "aprendemos", "aprenden"], "pasado": ["aprendí", "aprendiste", "aprendió", "aprendimos", "aprendieron"], "futuro": ["aprenderé", "aprenderás", "aprenderá", "aprenderemos", "aprenderán"]}};
+    const subjects = ["Yo", "Tú", "Él/Ella/Usted", "Nosotros", "Ellos/Ellas"];
+    
+    function updateTable() {
+        const verb = document.getElementById('verbSelect').value;
+        const data = verbsData[verb];
+        document.getElementById('enTranslation').innerText = 'Meaning: ' + data.en;
+        
+        let html = '';
+        for(let i=0; i<5; i++) {
+            html += '<tr><td class="subj">' + subjects[i] + '</td><td>' + data.presente[i] + '</td><td>' + data.pasado[i] + '</td><td>' + data.futuro[i] + '</td></tr>';
+        }
+        document.getElementById('tableBody').innerHTML = html;
+    }
+    
+    window.onload = updateTable;
+</script>
+</body>
+</html>

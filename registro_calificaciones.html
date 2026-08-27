@@ -1,1 +1,168 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Registro Central de Calificaciones</title><style>body { font-family: 'Arial', sans-serif; background-color: #fdf5e6; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; } .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #333; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); } .back-btn:hover { background-color: #eee; } .history-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 40px; width: 900px; max-width: 95%; height: 85vh; display: flex; flex-direction: column; } h1 { color: #333; margin-bottom: 5px; } p { color: #777; margin-bottom: 20px; font-size: 16px; } .filter-container { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 20px; } .filter-label { font-size: 18px; font-weight: bold; color: #333; } .activity-select { padding: 10px 15px; font-size: 16px; border-radius: 8px; border: 2px solid #ccc; cursor: pointer; outline: none; font-family: inherit; background-color: #f8f9fa; color: #333; font-weight: bold; transition: border-color 0.2s; } .activity-select:focus { border-color: #007bff; } .top-controls { display: flex; justify-content: flex-end; margin-bottom: 10px; } .refresh-btn { background-color: #17a2b8; border: none; padding: 8px 15px; font-size: 14px; border-radius: 8px; cursor: pointer; color: white; font-weight: bold; transition: 0.2s; } .refresh-btn:hover { background-color: #138496; } .scroll-area { overflow-y: auto; flex-grow: 1; padding-right: 10px; } table { width: 100%; border-collapse: collapse; margin-top: 0; } th, td { padding: 12px; border-bottom: 1px solid #ddd; font-size: 16px; text-align: center; } th { background-color: #f8f9fa; color: #333; position: sticky; top: 0; z-index: 1; box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1); } td { color: #555; } .score-good { color: #28a745; font-weight: bold; } .score-avg { color: #fd7e14; font-weight: bold; } .score-bad { color: #dc3545; font-weight: bold; } .empty-msg { font-size: 18px; color: #777; margin: 50px 0; font-style: italic; } .activity-badge { background-color: #e9ecef; padding: 4px 8px; border-radius: 6px; font-size: 14px; font-weight: bold; color: #495057; }</style></head><body><a href="index.html" class="back-btn">⬅️ Volver al Menú Principal</a><div class="history-container"><h1>Panel de Calificaciones 📊</h1><p>Conectado a la base de datos central</p><div class="filter-container"><label for="activity-filter" class="filter-label">Filtrar por actividad:</label><select id="activity-filter" class="activity-select" onchange="handleFilterChange()"><option value="Todas">📋 Mostrar Todas</option><option value="Animales">🐾 Animales</option><option value="Vamos a">🚶 Vamos a...</option><option value="Gramática">💡 Gramática</option><option value="Reloj">⌚ Reloj</option><option value="Oraciones">🧩 Oraciones</option></select></div><div class="top-controls"><button class="refresh-btn" onclick="loadCloudData()">Actualizar Datos 🔄</button></div><div class="scroll-area" id="table-container"><p class="empty-msg">Cargando registros... ⏳</p></div></div><script>const scriptURL = 'https://script.google.com/macros/s/AKfycbw1BxtqYUMinRLcVe-e-lLXgQZyAN3X-VFUU3a6CDJX_HfBBv3_5lidAgS4Ow0DU4i-8w/exec'; let allRecords = []; let currentFilter = 'Todas'; function renderTable(records) { const container = document.getElementById('table-container'); if (records.length === 0) { container.innerHTML = `<p class="empty-msg">No se encontraron registros para esta sección.</p>`; return; } const showActivityColumn = currentFilter === 'Todas'; let tableHTML = `<table><thead><tr>`; if (showActivityColumn) tableHTML += `<th>Actividad</th>`; tableHTML += `<th>Nombre</th><th>Ubicación 📍</th><th>Fecha</th><th>Hora</th><th>Puntaje</th></tr></thead><tbody>`; records.slice().reverse().forEach((record) => { let scoreVal = parseInt(record.score) || 0; let totalVal = parseInt(record.total) || 10; let scoreClass = 'score-bad'; if (scoreVal / totalVal >= 0.8) scoreClass = 'score-good'; else if (scoreVal / totalVal >= 0.5) scoreClass = 'score-avg'; let displayName = record.name ? record.name : 'Anónimo'; let actName = record.actividad ? record.actividad : 'Sin clasificar'; let locName = record.location ? record.location : 'Desconocida'; tableHTML += `<tr>`; if (showActivityColumn) { tableHTML += `<td><span class="activity-badge">${actName}</span></td>`; } tableHTML += `<td><strong>${displayName}</strong></td><td><small>${locName}</small></td><td>${record.date}</td><td>${record.time}</td><td class="${scoreClass}">${scoreVal} / ${totalVal}</td></tr>`; }); tableHTML += `</tbody></table>`; container.innerHTML = tableHTML; } function handleFilterChange() { const selectEl = document.getElementById('activity-filter'); filterData(selectEl.value); } function filterData(activityName) { currentFilter = activityName; if (activityName === 'Todas') { renderTable(allRecords); } else { const filtered = allRecords.filter(record => record.actividad === activityName); renderTable(filtered); } } function checkUrlParameter() { const urlParams = new URLSearchParams(window.location.search); const actParam = urlParams.get('act'); const selectEl = document.getElementById('activity-filter'); if (actParam) { const map = { 'Animales': 'Animales', 'Vamos a': 'Vamos a', 'Gramática': 'Gramática', 'Reloj': 'Reloj', 'Oraciones': 'Oraciones' }; const exactName = map[actParam] || map[actParam.replace('+', ' ')]; if(exactName) { selectEl.value = exactName; filterData(exactName); return; } } selectEl.value = 'Todas'; filterData('Todas'); } function loadCloudData() { const container = document.getElementById('table-container'); container.innerHTML = `<p class="empty-msg">Cargando registros... ⏳</p>`; fetch(scriptURL).then(response => response.json()).then(data => { allRecords = data; checkUrlParameter(); }).catch(error => { container.innerHTML = `<p class="empty-msg" style="color:red;">Error al conectar con la base de datos.<br>Revisa tu conexión a internet.</p>`; console.error('Error fetching data:', error); }); } window.onload = loadCloudData;</script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro Central de Calificaciones</title>
+<style>
+    body { font-family: 'Arial', sans-serif; background-color: #fdf5e6; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
+    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #333; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .back-btn:hover { background-color: #eee; }
+    .history-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 40px; width: 900px; max-width: 95%; height: 85vh; display: flex; flex-direction: column; }
+    h1 { color: #333; margin-bottom: 5px; }
+    p { color: #777; margin-bottom: 20px; font-size: 16px; }
+    
+    .filter-container { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
+    .filter-label { font-size: 18px; font-weight: bold; color: #333; }
+    .activity-select { padding: 10px 15px; font-size: 16px; border-radius: 8px; border: 2px solid #ccc; cursor: pointer; outline: none; font-family: inherit; background-color: #f8f9fa; color: #333; font-weight: bold; transition: border-color 0.2s; }
+    .activity-select:focus { border-color: #007bff; }
+    
+    .top-controls { display: flex; justify-content: flex-end; margin-bottom: 10px; }
+    .refresh-btn { background-color: #17a2b8; border: none; padding: 8px 15px; font-size: 14px; border-radius: 8px; cursor: pointer; color: white; font-weight: bold; transition: 0.2s; }
+    .refresh-btn:hover { background-color: #138496; }
+
+    .scroll-area { overflow-y: auto; flex-grow: 1; padding-right: 10px; }
+    
+    table { width: 100%; border-collapse: collapse; margin-top: 0; }
+    th, td { padding: 12px; border-bottom: 1px solid #ddd; font-size: 16px; text-align: center; }
+    th { background-color: #f8f9fa; color: #333; position: sticky; top: 0; z-index: 1; box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1); }
+    td { color: #555; }
+    .score-good { color: #28a745; font-weight: bold; }
+    .score-avg { color: #fd7e14; font-weight: bold; }
+    .score-bad { color: #dc3545; font-weight: bold; }
+    .empty-msg { font-size: 18px; color: #777; margin: 50px 0; font-style: italic; }
+    .activity-badge { background-color: #e9ecef; padding: 4px 8px; border-radius: 6px; font-size: 14px; font-weight: bold; color: #495057; }
+</style>
+</head>
+<body>
+<a href="menu_actividades.html" class="back-btn">⬅️ Volver a Actividades</a>
+<div class="history-container">
+    <h1>Panel de Calificaciones 📊</h1>
+    <p>Conectado a la base de datos central</p>
+    
+    <div class="filter-container">
+        <label for="activity-filter" class="filter-label">Filtrar por actividad:</label>
+        <select id="activity-filter" class="activity-select" onchange="handleFilterChange()">
+            <option value="Todas">📋 Mostrar Todas</option>
+            <option value="Animales">🐾 Animales</option>
+            <option value="Vamos a">🚶 Vamos a...</option>
+            <option value="Gramática">💡 Gramática</option>
+            <option value="Reloj">⌚ Reloj</option>
+            <option value="Oraciones">🧩 Oraciones</option>
+            <option value="Conjugaciones">⏳ Conjugaciones</option>
+        </select>
+    </div>
+    
+    <div class="top-controls">
+        <button class="refresh-btn" onclick="loadCloudData()">Actualizar Datos 🔄</button>
+    </div>
+    
+    <div class="scroll-area" id="table-container">
+        <p class="empty-msg">Cargando registros... ⏳</p>
+    </div>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw1BxtqYUMinRLcVe-e-lLXgQZyAN3X-VFUU3a6CDJX_HfBBv3_5lidAgS4Ow0DU4i-8w/exec';
+    
+    let allRecords = []; 
+    let currentFilter = 'Todas';
+
+    function renderTable(records) {
+        const container = document.getElementById('table-container');
+        
+        if (records.length === 0) {
+            container.innerHTML = `<p class="empty-msg">No se encontraron registros para esta sección.</p>`;
+            return;
+        }
+        
+        const showActivityColumn = currentFilter === 'Todas';
+        
+        let tableHTML = `<table><thead><tr>`;
+        if (showActivityColumn) tableHTML += `<th>Actividad</th>`;
+        tableHTML += `<th>Nombre</th><th>Ubicación 📍</th><th>Fecha</th><th>Hora</th><th>Puntaje</th></tr></thead><tbody>`;
+        
+        records.slice().reverse().forEach((record) => {
+            let scoreVal = parseInt(record.score) || 0;
+            let totalVal = parseInt(record.total) || 10;
+            
+            let scoreClass = 'score-bad';
+            if (scoreVal / totalVal >= 0.8) scoreClass = 'score-good';
+            else if (scoreVal / totalVal >= 0.5) scoreClass = 'score-avg';
+            
+            let displayName = record.name ? record.name : 'Anónimo';
+            let actName = record.actividad ? record.actividad : 'Sin clasificar';
+            let locName = record.location ? record.location : 'Desconocida';
+            
+            tableHTML += `<tr>`;
+            if (showActivityColumn) {
+                tableHTML += `<td><span class="activity-badge">${actName}</span></td>`;
+            }
+            tableHTML += `<td><strong>${displayName}</strong></td><td><small>${locName}</small></td><td>${record.date}</td><td>${record.time}</td><td class="${scoreClass}">${scoreVal} / ${totalVal}</td></tr>`;
+        });
+        
+        tableHTML += `</tbody></table>`;
+        container.innerHTML = tableHTML;
+    }
+
+    function handleFilterChange() {
+        const selectEl = document.getElementById('activity-filter');
+        filterData(selectEl.value);
+    }
+
+    function filterData(activityName) {
+        currentFilter = activityName;
+        
+        if (activityName === 'Todas') {
+            renderTable(allRecords);
+        } else {
+            const filtered = allRecords.filter(record => record.actividad === activityName);
+            renderTable(filtered);
+        }
+    }
+
+    function checkUrlParameter() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const actParam = urlParams.get('act');
+        const selectEl = document.getElementById('activity-filter');
+        
+        if (actParam) {
+            const map = {
+                'animales': 'Animales',
+                'vamos': 'Vamos a',
+                'gramatica': 'Gramática',
+                'reloj': 'Reloj',
+                'oraciones': 'Oraciones'
+            };
+            
+            const exactName = map[actParam];
+            if(exactName) {
+                selectEl.value = exactName;
+                filterData(exactName);
+                return;
+            }
+        }
+        selectEl.value = 'Todas';
+        filterData('Todas');
+    }
+
+    function loadCloudData() {
+        const container = document.getElementById('table-container');
+        container.innerHTML = `<p class="empty-msg">Cargando registros... ⏳</p>`;
+        
+        fetch(scriptURL)
+            .then(response => response.json())
+            .then(data => {
+                allRecords = data;
+                checkUrlParameter(); 
+            })
+            .catch(error => {
+                container.innerHTML = `<p class="empty-msg" style="color:red;">Error al conectar con la base de datos.<br>Revisa tu conexión a internet.</p>`;
+                console.error('Error fetching data:', error);
+            });
+    }
+
+    window.onload = loadCloudData;
+</script>
+</body>
+</html>
