@@ -5,37 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Registro Central de Calificaciones</title>
 <style>
-    body { font-family: 'Arial', sans-serif; background-color: #fdf5e6; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
-    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: white; color: #333; padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    .back-btn:hover { background-color: #eee; }
-    .history-container { background-color: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 40px; width: 900px; max-width: 95%; height: 85vh; display: flex; flex-direction: column; }
-    h1 { color: #333; margin-bottom: 5px; }
-    p { color: #777; margin-bottom: 20px; font-size: 16px; }
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+    :root {
+        --color-sage: #D3DCBC;
+        --color-olive: #7E8E65;
+        --color-beige: #D1D0BE;
+        --color-caramel: #BB915D;
+        --color-mustard: #E6D56C;
+        --text-dark: #2C3523;
+        --text-muted: #55604E;
+        --card-bg: #FFFFFF;
+        --border: #D1D0BE;
+    }
+    body { font-family: 'Nunito', sans-serif; background-color: var(--color-sage); display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; color: var(--text-dark); }
+    .back-btn { position: absolute; top: 30px; left: 30px; text-decoration: none; background-color: var(--card-bg); color: var(--color-olive); padding: 10px 20px; border-radius: 10px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid var(--border); transition: 0.2s; }
+    .back-btn:hover { color: var(--color-caramel); }
+    .history-container { background-color: var(--card-bg); border-radius: 20px; box-shadow: 0 10px 20px rgba(44, 53, 35, 0.08); padding: 40px; width: 900px; max-width: 95%; height: 85vh; display: flex; flex-direction: column; border-top: 5px solid var(--color-olive); }
+    h1 { color: var(--color-olive); margin-bottom: 5px; }
+    p { color: var(--text-muted); margin-bottom: 20px; font-size: 16px; }
     
-    .filter-container { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
-    .filter-label { font-size: 18px; font-weight: bold; color: #333; }
-    .activity-select { padding: 10px 15px; font-size: 16px; border-radius: 8px; border: 2px solid #ccc; cursor: pointer; outline: none; font-family: inherit; background-color: #f8f9fa; color: #333; font-weight: bold; transition: border-color 0.2s; }
-    .activity-select:focus { border-color: #007bff; }
+    .filter-container { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px; border-bottom: 2px solid var(--border); padding-bottom: 20px; }
+    .filter-label { font-size: 18px; font-weight: bold; color: var(--text-dark); }
+    .activity-select { padding: 10px 15px; font-size: 16px; border-radius: 8px; border: 2px solid var(--border); cursor: pointer; outline: none; font-family: inherit; background-color: #f8f9fa; color: var(--text-dark); font-weight: bold; transition: border-color 0.2s; }
+    .activity-select:focus { border-color: var(--color-caramel); }
     
     .top-controls { display: flex; justify-content: flex-end; margin-bottom: 10px; }
-    .refresh-btn { background-color: #17a2b8; border: none; padding: 8px 15px; font-size: 14px; border-radius: 8px; cursor: pointer; color: white; font-weight: bold; transition: 0.2s; }
-    .refresh-btn:hover { background-color: #138496; }
+    .refresh-btn { background-color: var(--color-olive); border: none; padding: 8px 15px; font-size: 14px; border-radius: 8px; cursor: pointer; color: white; font-weight: bold; transition: 0.2s; }
+    .refresh-btn:hover { background-color: var(--color-caramel); }
 
     .scroll-area { overflow-y: auto; flex-grow: 1; padding-right: 10px; }
     
     table { width: 100%; border-collapse: collapse; margin-top: 0; }
-    th, td { padding: 12px; border-bottom: 1px solid #ddd; font-size: 16px; text-align: center; }
-    th { background-color: #f8f9fa; color: #333; position: sticky; top: 0; z-index: 1; box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1); }
-    td { color: #555; }
-    .score-good { color: #28a745; font-weight: bold; }
-    .score-avg { color: #fd7e14; font-weight: bold; }
-    .score-bad { color: #dc3545; font-weight: bold; }
-    .empty-msg { font-size: 18px; color: #777; margin: 50px 0; font-style: italic; }
-    .activity-badge { background-color: #e9ecef; padding: 4px 8px; border-radius: 6px; font-size: 14px; font-weight: bold; color: #495057; }
+    th, td { padding: 12px; border-bottom: 1px solid var(--border); font-size: 16px; text-align: center; }
+    th { background-color: #F4F5F0; color: var(--color-olive); position: sticky; top: 0; z-index: 1; box-shadow: 0 2px 2px -1px rgba(0,0,0,0.05); }
+    td { color: var(--text-muted); }
+    .score-good { color: #2A9D8F; font-weight: bold; }
+    .score-avg { color: var(--color-caramel); font-weight: bold; }
+    .score-bad { color: #E53E3E; font-weight: bold; }
+    .empty-msg { font-size: 18px; color: var(--text-muted); margin: 50px 0; font-style: italic; }
+    .activity-badge { background-color: #F4F5F0; padding: 4px 8px; border-radius: 6px; font-size: 14px; font-weight: bold; color: var(--text-dark); border: 1px solid var(--border); }
 </style>
 </head>
 <body>
-<a href="menu_actividades.html" class="back-btn">⬅️ Volver a Actividades</a>
+<a href="index.html" class="back-btn">⬅️ Volver a Actividades</a>
 <div class="history-container">
     <h1>Panel de Calificaciones 📊</h1>
     <p>Conectado a la base de datos central</p>
@@ -49,7 +61,6 @@
             <option value="Gramática">💡 Gramática</option>
             <option value="Reloj">⌚ Reloj</option>
             <option value="Oraciones">🧩 Oraciones</option>
-            <option value="Conjugaciones">⏳ Conjugaciones</option>
         </select>
     </div>
     
